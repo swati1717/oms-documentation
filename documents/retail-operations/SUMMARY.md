@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Launchpad](README.md)
+* [Launchpad](../launchpad/README.md)
 
 ## Workflow
 

@@ -16,4 +16,9 @@ Transfer orders are initiated in the NetSuite ERP system, facilitating the movem
 Once a transfer order is created and synced, any updates or modifications must be handled by creating a new transfer order.
 {% endhint %}
 
+{% hint style="info" %}
+HotWax's [Receiving App](https://docs.hotwax.co/documents/store-operations/inventory/receiving/receiving#handle-discrepancies) helps store associates manage receiving discrepancies. The app allows over-receiving, under-receiving as well as provides an option to receive unexpected items in a TO. HotWax’s BI Reports & Analytics platform also provides [Receiving Discrepancy](https://docs.hotwax.co/documents/analytics/reports/inventory#receiving-discrepancies-by-product) report for the operations team to track and manage these discrepancies.
+{% endhint %}
+
+
 <table data-view="cards"><thead><tr><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Warehouse to Store</td><td><a href="warehousetostore.md">warehousetostore.md</a></td></tr><tr><td>Store to Warehouse</td><td><a href="storetowarehouse.md">storetowarehouse.md</a></td></tr><tr><td>Store to Store</td><td><a href="storetostore.md">storetostore.md</a></td></tr></tbody></table>
