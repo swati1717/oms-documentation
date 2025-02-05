@@ -54,7 +54,7 @@
   * [Inventory Rules](orders/order-routing/inventory-rules.md)
   * [Use Cases](orders/order-routing/use-cases.md)
   * [Additional Settings](orders/order-routing/additional-settings.md)
-  * [Templates](orders/order-routing/templates/README.md)
+  * [Templates](orders/order-routing/template/README.md)
     * [Inventory Based Shipping](orders/order-routing/template/inventory-based-shipping.md)
     * [Cross Border Shipping](orders/order-routing/template/cross-border-shipping.md)
   * [Troubleshooting](orders/order-routing/troubleshooting/README.md)
