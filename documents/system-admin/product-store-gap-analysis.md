@@ -8,7 +8,6 @@
 
 The legacy OMS (`/commerce/control/ViewStore`) provides a granular, tab-based configuration for every aspect of a Product Store.
 
-### Core Identity
 
 | Field | Editable | Notes |
 |---|---|---|
@@ -17,14 +16,12 @@ The legacy OMS (`/commerce/control/ViewStore`) provides a granular, tab-based co
 | External ID | Yes | Used for external system references |
 | Company Name (Party ID) | Yes | Links to the Company Profile |
 
-### Financials
 
 | Field | Editable | Notes |
 |---|---|---|
 | Default Currency | Yes | USD, CAD, GBP, etc. |
 | Visual Theme | Yes | Controls storefront appearance |
 
-### Inventory & Order Logic
 
 | Field | Editable | Notes |
 |---|---|---|
@@ -36,7 +33,6 @@ The legacy OMS (`/commerce/control/ViewStore`) provides a granular, tab-based co
 | Pre-order Auto-Releasing | Yes | Automates pre-order release when inventory arrives |
 | Sales Order ID Prefix | Yes | Prefix added to internal order IDs |
 
-### Facility Management
 
 | Capability | Available | Notes |
 |---|---|---|
@@ -45,7 +41,6 @@ The legacy OMS (`/commerce/control/ViewStore`) provides a granular, tab-based co
 | Set Primary Inventory Facility | Yes | Defines the "home" facility for inventory |
 | Sequence Facilities for Brokering | Yes | Drag-and-drop priority ordering |
 
-### Shipping & Fulfillment
 
 | Capability | Available | Notes |
 |---|---|---|
@@ -54,7 +49,6 @@ The legacy OMS (`/commerce/control/ViewStore`) provides a granular, tab-based co
 | Set Tracking Requirements | Yes | Flags per shipping method |
 | View/Manage Shipment Method List | Yes | All methods listed with carrier details |
 
-### Operating Countries (DBIC)
 
 | Capability | Available | Notes |
 |---|---|---|
@@ -62,14 +56,12 @@ The legacy OMS (`/commerce/control/ViewStore`) provides a granular, tab-based co
 | Add country/geo | Yes | Add from dropdown |
 | Remove country/geo | Yes | |
 
-### Branding
 
 | Capability | Available | Notes |
 |---|---|---|
 | Update Instance Logo | Yes | Via Company Profile → Change logo link |
 | Update Company Name | Yes | Editable in Company Profile |
 
-### Store Settings (Advanced)
 
 Additional key-value settings configurable in Legacy OMS:
 
@@ -93,7 +85,6 @@ Additional key-value settings configurable in Legacy OMS:
 
 The Company App (`/product-store-details/<id>`) provides a modern, card-based interface focused on the most frequently used operational toggles.
 
-### A. Functional (Working as Expected)
 
 | Section | Field / Toggle | State |
 |---|---|---|
@@ -122,7 +113,6 @@ The Company App (`/product-store-details/<id>`) provides a modern, card-based in
 | **Reroute Fulfillment** | Allow Pickup Location Change | Toggle |
 | **Product** | Global Product Identifier | Selectable |
 
-### B. Non-Functional / Read-Only
 
 | Feature | Current State | Issue |
 |---|---|---|
