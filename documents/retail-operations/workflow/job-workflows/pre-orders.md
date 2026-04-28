@@ -1,7 +1,6 @@
 ---
 description: >-
-  Learn about the Import New Products job in HotWax Commerce. Keep your product
-  catalog updated for accurate representation on your platform.
+  Learn about the Pre-Order job in HotWax Commerce.
 ---
 
 # Pre-Orders
@@ -22,198 +21,135 @@ All Pre-order jobs have a defined frequency of 15 minutes by default which can b
 6. Users can add custom parameters to the jobs and schedule them accordingly.
 7. Users can also “Skip” or “Cancel” the jobs from the same job detailed card.
 
-### Pre-sell Catalog (Auto Refresh Presell Catalog)
+___
 
-**Job ID:** JOB\_REL\_PREODR\_CAT\
-**Job Name:** Reset Preorder catalog Items
+### Auto Refresh Pre-Sell Catalog
 
-**Description:**\
-The Pre-sell Catalog job automatically manages the addition or removal of pre-sell products from the HotWax Pre-order/Backorder category. This job checks for new products eligible for pre-order/backorder in the received feeds from ERP and adds them to the pre-order backorder catalog in HotWax Commerce based on specific eligibility criteria for product inventory, purchase orders, and order queues.
+Job Name: `Auto Refresh Pre-Sell Catalog`
+Job Enum Id: `JOB_PREORDER_CAT_SYNC`
+Service Name: `uploadPreorderCatalogToShopify`
+Flow: Catalog Update to Shopify
 
-#### **Troubleshooting Use Case**
+A product is eligible for pre-order only if:
 
-**Issue 1:** New or existing products do not appear as pre-orders or backorders.
+- **PO ATP is greater than 0**: This means there is incoming stock confirmed through a Purchase Order.
+- **Current ATP is less than or equal to 0**: This means that the current ATP of the product should be 0 only then the product will be eligible for Pre-order.
 
-**Possible Causes:**
+Retailers organize products into different catalogs for better segregation, including a dedicated catalog for pre-order items. The `Auto Refresh Pre-Sell Catalog` job adds or removes products from the pre-order catalog based on their eligibility criteria for pre-orders.
 
-* Item does not exist in the system
-* PO status is canceled
-* Item has Inventory in the system
+**Note**: This job is specifically for OMS and is used to maintain the pre-order catalog. However, there are separate jobs that sync the same products as pre-orders on Shopify
+<figure><img src="../../.gitbook/assets/pre-sell-catalog.png" alt="" width="375"><figcaption></figcaption></figure>
 
-**Resolution Steps:**
+___
 
-1. Status of PO items must be created or approved, ensuring canceled PO items are not considered for Pre-Order.
-2. The promise date of a PO item must be in the future, guaranteeing that purchase order items will arrive in the future, not from an old PO.
-3. The current inventory of the item must be 0, indicating it's out of stock and qualified for Pre-Order or backorder.
-4. If the 'isNewProduct' field of a PO is marked as “yes”, it’s identified as a Pre-Order product; if marked “no”, it's categorized as a backorder product.
+## Pre-Sell on Shopify
 
-Products from purchase orders that don't meet these criteria won't be listed in HotWax Commerce's pre-order catalog. It's important to ensure that purchase order items adhere to these criteria for accurate listing.
+**All jobs in this category synchronize changes and updates from HotWax to Shopify.**
 
-**Issue 2:** Products are not removed from the pre-order or backorder category.
+## Products
 
-**Resolution Steps:**
+Note: HotWax and Shopify both maintain product details. The jobs listed in the product section below are used to sync product level changes and updates from HotWax to Shopify.
 
-1. Ensure all future inventory of pre-orders is received.
-2. Ensure the Purchase Order status changes to “Canceled” or “Completed”.
-3. Ensure the Purchase Order arrival date (promised fulfillment date) has passed.
-4. There is no Return for any pre-order or backorder.
+### Sync Variant Details
 
-#### **Custom Parameters**
+When a product becomes eligible for pre-order in OMS, it is responsible for syncing the updated product details to Shopify. Only after this synchronization can Shopify accept pre-orders or backorders for that product. The `Sync Variant Details` job is used to sync meta-fields (like promise date, etc) of pre-order/backorder-eligible products from HotWax to Shopify.
 
-| Parameter          | Type   | Description                                                                                                                | Default Value | Example Value           |
-| ------------------ | ------ | -------------------------------------------------------------------------------------------------------------------------- | ------------- | ----------------------- |
-| RunTime            | String | Specifies the Runtime scheduled for a job, which can be customized.                                                        | null          | April 17, 2024, 1:15 PM |
-| Schedule Frequency | String | Schedules frequency from the dropdown as every 5 minutes, Hourly, Daily, Weekly, etc. which can be customized as required. | Daily Once    | 11:30:00:00 AM          |
+Other jobs, such as `Add Promise Date` and `Update Sales Order Item Promise Date`, must be scheduled in HotWax to ensure accurate synchronization of updated promise dates with Shopify. These jobs are discussed in detail later in this document.
 
-<figure><img src="../.gitbook/assets/Pre-sell Catalog.png" alt="" width="375"><figcaption></figcaption></figure>
+---
 
-### Jobs for Synchronizing the Pre-Order Catalog with eCommerce
+### Add Pre-Order Tags
 
-### Pre-sell on Shopify
+This job is used to apply tags on products that are eligible for pre-order in HotWax product catalog, to products in Shopify. For example, if Product A is eligible for pre-order in HotWax, the `Add Pre-Order Tags` job is used to apply the pre-order tag in Shopify, ensuring integrity between both systems.
 
-1. **Job ID:** JOB\_PREORDER\_CAT\_SYC **Job Name:** Preorder catalog sync
-2. **Job ID:** JOB\_ADD\_PREORD\_VRT **Job Name:** Bulk Upload to add preorder tags to products
+**Internally**, when this job is toggled on, HotWax makes a POST API call to Shopify and enables the **`Continue selling when out of stock`** toggle in Shopify. This ultimately allows the product to be available for pre-order in Shopify.
 
-**Description** These jobs facilitate updates to the Presell catalog on Shopify, encapsulating all pre-order-related changes, including promised delivery dates, product categories, and statuses. This file is placed on a dedicated SFTP location. These jobs set the pre-order or backorder category in the meta fields to add the suitable tag to the parent product on Shopify.
+---
 
-1. Tagging as **HC:Pre-order** or **HC:Backorder** can be easily managed by enabling the checkbox for the Add pre-order tags and Add backorder tags jobs, which helps to employ tags and meta fields to modify the Add to Cart button and display the expected delivery date on Shopify PDP.
-2. It is essential to click checkboxes to schedule the Remove Pre-order tags and Remove Backorder tags jobs to eliminate the HC: Pre-order and HC: Backorder tags when a product is removed from the pre-order catalog.
-3. Add Promise Date check box is also to be selected to enable setting the expected delivery dates on the product on Shopify PDP
+### Remove Pre Order Tags
 
-#### Troubleshooting Use Case
+This job is used to remove pre-order tags on products in Shopify. For example, if Product A is now in-stock and considered as a normal product. the `Remove Pre-Order Tags` job is used to remove the pre-order tag in Shopify, ensuring integrity between both systems.
 
-**Issue 1:** The product is not updated as a pre-order or a backorder at Shopify and PDP
+**Internally**,`Remove Pre-Order Tags` functions in a similar way to the Add Pre-Order Tags job only difference being that in the POST API call this job disables the **`Continue selling when out of stock`** toggle in Shopify.
 
-**Possible Causes:**
+---
 
-1. PO status is canceled
-2. PO has a past expected delivery date.
-3. Items have available inventory in the system.
-4. The generated file is not processed by Shopify and is lying unread at the specified SFTP location
+### Add Back Order tags
 
-**Resolution Steps:**
+This job is used to sync products that are eligible for back-order in HotWax with Shopify. For example, if Product A is eligible for back-order in HotWax, the `Add Back Order Tags` job is used to apply the back order tag in Shopify, ensuring integrity between both systems.
 
-1. Status of PO items must be created or approved, ensuring canceled PO items are not considered for Pre-Order.
-2. The promise date of a PO item must be in the future, guaranteeing that the purchase order item will arrive in the future, not from an old PO.
-3. The current inventory of the item must be 0, indicating it's out of stock and qualified for Pre-Order or backorder.
-4. If the 'isNewProduct' field of a PO is marked as “yes”, it’s identified as a Pre-Order product; if marked “no”, it's categorized as a backorder product.
-5. Item is associated with the pre-order or backorder category.
-6. Ensure the file is read and processed from the SFTP location.
+Internally, when this job is toggled on, HotWax makes a POST API call to Shopify and enables the **`Continue selling when out of stock`** toggle in Shopify. This ultimately allows the product to be available for back order in Shopify.
 
-Products from purchase orders that don't meet these criteria won't be listed in Shopify’s pre-order catalog. Contact the Shopify team if your product is still not listed on Shopify.
+---
 
-#### Custom Parameters
+### Remove Back Order tags
 
-| Parameter          | Type   | Description                                                                           | Default Value | Example Value           |
-| ------------------ | ------ | ------------------------------------------------------------------------------------- | ------------- | ----------------------- |
-| RunTime            | String | Specifies the Runtime scheduled for a job, which can be customized.                   | null          | April 17, 2024, 1:15 PM |
-| Schedule Frequency | String | Schedules frequency from the dropdown as every 5 minutes, Hourly, Daily, Weekly, etc. | Daily Once    | 23:59:00:00 PM          |
+This job is used to remove back order tags on products in Shopify. For example, if Product A is now in-stock and considered as a normal product. the `Remove Back Order Tags` job is used to remove the pre-order tag in Shopify, ensuring integrity between both systems.
 
-<figure><img src="../.gitbook/assets/Sync upload preorder sync.png" alt="" width="375"><figcaption></figcaption></figure>
+Internally,`Remove Back Order Tags` functions in a similar way to the Add Back Order Tags job only difference being that in the POST API call this job disables the **`Continue selling when out of stock`** toggle in Shopify.
 
-### Promise Date Changes (Update Pre-Order Category Item Arrival Date)
+___
 
-**Job ID:** JOB\_UL\_PRMS\_DTE **Job Name:** Update promise dates for pre-order products.
+## Orders
 
-#### Description
+**Note: The jobs listed in the order section below are used to sync Order level changes and updates from HotWax to Shopify.**
 
-#### Update Pre-Order Category Item Arrival Date
+### Add Pre-Order Tags
 
-When there are any changes in the arrival dates of the multiple items in the purchase orders, the promise dates need to be first updated in the HotWax Commerce pre-sell category. The Sync Variant Details job ensures that the expected date changes in the purchase order arrival date, and the promise dates of the product are also updated on Shopify. These changes happen through the Update Pre-Order Category Item Arrival Date job which creates a file and processes all the updated date changes in the HotWax Commerce category, after this, the Sync Variant Details updates the changes on Shopify.
+This job applies pre-order tags to orders. For example, if a customer places an order with three items—two pre-order products and one regular product—HotWax identifies orders that contain pre-order items and tags the entire order in Shopify.
 
-**Troubleshooting Use Case**
+Internally, when this job is toggled onn HotWax makes a post API call to Shopify and add tags on all orders which contains pre-order items.
 
-**Issue 1:** The promise date of the Product is not updated on Shopify PDP.
+---
 
-**Possible Causes:**
+### Add Back Order Tags
 
-1. PO status is canceled
-2. Item does not exist anymore in the pre-order or backorder category.
-3. Item has Inventory in the system.
-4. The generated file is not processed by Shopify and is lying unread at specified SFTP location
+This job applies back order tags to orders. For example, if a customer places an order with three items—two back order products and one regular product—HotWax identifies orders that contain back order items and tags the entire order in Shopify.
 
-**Resolution Steps:**
+Internally, when this job is toggled onn HotWax makes a post API call to Shopify and add tags on all order in Shopify which containing back order items.
 
-1. Status of PO items must be created or approved.
-2. The promise date of a PO item must be in the future.
-3. Ensure the current inventory of the item must be 0.
-4. Ensure that the file is processed by Shopify from the SFTP location
+---
 
-| Parameter          | Type   | Description                                                                                                                | Default Value | Example Value           |
-| ------------------ | ------ | -------------------------------------------------------------------------------------------------------------------------- | ------------- | ----------------------- |
-| RunTime            | String | Specifies the Runtime scheduled for a job, which can be customized.                                                        | null          | April 17, 2024, 1:15 PM |
-| Schedule Frequency | String | Schedules frequency from the dropdown as every 5 minutes, Hourly, Daily, Weekly, etc. which can be customized as required. | 15 Minutes    | Every 15 minutes        |
+### Add Promise Date
 
-### Jobs for Sales Orders with Pre-Order Items
+When an order is placed containing a pre-order or back order items, HotWax identifies it and add the promise date in Shopify as a note on Order Level. This job is used to apply promise date to orders in Shopify.
 
-To ensure accurate representation of pre-order information when pre-orders are downloaded alongside regular orders, specific notes or tags are included in incoming sales orders for easy identification of pre-orders. The job is scheduled by selecting the respective checkboxes while configuring the Pre-sell on the Shopify job from the Job Manager application.
+---
 
-Users are allowed to select multiple checkboxes to schedule various jobs in HotWax Commerce for managing sales orders with pre-order items more efficiently.
+### Update Promise Date
 
-#### Add Pre-order/Backorder Tags
+When the estimated promise date on a purchase order changes, it's important to inform customers about updates to their orders linked to that inventory. The "Update Promise Date" job updates the promise date of order note in Shopify.
 
-**Description:** These jobs assign pre-order/backorder tags to orders containing pre-selling items. This simplifies identification for the operations team. The job is scheduled by selecting the respective checkbox against the Add Pre-Order Tag or Add Backorder Tag. By default, the frequency will be scheduled just as specified for the Pre-sell on the Shopify job.
+Internally, through this job HotWax sends an post API call on Shopify and change the promise date on the of order note on Shopify. However, there are different jobs in HotWax which triggers notification to the customers.
+___
 
-| Parameter          | Type   | Description                                                                                                                | Default Value | Example Value           |
-| ------------------ | ------ | -------------------------------------------------------------------------------------------------------------------------- | ------------- | ----------------------- |
-| RunTime            | String | Specifies the Runtime scheduled for a job, which can be customized.                                                        | null          | April 17, 2024, 1:15 PM |
-| Schedule Frequency | String | Schedules frequency from the dropdown as every 5 minutes, Hourly, Daily, Weekly, etc. which can be customized as required. | 15 Minutes    | Every 15 Minutes        |
+## Auto Releasing
 
-#### Add Promise Date
+### Run Daily
 
-**Description:** These jobs will assign promise dates to sales orders, mirroring the dates provided to customers upon order placement for pre-order or backorder items. This job, when activated via checkbox, appends promise date notes to sales orders. By default, the frequency will be scheduled just as specified for the Pre-sell on the Shopify job.
+Job Name: `Release pre-orders and back orders`
+Job Enum ID: `JOB_RLS_ORD_DTE`
+Service Name: `checkPreOrderItemForRelease`
 
-#### Update Promise Date
+After the promise date is passed, this job is used to push orders for brokering. HotWax maintains dedicated parking for pre-orders and backorders, ensuring they are managed separately. All such orders remain in this parking until they are ready for fulfillment. The "Run Daily" job runs once a day, checking the pre-order and backorder parking for orders with passed promise date and releasing them for brokering.
 
-**Description:** There might be multiple purchase Orders uploaded in HotWax Commerce. Once the active PO is exhausted, the subsequent PO gets active with a new arrival date. Sometimes, a new PO is introduced with an early arrival date, while the Item already has a specified promise date at Shopify PDP. In cases where promise dates change due to shifts in the arrival date of purchase orders, updates to the promise dates in sales orders are necessary. The Update promise date job updates the promise date notes of the sales orders. This job, when activated via checkbox, adds notes to the impacted order items on Shopify for changes in promise dates. By default, the frequency will be scheduled just as specified for the Pre-sell on the Shopify job.
+<figure><img src="../../.gitbook/assets/update-promise-date-for-pre-order-product.png" alt="" width="375"><figcaption></figcaption></figure>
 
-| Parameter          | Type   | Description                                                                                                                | Default Value | Example Value           |
-| ------------------ | ------ | -------------------------------------------------------------------------------------------------------------------------- | ------------- | ----------------------- |
-| RunTime            | String | Specifies the Runtime scheduled for a job, which can be customized.                                                        | null          | April 17, 2024, 1:15 PM |
-| Schedule Frequency | String | Schedules frequency from the dropdown as every 5 minutes, Hourly, Daily, Weekly, etc. which can be customized as required. | 15 Minutes    | Every 15 Minutes        |
+___
 
-#### Adjust ATP on Early PO in Bulk
+## More Jobs
 
-**Description:** The ATP available on the purchase orders needs to be handled when exhausted or shifted from one PO to the other PO. Merchandisers frequently handle multiple Purchase Orders for identical SKUs. Sometimes, they might upload a new Purchase Order with an earlier promised date, even if there's an existing Purchase Order for the same SKU in the system. In such cases, re-allocating sales orders from the initial Purchase Order to the latest one with an earlier date becomes vital. This ensures that customers who place pre-orders first are given priority, guaranteeing timely delivery. The task automatically adjusts Purchase Order ATP allocations and reallocates pre-orders accordingly. To schedule this, users need to enable and set up the Adjust ATP on Early PO in Bulk by selecting the checkbox available in the More Jobs section.
+### Update Sales Order Item Promise Date
 
-| Parameter          | Type   | Description                                                                                                                | Default Value | Example Value           |
-| ------------------ | ------ | -------------------------------------------------------------------------------------------------------------------------- | ------------- | ----------------------- |
-| RunTime            | String | Specifies the Runtime scheduled for a job, which can be customized.                                                        | null          | April 17, 2024, 1:15 PM |
-| Schedule Frequency | String | Schedules frequency from the dropdown as every 5 minutes, Hourly, Daily, Weekly, etc. which can be customized as required. | Every Hour    | Hourly                  |
+Job Name: `Update Sales Order Item Promise Date`
+Job Enum ID: `JOB_UL_PRMS_DTE`
+Service Name: `pushPromiseDateChangedNotes`
 
-### Promise Date Changes
+When a customer places a pre-order, they are given a promised delivery date based on the estimated arrival of the associated purchase order. If this estimated arrival date changes, the promised delivery date for existing orders must be updated accordingly. This adjustment is handled by the `Update Sales Order Item Promise Date` job.
 
-#### Auto Sync Date to order
+**Note**: This job updates the promise date specifically in OMS. However, other jobs are responsible for syncing the updated promise date to external systems.
 
-**Description:** Merchants can change the promise dates in sales orders if there are any changes in the promise date due to arrival date changes in Purchase orders through this job. This job can be scheduled by checking the box against the job name Auto Sync Date to order, available in the job card Promise Date Changes. The frequency can be set as required from the available dropdown or can be customized.
+**Custom Parameters**
+- No required parameter for this job.
+- productStoreIds is the optional parameters for this job.
 
-| Parameter          | Type   | Description                                                                                                                | Default Value | Example Value           |
-| ------------------ | ------ | -------------------------------------------------------------------------------------------------------------------------- | ------------- | ----------------------- |
-| RunTime            | String | Specifies the Runtime scheduled for a job, which can be customized.                                                        | null          | April 17, 2024, 1:15 PM |
-| Schedule Frequency | String | Schedules frequency from the dropdown as every 5 minutes, Hourly, Daily, Weekly, etc. which can be customized as required. | Every Hour    | Hourly                  |
-
-#### Email Customers
-
-**Description:** To efficiently manage customer expectations regarding changes in promised dates, activating the Email customers checkbox initiates a job that triggers automatic emails to customers. This action ensures customers are informed whenever there's a modification in the promised date since the job notifies customers of any changed promise dates for their orders.
-
-| Parameter          | Type   | Description                                                                                                                | Default Value | Example Value           |
-| ------------------ | ------ | -------------------------------------------------------------------------------------------------------------------------- | ------------- | ----------------------- |
-| RunTime            | String | Specifies the Runtime scheduled for a job, which can be customized.                                                        | null          | April 17, 2024, 1:15 PM |
-| Schedule Frequency | String | Schedules frequency from the dropdown as every 5 minutes, Hourly, Daily, Weekly, etc. which can be customized as required. | 15 Minutes    | Every 15 Minutes        |
-
-## Release Pre-orders
-
-**Description:** HotWax Commerce facilitates users to automatically handle the release and brokering of Shopify Pre-Orders, ensuring fulfillment from the most suitable location without requiring manual intervention. HC strategically organizes all pre-orders in a dedicated queue until their physical inventory is received. This approach ensures that brokering processes are not initiated for orders lacking available inventory. Once the pre-order inventory arrives, HotWax Commerce transfers all orders from the pre-order queue to the brokering queue. This allows the system's engine to efficiently match the most suitable inventory with specific orders for fulfillment.
-
-### Auto Releasing
-
-**Daily Job**
-
-**Description:** Merchandisers can schedule this job through the Job Manager Application from the Pre Order Page by enabling the Run Daily checkbox in the auto-releasing card. This automated process releases pre-orders where the shipping date has arrived and inventory is available in HotWax Commerce for release.
-
-| Parameter          | Type   | Description                                                                                                                | Default Value | Example Value           |
-| ------------------ | ------ | -------------------------------------------------------------------------------------------------------------------------- | ------------- | ----------------------- |
-| RunTime            | String | Specifies the Runtime scheduled for a job, which can be customized.                                                        | null          | April 17, 2024, 7:15 AM |
-| Schedule Frequency | String | Schedules frequency from the dropdown as every 5 minutes, Hourly, Daily, Weekly, etc. which can be customized as required. | Daily Once    | Every Day               |
-
-<figure><img src="../.gitbook/assets/Update promise Date for pre-order product.png" alt="" width="375"><figcaption></figcaption></figure>

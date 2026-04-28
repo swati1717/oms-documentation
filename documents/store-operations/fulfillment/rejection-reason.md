@@ -1,7 +1,8 @@
 ---
-description: >-  
+description: >-
     HotWax Commerce's Rejection Reason Management enables customizable rejection reasons and inventory impacts.
 ---
+
 # Customize Rejection Reasons
 
 The **Rejection Reason Management** feature offers a solution for retail stores facing challenges in fulfilling online orders. It allows retailers to customize rejection reasons and their impact on inventory, tailoring the system to their operational needs. Within the **Fulfillment App**, retailers can add new rejection reasons, edit existing ones, and adjust inventory impacts, ensuring accurate reflection of various scenarios encountered in their operations. Rejection reasons can have two types of impacts on **Available to Promise (ATP) inventory**, depending on their variance type:
@@ -24,15 +25,11 @@ Here's a step-by-step guide on how to use this feature:
    - **Variance Type:** Select the appropriate type that categorizes this rejection reason (e.g., Report All variance).
 5. Click `Save` to save the reason.
 
-{% embed url="https://youtu.be/sU6W-4l6luY" %} Video: Create Rejection Reason {% endembed %}
-
 Furthermore, you can make the following edits to the existing rejection reasons:
 
 - Update the impact on ATP for the reason
-- Edit Name and Description of the Reason 
+- Edit Name and Description of the Reason
 - Reorder the Rejection Reason
 - Remove Rejection Reason
 
 By customizing rejection reasons, users can efficiently manage orders and communicate effectively with customers.
-
-{% embed url="https://youtu.be/jH-MvETA_GY" %} Video: Edit Rejection Reason {% endembed %}

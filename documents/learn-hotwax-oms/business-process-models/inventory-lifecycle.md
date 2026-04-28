@@ -9,9 +9,9 @@ description: >-
 
 The inventory count of a product is regularly updated due to various factors such as customer purchases made both in-store and online, as well as the receipt of new inventory. These transactions are recorded across different systems. In the Inventory Lifecycle BPM, we've provided detailed insights into how these operational inventory transactions impact the sellable inventory count, that is, `Online ATP` of a product.
 
-<figure><img src="../.gitbook/assets/Inventorybpm.png" alt=""><figcaption><p>Inventory lifecycle business process model</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/inventory-lifecycle-bpm.png" alt=""><figcaption><p>Inventory lifecycle business process model</p></figcaption></figure>
 
-Before delving into the specifics of Inventory Lifecycle BPM, it's crucial to understand HotWax Commerce's role in maintaining inventory levels and calculating inventory availability. <mark style="color:orange;">**HotWax Commerce serves as the master of inventory availability**</mark>. Now, what exactly does this mean, and how does HotWax Commerce compute it? Let's see:
+Before delving into the specifics of Inventory Lifecycle BPM, it's important to understand HotWax Commerce's role in maintaining inventory levels and calculating inventory availability. <mark style="color:orange;">**HotWax Commerce serves as the master of inventory availability**</mark>. Now, what exactly does this mean, and how does HotWax Commerce compute it? Let's see:
 
 In HotWax Commerce, you'll come across three inventory-related terms: **Quantity On Hand (QOH), Available To Promise (ATP), and Online ATP**
 
@@ -21,14 +21,14 @@ In HotWax Commerce, you'll come across three inventory-related terms: **Quantity
 
 ### Calculating Online ATP
 
-To calculate `Online ATP`, HotWax Commerce deducts inventory that is not available for sale from the ATP. This includes items such as safety stock, threshold quantities, orders in the brokering queue, and inventory from locations that are not participating in online selling.
+To calculate `Online ATP`, HotWax Commerce deducts inventory that is not available for sale from the ATP. This includes safety stock, threshold quantities, orders in the brokering queue, and inventory from locations that are not participating in online selling.
 
 * <mark style="color:orange;">**Safety stock**</mark><mark style="color:orange;">:</mark> Inventory set aside at each store specifically for walk-in customers.
 * <mark style="color:orange;">**Threshold**</mark><mark style="color:orange;">:</mark> Inventory buffer established at a company level to prevent inventory discrepancies and overselling on eCommerce platforms.
 * <mark style="color:orange;">**Orders in the brokering queue**</mark><mark style="color:orange;">:</mark> eCommerce orders awaiting inventory allocation.
 * <mark style="color:orange;">**Non participating facilities' ATP**</mark><mark style="color:orange;">:</mark> Inventory at fulfillment locations that have online selling disabled in HotWax Commerce.
 
-#### How it works:
+#### How it works
 
 HotWax Commerce integrates with ERP, POS, and WMS, to create a unified pool of inventory. After synchronizing inventory totals from all systems, HotWax Commerce calculates the `Online ATP` for eCommerce by subtracting any inventory set aside as safety stock, thresholds, orders in the brokering queue, and inventory at non participating facilities from the physical ATP. This makes HotWax Commerce the ultimate authority on inventory availability and prevents overcommitting on eCommerce platforms.
 
@@ -64,7 +64,7 @@ When new purchase orders are created in the ERP, a scheduled job in HotWax Comme
 
 When a product’s QOH and ATP is updated in HotWax Commerce, its `Online ATP` is recomputed to ensure sellable inventory for eCommerce is calculated on the latest stock levels.
 
-Learn more about [purchase orders](https://docs.hotwax.co/documents/v/learn-netsuite/supported-integrations/purchase-orders)
+Learn more about [purchase orders](/documents/learn-netsuite/integration-flows/purchase-orders.md)
 
 #### Transfer Orders
 
@@ -76,7 +76,7 @@ When a product’s QOH and ATP is updated in HotWax Commerce, its `Online ATP` i
 
 Transfer orders can be categorized into three types: store to store, warehouse to store, and store to warehouse. To explore each type, refer to the Transfer Order Lifecycle BPM. In the Inventory Lifecycle BPM, we have taken warehouse to store to explain the concept.
 
-Learn more about [transfer orders](https://docs.hotwax.co/documents/v/learn-netsuite/supported-integrations/transfer-order)
+Learn more about [transfer orders](/documents/learn-netsuite/integration-flows/transfer-order)
 
 ## Inventory Variances in Stores
 
@@ -90,7 +90,7 @@ These periodic checks help clear inventory discrepancies in real time, so store 
 
 After completing the cycle count, store associates submit their results, which are then reviewed by operations managers. Once the cycle counting results are approved, HotWax Commerce automatically adjusts the QOH and ATP.
 
-It’s also crucial to account for these variances in the ERP and keep inventory up-to-date for stores. Before understanding how HotWax Commerce pushes inventory variances to the ERP, let's first see how inventory adjustments resulting from cycle counting are accounted for in HotWax Commerce:
+It’s also important to account for these variances in the ERP and keep inventory up-to-date for stores. Before understanding how HotWax Commerce pushes inventory variances to the ERP, let's first see how inventory adjustments resulting from cycle counting are accounted for in HotWax Commerce:
 
 <mark style="color:orange;">**Auto increase QOH & ATP:**</mark> When results show that the physical count exceeds the systemic inventory, the QOH and ATP are increased.
 
@@ -106,7 +106,7 @@ HotWax Commerce generates an inventory variance feed and synchronizes it with th
 
 For example, in case of NetSuite as the ERP, HotWax Commerce generates the inventory variance feed, after that HotWax Commerce integration platform transforms this feed and synchronizes it to NetSuite. Once NetSuite’s script consumes this feed, inventory levels of the affected products are automatically updated.
 
-Learn more about [inventory variance synchronization](https://docs.hotwax.co/documents/learn-netsuite/integration-flows/cycle-count)
+Learn more about [inventory variance synchronization](/documents/learn-netsuite/integration-flows/cycle-count.md#workflow)
 
 Similarly, in the event where inventory is managed in another third party system, HotWax Commerce inventory variance feed can be used to update inventory in other ERP or WMS.
 
@@ -126,7 +126,7 @@ Online orders are captured on the eCommerce platform, a scheduled job in HotWax 
 
 **How does HotWax Commerce reduce inventory promised to online sales?**
 
-Online orders are sent to the brokering queue for inventory allocation. As orders are waiting in the brokering queue, HotWax Commerce deducts promised inventory from the `Online ATP`. The reason being, even if the fulfillment location is not yet decided, the captured order has been promised inventory and so it’s crucial to reduce the sellable inventory, that is, `Online ATP` to prevent overselling on eCommerce platforms.
+Online orders are sent to the brokering queue for inventory allocation. As orders are waiting in the brokering queue, HotWax Commerce deducts promised inventory from the `Online ATP`. The reason being, even if the fulfillment location is not yet decided, the captured order has been promised inventory and so it’s important to reduce the sellable inventory, that is, `Online ATP` to prevent overselling on eCommerce platforms.
 
 <mark style="color:orange;">**Auto decrease ATP:**</mark> After the order is allocated to the most suitable store or warehouse, HotWax Commerce automatically reduces ATP at the chosen fulfillment location.
 
@@ -136,7 +136,7 @@ This step ensures that the count for physical available inventory is accurately 
 
 In the event where a store cannot fulfill an online order allocated to them, HotWax Commerce checks the rejection reasons for the rejected orders and automatically updates ATP and Online ATP.
 
-Learn more about [rejection handling and its impact on inventory](https://docs.hotwax.co/documents/store-operations/orders/fulfillment/rejection).
+Learn more about [rejection handling and its impact on inventory](/documents/store-operations/fulfillment/rejection.md).
 
 When rejections happen in a warehouse, inventory is automatically updated during the daily reset.
 
@@ -164,6 +164,6 @@ A scheduled job in HotWax Commerce checks the inventory records of HotWax Commer
 
 HotWax Commerce then retrieves information from Shopify about products that have undergone changes in HotWax Commerce. The inventory counts for these products in Shopify are then compared with the inventory counts that HotWax Commerce. After comparing inventory changes, a scheduled job in HotWax Commerce records the difference and generates an inventory feed for the affected products. This feed is then pushed to Shopify, which reads it and updates to either add or deduct inventory based on the changes.
 
-Learn more about [Inventory Synchronization](https://docs.hotwax.co/documents/v/learn-shopify/shopify-integration/how-does-hotwax-commerce-ensure-accurate-inventory-is-synchronized-to-shopify/inventory-synchronization)
+Learn more about [Inventory Synchronization](/documents/learn-shopify/shopify-integration/inventory/inventory-sync.md)
 
 Similarly, in the event where a retailer has another eCommerce platform, HotWax Commerce can generate a sellable inventory feed with additional development efforts. HotWax Commerce will then calculate sellable inventory, retrieve the products inventory counts from that eCommerce platform, and synchronize the latest inventory difference.

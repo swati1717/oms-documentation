@@ -12,9 +12,11 @@ The API allows to look up the stores accepting BOPIS orders near the customer’
 
 ### Endpoint
 
-`https://< host >/api/storeLookup`
+`https://< host >/rest/s1/api/stores`
 
-Example: Host: https://demo-oms.hotwax.io/api/storeLookup
+Method: `POST`
+
+Example: Host: https://demo-maarg.hotwax.io/rest/s1/api/store
 
 ### Header
 
@@ -38,7 +40,8 @@ Content-Type: application/json
 
 | Parameter        | Description                                                                                  | Required (Y/N) |
 | ---------------- | -------------------------------------------------------------------------------------------- | -------------- |
-| `viewSize`       | The total number of results in the API response                                              | N              |
+| `viewSize`       | The total number of results to be fetched in the API response                                | N              |
+| `viewIndex`      | Index of the view in pagination.                                                             | N              |
 | `filter`         | Filter records based on the passed parameters                                                | N              |
 | `point`          | The latitude-longitude of a specific location to find nearby stores                          | N              |
 | `distance`       | The distance from the passed latitude-longitude                                              | N              |
@@ -59,7 +62,7 @@ Content-Type: application/json
 ### Body
 
 ```
-"response": 
+"response":
 {
   "numFound": 1,
   "start": 0,
@@ -79,6 +82,8 @@ Content-Type: application/json
     "10862657599_pref": "true",
     "fac_grp_pref": "true",
     "address1": "8200 Vineland Ave.,",
+    "address2": "#136",
+    "directions": "Near Mall",
     "city": "Orlando",
     "postalCode": "32821",
     "country": "United States",
@@ -93,8 +98,8 @@ Content-Type: application/json
     "wednesday_open": "10:00:00",
     "thursday_open": "10:00:00",
     "thursday_close": "21:00:00",
-    "frIday_open": "10:00:00",
-    "frIday_close": "21:00:00",
+    "friday_open": "10:00:00",
+    "friday_close": "21:00:00",
     "saturday_open": "10:00:00",
     "saturday_close": "21:00:00",
     "sunday_open": "11:00:00",
@@ -121,7 +126,9 @@ Content-Type: application/json
 | `primaryFacilityGroupId`   | The Id of the primary facility group                                                                                                                |
 | `primaryFacilityGroupName` | [The name of the primary facility group](https://github.com/hotwax/press-release-faq/blob/main/bopis/customer-experience/primary-facility-group.md) |
 | `primaryShopifyShopId`     | The Id of the primary Shopify Shop                                                                                                                  |
-| `address1`                 | The address of the store                                                                                                                            |
+| `address1`                 | The primary address of the store                                                                                                                    |
+| `address2`                 | The secondary address of the store                                                                                                                  |
+| `directions`               | Specific instructions for locating the store                                                                                                        |
 | `city`                     | City                                                                                                                                                |
 | `postalCode`               | Postal Code                                                                                                                                         |
 | `country`                  | Country                                                                                                                                             |
@@ -131,9 +138,7 @@ Content-Type: application/json
 | `<day_of_week>_open`       | The opening time of the store on the day of a week                                                                                                  |
 | `<day_of_week>_close`      | The closing time of the store on the day of a week                                                                                                  |
 
-
-
-## Note:
+## Note
 
 ### Filters
 
@@ -153,6 +158,15 @@ Filter is a parameter that allows you to narrow down the results of a query or s
 | `countryCode`              | Country Code                                         |
 | `stateCode`                | State Code                                           |
 | `latlon`                   | The latitude and longitude of the facility           |
+
+{% hint style="info" %}
+**Spaces in Filter Values**:
+When filtering by parameters containing spaces (e.g., storeName, city, primaryFacilityGroupName), replace spaces with + (plus signs) for the storeLookUp API.
+
+Example:
+To filter for the store name "Time Square", use:
+storeName: Time+Square
+{% endhint %}
 
 ### Valid values of storeType
 

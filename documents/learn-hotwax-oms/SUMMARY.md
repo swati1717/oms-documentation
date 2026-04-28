@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Glossary](GLOSSARY.md)
+* [Glossary](README.md)
 * [Getting Started with HotWax Commerce](README.md)
 
 ## Business Processes

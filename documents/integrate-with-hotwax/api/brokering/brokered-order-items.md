@@ -429,8 +429,8 @@ The Brokered Order Items feed has certain out-of-the-box customizations that all
       "contactMechId" : "10948",
       "toName" : "Dhiraj Nagar",
       "attnName" : null,
-      "address1" : "Main St Squre",
-      "address2" : "Main St Squre",
+      "address1" : "Main St Square",
+      "address2" : "Main St Square",
       "houseNumber" : null,
       "houseNumberExt" : null,
       "directions" : null,
@@ -592,8 +592,8 @@ The Brokered Order Items feed has certain out-of-the-box customizations that all
         "contactMechId" : "10945",
         "toName" : "Dhiraj Nagar",
         "attnName" : null,
-        "address1" : "Main St Squre",
-        "address2" : "Main St Squre",
+        "address1" : "Main St Square",
+        "address2" : "Main St Square",
         "houseNumber" : null,
         "houseNumberExt" : null,
         "directions" : null,
@@ -756,8 +756,8 @@ The Brokered Order Items feed has certain out-of-the-box customizations that all
         "contactMechId" : "10945",
         "toName" : "Dhiraj Nagar",
         "attnName" : null,
-        "address1" : "Main St Squre",
-        "address2" : "Main St Squre",
+        "address1" : "Main St Square",
+        "address2" : "Main St Square",
         "houseNumber" : null,
         "houseNumberExt" : null,
         "directions" : null,
@@ -917,8 +917,8 @@ The Brokered Order Items feed has certain out-of-the-box customizations that all
         "contactMechId" : "10945",
         "toName" : "Dhiraj Nagar",
         "attnName" : null,
-        "address1" : "Main St Squre",
-        "address2" : "Main St Squre",
+        "address1" : "Main St Square",
+        "address2" : "Main St Square",
         "houseNumber" : null,
         "houseNumberExt" : null,
         "directions" : null,
@@ -1195,7 +1195,7 @@ The Brokered Order Items feed has certain out-of-the-box customizations that all
 | customerLastName                                            | The last name of the customer                                     | deo                       |
 | facilityId                                                  | The facility ID                                                   | WH0615                    |
 | facilityExternalId                                          | The external ID of the facility                                   | 22                        |
-| facilityTypeId                                              | This attribute contains the facility Type Id.                     | WAREHOUSE                 | 
+| facilityTypeId                                              | This attribute contains the facility Type Id.                     | WAREHOUSE                 |
 | parentFacilityTypeId                                        | This attribute contains ID of the parent facility for facilityId. |  DISTRIBUTION_CENTER
 | statusDatetime                                              | The date and time of the status                                   | 2024-02-23T04:05:15+09:00 |
 | productId                                                   | The product's unique identifier in HotWax Commerce                | 60757                     |

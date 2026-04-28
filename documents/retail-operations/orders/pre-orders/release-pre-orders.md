@@ -5,7 +5,7 @@ description: >-
   both physical stores and eCommerce platforms.
 ---
 
-# Release Pre-orders
+# Release Pre-Orders
 
 HotWax Commerce automatically handles the release and brokering of Shopify Pre-Orders, ensuring fulfillment from the most suitable location without requiring manual intervention. However, for merchandisers seeking greater control over online Pre-Order inventory, manual release becomes preferable over automatic processing. This preference often emerges among merchants managing both physical stores and eCommerce platforms. They opt for manual release to prevent allocating all available inventory solely to online Pre-Orders, reserving a portion for their physical stores instead.
 
@@ -16,7 +16,7 @@ HotWax Commerce strategically organizes all pre-orders in a dedicated queue unti
 1. **Daily Job**: Merchandisers can schedule this job through the `Job Manager App` > `Pre-Order Page` by enabling the `Run Daily` checkbox in the auto-releasing card. This automated process releases pre-orders where the shipping date has arrived and inventory is available for release.
 2. **Immediate Release:** This method doesn't require scheduling. Merchandisers can trigger instant release by clicking the `release` button associated with the `Release Pre-orders` job name. This action promptly releases all pre-orders in the queue, facilitating their allocation to the respective fulfillment locations.
 
-<figure><img src="../.gitbook/assets/job-manager.hotwax.io_pre-order (4).png" alt=""><figcaption><p>Pre-order Automatic release</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/pre-order-automatic-release-job.png" alt=""><figcaption><p>Pre-order Automatic release</p></figcaption></figure>
 
 ## Manual Release
 
@@ -45,7 +45,7 @@ Release orders by products
 Cancel orders by products
 {% endembed %}
 
-### Releasing by Orders:
+### Releasing by Orders
 
 When merchants specifically aim to release a particular customer's Pre-Order, they have the option to release it `By Order`.
 

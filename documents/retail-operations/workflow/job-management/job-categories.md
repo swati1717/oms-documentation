@@ -58,19 +58,6 @@ Holds all order jobs.
 
 <details>
 
-<summary>Brokering</summary>
-
-Holds all brokering jobs and occurrence.
-
-**This page contains jobs such as:**
-
-1. **Create new brokering:** Schedule a new brokering batch on new or unfulfilled orders.
-2. **Rejected orders brokering:** Schedule a brokering batch for rejected orders.
-
-</details>
-
-<details>
-
 <summary>Fulfillment</summary>
 
 Holds all fulfillment jobs.
@@ -79,7 +66,7 @@ Holds all fulfillment jobs.
 
 1. **Shipping:** Automatically ship orders that are packed and have a tracking number if required.
 2. **History:** Create or update order fulfillment history records from FTP.
-3. **Auto cancellations:** Unfulfilled orders that pass their auto cancelation date will be canceled automatically in HotWax Commerce. They will also be canceled in Shopify if upload for canceled orders is enabled.
+3. **Auto cancellations:** Unfulfilled orders that pass their auto cancellation date will be canceled automatically in HotWax Commerce. They will also be canceled in Shopify if upload for canceled orders is enabled.
 
 </details>
 
@@ -121,47 +108,3 @@ Holds all uncategorised jobs
 </details>
 
 ***
-
-## Webhooks
-
-{% hint style="info" %}
-Webhooks can be subscribed to from the category pages within the Job Manager app for specific categories.
-{% endhint %}
-
-Automated messages sent from eCommerce (Shopify) to OMS whenever an event occurs. They contain data about the event and are received in OMS, allowing real time communication between eCommerce and OMS.
-
-**Subscribe to Shopify eCommerce Webhooks from OMS for:**
-
-<details>
-
-<summary>Orders</summary>
-
-**Webhooks available for:**
-
-1. New Orders
-2. Cancelled orders
-3. Payment status
-4. Returns
-
-</details>
-
-<details>
-
-<summary>Inventory</summary>
-
-**Webhooks available for:**
-
-Inventory level update
-
-</details>
-
-<details>
-
-<summary>Products</summary>
-
-**Webhooks available for:**
-
-1. New products
-2. Delete products
-
-</details>

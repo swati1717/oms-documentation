@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Launchpad](../launchpad/README.md)
+* [Launchpad](README.md)
 
 ## Workflow
 
@@ -15,15 +15,16 @@
     * [Job Failed](workflow/job-management/troubleshooting/job-failed.md)
     * [Duplicate Jobs](workflow/job-management/troubleshooting/duplicate-job-scheduled.md)
     * [Job Scheduling](workflow/job-management/troubleshooting/schedule-job.md)
-    * [Job Scheduling Errors](workflow/job-management/troubleshooting/job-scheduling-errors.md) 
+    * [Job Scheduling Errors](workflow/job-management/troubleshooting/job-scheduling-errors.md)
+
 * [Job Workflows](workflow/job-workflows/README.md)
+  * [Parameters](workflow/job-workflows/parameters.md)
   * [Pre-Orders](workflow/job-workflows/pre-orders.md)
   * [Orders](workflow/job-workflows/orders.md)
   * [Fulfillment](workflow/job-workflows/fulfillment.md)
   * [Inventory](workflow/job-workflows/inventory.md)
   * [Products](workflow/job-workflows/products.md)
   * [Miscellaneous](workflow/job-workflows/miscellaneous.md)
-  
 
 ## Products
 
@@ -52,6 +53,7 @@
   * [Brokering Runs](orders/order-routing/brokering-runs.md)
   * [Routing Rules](orders/order-routing/routing-rules.md)
   * [Inventory Rules](orders/order-routing/inventory-rules.md)
+  * [Test Drive](orders/order-routing/test-drive.md)
   * [Use Cases](orders/order-routing/use-cases.md)
   * [Additional Settings](orders/order-routing/additional-settings.md)
   * [Templates](orders/order-routing/template/README.md)
@@ -61,7 +63,7 @@
     * [Scheduling Errors](orders/order-routing/troubleshooting/scheduling-error.md)
     * [Incorrect Facility Configurations](orders/order-routing/troubleshooting/incorrect-facility-configurations.md)
     * [Inventory Unavailability](orders/order-routing/troubleshooting/inventory-unavailability.md)
-    * [Incorrect Shipping Method Mapping](order-routing/troubleshooting/incorrect-shipping-method-mapping.md)
+    * [Incorrect Shipping Method Mapping](orders/order-routing/troubleshooting/incorrect-shipping-method-mapping.md)
 * [Pre-Orders](orders/pre-orders/README.md)
   * [Purchase Order Upload](orders/pre-orders/purchase-order-uploads.md)
   * [Purchase Order Management](orders/pre-orders/purchase-order-management.md)
@@ -73,7 +75,8 @@
   * [Troubleshooting](orders/pre-orders/troubleshooting/README.md)
     * [Inaccurate Inventory Computation](orders/pre-orders/troubleshooting/inaccurate-inventory-computation.md)
     * [Missing Product Linking](orders/pre-orders/troubleshooting/missing-product-linking.md)
-      
+    * [Product Syns Issues](orders/pre-orders/troubleshooting/preorder-backorder-product-sync-issues.md)
+
 * [Returns](orders/returns/README.md)
   * [Import Returns](orders/returns/import-returns.md)
   * [In-Store Returns](orders/returns/in-store-returns.md)
@@ -84,17 +87,22 @@
 * [Inventory Management](inventory/inventory-management/README.md)
   * [Find Product Inventory](inventory/inventory-management/find-product-inventory.md)
   * [Product Inventory View Page](inventory/inventory-management/product-inventory-view.md)
-  * [Configure Product Inventory.md](inventory/inventory-management/configure-product-inventory.md)
+  * [Configure Product Inventory](inventory/inventory-management/configure-product-inventory.md)
 * [Inventory Upload](inventory/inventory-upload/README.md)
   * [Schedule Restocking](inventory/inventory-upload/schedule-restock.md)
+  * [Inventroy Import Method](inventory/inventory-upload/import-methods.md)
+* [Transfers](inventory/transfers-app.md)
+  * [Find Transfer Orders](inventory/find-transfer-order.md)
+  * [Transfer Order Creation](inventory/transfer-order-creation.md)
+  * [Transfer Order Details](inventory/transfer-order-details.md)
+  * [Transfer Discrepancies](inventory/transfers-discrepancies.md)
+  * [Transfers App Settings](inventory/transfers-settings.md)
+  * [Transfer Order Fulfillment](inventory/transfers-fulfillment.md)
 * [Cycle Count](inventory/cycle-count/README.md)
-  * [Draft Counts](inventory/cycle-count/draft-counts.md)
-  * [Hard Counts](inventory/cycle-count/hard-count.md)
-  * [View Assigned Counts](inventory/cycle-count/view-assigned-counts.md)
-  * [Review Counts](inventory/cycle-count/pending-review-count.md)
-  * [View Closed Counts](inventory/cycle-count/view-closed-counts.md)
-  * [Bulk Upload Cycle Counts](inventory/cycle-count/bulk-upload-cycle-counts.md)
-  * [Store Permissions](inventory/cycle-count/store-permissions.md)
+  * [Bulk Upload](inventory/cycle-count/bulk-upload.md)
+  * [Assigned](inventory/cycle-count/assigned.md)
+  * [Pending Review](inventory/cycle-count/pending-review.md)
+  * [Closed](inventory/cycle-count/closed.md)
 * [Available to Promise Management](inventory/available-to-promise/README.md)
   * [Concepts](inventory/available-to-promise/concepts.md)
   * [Create Channels](inventory/available-to-promise/create-channels.md)
@@ -102,7 +110,7 @@
   * [Threshold Rules](inventory/available-to-promise/threshold-rules.md)
   * [Store Pickup Rules](inventory/available-to-promise/store-pickup-rules.md)
   * [Shipping Rules](inventory/available-to-promise/shipping-rule.md)
-  * [Schedule ATP Rules](inventory/available-to-promise/manage-rules.md)
+  * [Schedule ATP Rules](inventory/available-to-promise/schedule-atp-rules.md)
   * [Use Cases](inventory/available-to-promise/use-cases.md)
 * [Safety Stock](inventory/safety-stock/README.md)
   * [Set Bulk Safety Stock](inventory/safety-stock/set-bulk-safety-stock.md)

@@ -36,5 +36,6 @@ Below is a list of all the actions available in the Receiving App, along with th
 | 2  | Manage All Receiving Operations | COMMON_ADMIN         | Allows users to manage all receiving operations. |
 | 3  | View Receiving App              | RECEIVING_APP_VIEW   | Grants users permission to view the Receiving App. |
 | 4  | Go To OMS                       | COMMERCEUSER_VIEW    | Allows users to access HotWax OMS. |
+| 5  | Force Scan                       | COMMON_ADMIN    | Allow received quantity to be incremented by scanning the barcode of products.|
 
-<figure><img src="../../.gitbook/assets/settings r.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/settings-r.png" alt=""><figcaption></figcaption></figure>

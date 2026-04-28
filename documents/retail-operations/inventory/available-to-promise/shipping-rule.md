@@ -10,7 +10,7 @@ In HotWax Commerce, retailers can create different types of shipping rules:
 * Configure which products will be suppressed to sell from which sales channel.
 * Configure which product will be suppressed for which facility so that the inventory of these facilities for that product is not computed.
 
-In this user manual, we will set up different types of configurations. For the remainder of the setup, we will use the example of a Canadian retailer that has five retail locations, including three retail stores and two warehouses, and sell their inventory across Canada and US. They want to configure shipping rules for a specific product: a Blue Medium-sized shirt from the NotNaked brand. Let’s see how retailers can configure shipping rules for such scenarios.
+In this user manual, we will set up different types of configurations. For the remainder of the setup, we will use the example of a Canadian retailer that has five locations, including three retail stores and two warehouses, and sell their inventory across Canada and US. They want to configure shipping rules for a specific product: a Blue Medium-sized shirt from the NotNaked brand. Let’s see how retailers can configure shipping rules for such scenarios.
 
 ## Setting Maximum Order Capacity of a Facility
 
@@ -36,8 +36,6 @@ Once this setup is complete, the system will automatically redirect any addition
 \
 Setting Maximum Order Capacity of a Facility
 {% endembed %}
-
-
 
 ## Suppressing Shipping for Channel/ Configuration Facility
 
@@ -65,8 +63,6 @@ Here’s how to set up the rule to suppress shipping for this specific product o
 Suppressing Shipping for Channel/ Configuration Facility
 {% endembed %}
 
-
-
 ## Suppressing Shipping from Facility
 
 In this scenario, the retailer wants to suppress shipping for the Blue Shirt (Size M) from their retail stores due to higher demand from walk-in customers. Shipping for this product will remain available at other locations, ensuring that online orders can still be fulfilled from other facilities.
@@ -90,8 +86,6 @@ Here’s how to set up this rule:
 \
 Suppressing Shipping from Facility
 {% endembed %}
-
-
 
 ## Schedule Shipping Rule
 

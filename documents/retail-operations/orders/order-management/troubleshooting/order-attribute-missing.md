@@ -1,4 +1,4 @@
-# Order Attribute is Missing
+# Order Attribute Missing
 
 Shopify retailers can capture additional crucial order details through metafields. When HotWax Commerce enters a retailer’s Shopify ecosystem, it becomes the source of truth for all order-related information.
 
@@ -30,4 +30,4 @@ For example, if the `Riskified` or `Signified approved` tag is missing in Shopif
 
 In such cases, CSRs have to manually verify the orders and add the attribute in the Order Attribute section on the Order View page.
 
-<figure><img src="../../.gitbook/assets/Add order Attribute 1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/add-order-attribute.png" alt=""><figcaption></figcaption></figure>

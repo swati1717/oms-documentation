@@ -7,7 +7,7 @@ description: >-
 
 # Warehouse Fulfillment Lifecycle
 
-<figure><img src="../.gitbook/assets/WarehouseFulfillmentbpm.png" alt=""><figcaption><p>Warehouse fulfillment lifecycle business process model</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/warehouse-fulfillment-lifecycle-bpm.png" alt=""><figcaption><p>Warehouse fulfillment lifecycle business process model</p></figcaption></figure>
 
 HotWax Commerce, being as an Order Management System, finds the best location to fulfill an online order from. In the event where an approved order is brokered and allocated to warehouse fulfillment location, HotWax Commerce synchronizes allocation details with the Warehouse Management System (WMS) or ERP systems like NetSuite. Once the order is fulfilled, HotWax Commerce then also synchronizes the fulfillment updates from the WMS or ERP systems.
 
@@ -19,7 +19,7 @@ Most of our customers use NetSuite ERP to fulfill orders from their warehouses. 
 
 For orders allocated to warehouses, a scheduled job in HotWax Commerce generates a feed containing order line items with their respective fulfillment locations and synchronizes it with NetSuite. Once NetSuite’s script reads and consumes this feed, the fulfillment location details is updated on the order item.
 
-Learn more about [order synchronization from HotWax Commerce to NetSuite](https://docs.hotwax.co/documents/learn-netsuite/integration-flows/salesorder/orderapproval#synchronize-sales-order-from-hotwax-commerce-to-netsuite)
+Learn more about order [synchronization from HotWax Commerce to NetSuite](/documents/learn-netsuite/integration-flows/sales-order/order-approval#synchronize-customers-from-hotwax-commerce-to-netsuite)
 
 ## Prepare Shipment
 

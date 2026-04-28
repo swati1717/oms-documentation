@@ -1,4 +1,4 @@
-# Scheduling ATP Rules
+# Schedule ATP Rules
 
 Retailers can manage the scheduling of the job responsible for ATP (Available to Promise) rules from the top of the page. By default, ATP rule jobs are scheduled to run at midnight to ensure ATP calculations occur when store traffic is minimal, making the inventory ATP ready before the start of the day.
 
@@ -12,7 +12,7 @@ First, schedule the rule categories like Threshold, Safety Stock, Store Pickup, 
 
 **Step 2: Schedule `Import Product Facility Job`**
 
-Next, schedule the “Import Product Facility” job in the [Job Manager App](\[url]\(https:/docs.hotwax.co/documents/retail-operations/workflow/job-manager\)/). This step imports the CSV files into HotWax, where ATP is computed based on the applied rules.
+Next, schedule the “Import Product Facility” job in the [Job Manager App](/documents/system-admin/administration/user-permissions/job-manager-app.md). This step imports the CSV files into HotWax, where ATP is computed based on the applied rules.
 
 Each rule card provides an overview of configurations and product facility selections. Retailers can click the "Edit rule" button to modify rule configurations.\
 The rule configuration can be adjusted by toggling the store pickup and shipping options on or off, or by setting values for threshold and safety stock by clicking on the number chips.
@@ -37,3 +37,15 @@ A balloon icon in the bottom right corner allows retailers to collapse or expand
 {% embed url="https://youtu.be/EYvFXLzoe88" %}
 Change Rule Sequence
 {% endembed %}
+
+## Base Rule
+
+Some inventory rules only apply when a product matches a specific tag or condition. When the product no longer matches that condition, the rule stops applying.
+
+If there’s no other rule available for that product, it gets left in the last assigned state. The last assigned state may not be what the retailer actually wants the default state to be.
+
+Suppose a product has a pre-order tag and requires a different inventory threshold. A rule is created to set the threshold to 10 units for that product. This rule only works for products with the preorder tag.
+
+Now, if the tag is removed from a product, the product won’t qualify for the rule anymore because it no longer has the required tag. However, the threshold of 10 that has been set won't go back to the default level just because the tag is removed.
+
+To avoid this, a base rule can be added to set a default threshold of 5 units for all products. So even if a product loses the preorder tag, it still follows the base rule. 

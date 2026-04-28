@@ -1,51 +1,96 @@
 ---
-description: How to fulfill transfer orders in HotWax commerce
+description: How to fulfill transfer orders in HotWax Commerce
 ---
 
 # Transfer Order Fulfillment
 
-When transferring inventory from a store to a warehouse or between stores, the HotWax Commerce Store Fulfillment App facilitates this transfer order fulfillment process. The application streamlines the movement of inventory within the retail network, ensuring efficient handling of stock transfers and accurate inventory tracking. In the case of warehouse-to-store, transfer orders are fulfilled in WMS.
+Use the Fulfillment App to fulfill Transfer Orders (TOs). Use the app for store-to-store and store-to-warehouse transfers; complete warehouse-to-store transfers in your Warehouse Management System (WMS). This guide covers locating a TO, picking and packing inventory, creating shipments, handling exceptions, and completing fulfillment.
 
-## Transfer Order Fulfillment
 
-Warehouse managers create transfer orders in NetSuite, specifying the source location as the designated store and the destination location as the warehouse. These transfer orders are automatically assigned a Pending Fulfillment status
+## Fulfilling a TO
 
-A scheduled job Import Transfer Order in HotWax Commerce OMS reads the transfer orders CSV file from the SFTP location and downloads transfer orders in HotWax Commerce with a default Created status.
+### Locate the TO
+- Open the **Transfer Orders** page.
+- Use the search bar to look up the TO by ID or name.
+- You only see TOs where the origin facility matches your selected facility.
 
-A scheduled job Approves transfer orders in HotWax Commerce OMS identifies all transfer orders in the Created status and automatically marks them as Approved.
 
-Once approved, transfer orders are automatically reflected at the source location in the Store Fulfillment App so that store associates can create shipments and ship transfer order items. Here’s how store associates can fulfill transfer orders from the Fulfillment App:
+### Review TO details
+Opening a TO displays:
+- Item list with product name, image, SKU, and ordered quantity.
+- Total number of items to fulfill.
+- A progress bar that shows fulfillment progress per item.
 
-1. Navigate to the `Transfer order page` in the `Fulfillment app`.
-2. Use the search bar in the transfer order section to find the transfer order you want to create a shipment for.
-3. Once you've located the desired transfer order, click on it to access its details page.
-4. On the transfer order details page, you'll typically find two tabs: `Open` and `Completed`.
-   * The `Open` tab displays items that have not yet been shipped.
-   * The `Completed` tab displays items that have been shipped.
+This view helps you verify items before starting fulfillment.
 
-After processing a partial shipment of a transfer order item, it will be listed in the `completed tab`. Store associates have the option to ship the remaining items in the transfer order at a later time, and these remaining items will then be visible in the `Open tab`.
 
-5. Store associates can scan barcodes or manually enter the quantity of items to be shipped in the Item cards.
-6. Click on the "Create Shipment" button, located in the bottom right corner of the page.
-7. On clicking the `create shipment button`, the user will land on the transfer shipment review page. Click on `generate shipping label` to fetch the tracking code and carrier information or you can manually add the shipping label information.
-8. Click on the `arrow icon` located at the bottom right corner of the page to complete the shipment.
+### Print picklist
+- Select **Print Picklist** to generate a packing checklist.
+- For details, see [Transfer Order Picklist](picklist.md).
 
+
+### Pick items
+Pick items using one of three methods:
+1. **Barcode scanner:** Scanning selects the item and increments the picked quantity.
+2. **iPad camera:** Tap **Scan** to open the camera and scan the barcode.
+3. **Enter SKU:** Enter the SKU in the **Scan Item** field.
+
+Each scan or SKU entry adds one unit and updates the progress bar. You can also manually enter picked quantities once an item is selected.
+
+> **Tip:** Use `Pick All` when you are picking the entire ordered quantity for an item.
+
+
+### Create shipment
+TOs may be fulfilled in multiple shipments or in a single shipment.
+
+#### Fulfill in multiple shipments
+If you are fulfilling multiple shipments, record only the items for the current shipment. The rest remain open until fulfilled later.
+- Enter quantities for the items included in the current shipment.
+- Tap **Create Shipment** and confirm by selecting **Create**.
+
+#### Fulfill in single shipment
+When the entire TO is fulfilled at once, all items are picked and shipped together.
+- Tap **Pick All** for every item in the TO.
+- Tap **Create Shipment** and confirm by selecting **Create**.
+
+Once a shipment is created, the TO is marked as fulfilled and cannot be edited.
+
+
+### Review shipment
+After a shipment is created, the **Review shipment** page opens. Choose either to:
+- Tap **Generate shipping label** to fetch carrier and tracking information automatically, or
+- Enter the carrier and tracking code manually.
+
+
+### Complete shipment
+After entering the tracking code:
+- Select **Complete Shipment**.
+- Confirm by tapping **Ship**.
+
+
+## Exception handling
+
+### Rejecting an item in a TO
+If an item cannot be fulfilled (missing inventory, damage, or incorrect listing), reject it. Rejecting any item rejects the entire TO and records an inventory variance so future orders plan against accurate stock.
+
+Steps to reject an item:
+- Open the **Report an Issue** dropdown next to the item.
 {% hint style="info" %}
-Store associates are not allowed to insert more than the intended item quantities. The bar turns red if the user tries to overship item quantities
+The **Report an Issue** dropdown is only available if no shipments have been created for the TO.
 {% endhint %}
+- Select a rejection reason (for example, Not in stock, Mismatch, or Damaged).
+- Remaining items default to **No Variance** and the **Reject Items** button appears.
+- Select **Reject Items** and confirm by tapping **Reject**.
 
-For more details on Transfer order lifecycle refer to this [document](https://docs.hotwax.co/documents/v/learn-hotwax-oms/business-process-models/transferorderlifecycle)
+After rejection, the TO moves to **Rejected Order Parking**, and inventory variance is logged based on the selected reason. For details on rejection reasons, see **Rejections**.
 
-### Transfer Order Picklists
 
-Store Associates can print transfer order picklists directly from the Fulfillment App. Store associates can quickly verify products, ensuring that transfer orders are processed efficiently and accurately. By minimizing discrepancies, this feature strengthens inventory management and enhances overall operational efficiency.
+### Cancelling an item in a TO
+You can cancel a specific item even if it has been partially fulfilled (for example, low stock, damaged inventory, or a cutoff). Cancelled items are no longer available for fulfillment in either app.
 
-### Steps to Print Transfer Order Picklists in the Fulfillment App:
+Steps to close an item:
+- Tap **Close Items**.
+- In the review dialog, select the checkboxes for the items to close, then tap the **Save** icon.
+- When prompted, tap **Proceed** to confirm.
 
-1. **Access the Fulfillment App**: Open the HotWax Commerce Fulfillment App on your device.
-2. **Navigate to the Transfer Order Section**: Go to the `Transfer Order` section to view all `active` transfer orders.
-3. **Select the Relevant Transfer Order**: Locate the specific transfer order that you need to process.
-4. **Click on the Print Picklist Button**: Within the transfer order details, you’ll find a `Print Picklist` button. Click this `button` to generate a picklist for the order.
-5. **Review and Print the Picklist**: The system will generate a detailed picklist showing all `items` to be transferred.
-
-<figure><img src="../.gitbook/assets/Fulfillment 5 -  Print Transfer Order Picklist (1).png" alt=""><figcaption></figcaption></figure>
+Closed items are removed from the TO in both the Fulfillment App and the Receiving App.

@@ -1,6 +1,64 @@
-# Table of Content
+# Table of contents
 
 * [Introduction](README.md)
+
+## Components
+
+* [Available to Promise](components/available-to-promise/README.md)
+  * ```yaml
+    type: builtin:openapi
+    props:
+      models: true
+    dependencies:
+      spec:
+        ref:
+          kind: openapi
+          spec: available-to-promise
+    ```
+* [Fulfillment](components/fulfillment/README.md)
+  * ```yaml
+    type: builtin:openapi
+    props:
+      models: true
+    dependencies:
+      spec:
+        ref:
+          kind: openapi
+          spec: fulfillment
+    ```
+* [Inventory Count](components/inventory-count/README.md)
+  * ```yaml
+    type: builtin:openapi
+    props:
+      models: true
+    dependencies:
+      spec:
+        ref:
+          kind: openapi
+          spec: inventory-count
+    ```
+* [Order Routing](components/order-routing/README.md)
+  * ```yaml
+    type: builtin:openapi
+    props:
+      models: true
+    dependencies:
+      spec:
+        ref:
+          kind: openapi
+          spec: order-routing
+    ```
+* [Legacy OMS](components/legacy-oms/README.md)
+  * ```yaml
+    type: builtin:openapi
+    props:
+      models: true
+    dependencies:
+      spec:
+        ref:
+          kind: openapi
+          spec: legacy-oms
+    ```
 
 ## HotWax Commerce API and Data feeds
 
@@ -24,7 +82,6 @@
 * [Inbound Shipment](api/inbound-shipment/README.md)
   * [Import](api/inbound-shipment/import.md)
 * [Returns](api/returns/README.md)
-  * [Return Enumerations](api/returns/return-enumerations.md)
   * [Create Return](api/returns/create-return.md)
   * [Returns Financial Feed](api/returns/returns-financial-feed.md)
 * [Facility](api/facility/README.md)
@@ -37,6 +94,7 @@
   * [Outstanding Orders](api/fulfillment/outstanding-orders.md)
   * [Packing Slip PDF](api/fulfillment/packing-slip-pdf.md)
   * [Ready To Ship Items](api/fulfillment/ready-to-ship-items.md)
+  * [Reroute fulfillment APIs](api/fulfillment/reroute-fulfillment-apis.md)
   * [Retry Shipping Label](api/fulfillment/retry-shipping-label.md)
   * [Shipping Label and Packing Slip](api/fulfillment/shipping-label-and-packing-slip.md)
   * [Shipping Label PDF](api/fulfillment/shipping-label-pdf.md)
@@ -63,8 +121,8 @@
 * [Fulfilled Orders Items](sample-files/fulfilled-orders-items-json.md)
 * [Reset Inventory](sample-files/reset-inventory-csv.md)
 * [Return](sample-files/return-feed-json.md)
-  
 
 ## OMS Release Versions
 
 * [OMS Versions](oms-release-versions/README.md)
+  * [V7.0.0 Release](oms-release-versions/v7.0.0.md)

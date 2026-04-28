@@ -1,19 +1,19 @@
 ---
 description: >-
-  Efficiently manage your Shopify Connection with HotWax Order
-  Management System.
+  Efficiently manage your Shopify Connection with HotWax Order Management
+  System.
 ---
 
-# Manage Shopify integration
+# Manage Shopify Shop
 
 When you download the HotWax Commerce integration App from the Shopify App Store, it automatically creates a Shopify shop in HotWax OMS. This app acts as the link between OMS and Shopify, and you can adjust its settings on the `Find and View Shopify Connection` page in OMS. To manage your Shopify connections:
 
-1. Go to the `Find Shopify Connection` page and pick the specific Shopify Connection you want to handle. This will take you to the Shopify Connection page. 
+1. Go to the `Find Shopify Connection` page and pick the specific Shopify Connection you want to handle. This will take you to the Shopify Connection page.
 
 On the `Find Shopify Connection` page, you can filter connections by their status and perform quick actions like:
 
-a. Copy credentials: Quickly copy the shared secret and access token to Shopify, only accessible to super users.
-b. Favorite: Mark a Shopify connection as a favorite for easy access when using other apps like Job Manager.
+a. Copy credentials: Quickly copy the shared secret and access token to Shopify, only accessible to super users.\
+b. Favorite: Mark a Shopify connection as a favorite for easy access when using other apps like Job Manager.\
 c. Deactivate Shop: Stop all communication with Shopify by deactivating the connection.
 
 ### Shopify connection summary
@@ -27,7 +27,6 @@ b. Link product store: Users can connect the Shopify connection to a Product sto
 c. Upload refunds to Shopify: This setting is explicit and can only be configured when returns created in HotWax trigger refunds in Shopify. Accessible only to super users.
 
 d. Weight/Currency: Displays the weight and currency metrics used on Shopify.
-
 
 ### Products
 
@@ -49,7 +48,7 @@ Once orders are synced, you can easily review all orders count imported within t
 
 ### Inventory
 
-When inventory is sent to Shopify, it's directed to a single location for order acceptance. However, in HotWax, orders are fulfilled from the most suitable location available. 
+When inventory is sent to Shopify, it's directed to a single location for order acceptance. However, in HotWax, orders are fulfilled from the most suitable location available.
 
 HotWax suggests linking the default Shopify location with OMS, ensuring orders are fulfilled from a predetermined location. This default location in HotWax is associated with a brokering queue, used for bulk inventory counts. When an order is placed on Shopify, inventory is reduced from the default location, and the order is sent to the HotWax Commerce Brokering queue for brokering to the optimized location for fulfillment.
 

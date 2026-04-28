@@ -2,13 +2,14 @@
 description: >-
   Learn how warehouse to store transfer orders are processed in HotWax Commerce.
 ---
+
 # Warehouse to Store
 
 Transfer orders originate in NetSuite, but there is a distinction in how they are fulfilled. When a transfer order is initiated from a warehouse, NetSuite's fulfillment solution is employed to fulfill the transfer order, ensuring the correct allocation of inventory.
 
 Now, let’s look at how warehouse to store transfer orders are processed:
 
-Warehouse managers create transfer orders in NetSuite. On fulfilling transfer order items in NetSuite, corresponding item fulfillment records are generated and transfer orders are automatically assigned a `Pending Receipt` status in NetSuite.
+Inventory planners create transfer orders in NetSuite. On fulfilling transfer order items in NetSuite, corresponding item fulfillment records are generated and transfer orders are automatically assigned a `Pending Receipt` status in NetSuite.
 
 Each transfer order can result in either a single item fulfillment record or multiple records, depending on the scenario:
 
@@ -22,11 +23,11 @@ Inbound shipments are automatically created in HotWax Commerce so that the store
 
 Upon successful receipt of inventory, HotWax Commerce synchronizes item receipts with NetSuite. This ensures that the inventory count at store is accurately increased in NetSuite and the status of transfer orders status is updated from `Pending Receipt` to `Received`.
 
-As mentioned earlier, in NetSuite, the inventory count for transfer order items shipped from the warehouse is reduced. It’s crucial to note that in HotWax Commerce, this reduction takes place during its daily inventory sync from NetSuite.
+As mentioned earlier, in NetSuite, the inventory count for transfer order items shipped from the warehouse is reduced. In HotWax Commerce, this reduction takes place during its periodic inventory sync from NetSuite.
 
 ## Workflow
 
-<figure><img src="../../.gitbook/assets/33.png" alt=""><figcaption><p>Warehouse to store transfer order</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/warehouse-to-store-transfer-order.png" alt=""><figcaption><p>Warehouse to store transfer order</p></figcaption></figure>
 
 ### Fulfilling Transfer Order Items
 
@@ -97,11 +98,11 @@ Once all the transfer order item fulfillment records have been successfully rece
 
 {% tabs %}
 {% tab title="Transfer Order Fields in NetSuite" %}
-<figure><img src="../../.gitbook/assets/34.png" alt=""><figcaption><p>Transfer Order Fields Mapping in NetSuite</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/warehouse-to-store-transfer-order-fields-netsuite.png" alt=""><figcaption><p>Transfer Order Fields Mapping in NetSuite</p></figcaption></figure>
 {% endtab %}
 
 {% tab title="Transfer Order Fields in HotWax Commerce" %}
-<figure><img src="../../.gitbook/assets/35.png" alt=""><figcaption><p>Inbound Shipment Fields Mapping in HotWax Commerce "Inventory Receiving App"</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/warehouse-to-store-inbound-shipment-fields-hotwax.png" alt=""><figcaption><p>Inbound Shipment Fields Mapping in HotWax Commerce "Inventory Receiving App"</p></figcaption></figure>
 {% endtab %}
 {% endtabs %}
 
@@ -111,7 +112,7 @@ Once all the transfer order item fulfillment records have been successfully rece
 
 Consider a scenario where a retailer operates a store named Brooklyn, alongside a central warehouse. The Brooklyn store is experiencing low stock levels for a particular product, so the store manager requests a transfer of 100 quantities from the central warehouse. In this event, a warehouse-to-store transfer order is created for 100 quantities in NetSuite.
 
-It's possible that the warehouse manager ships these quantities in multiple shipments. For example, 60 quantities might be picked, packed, and shipped initially, with the remaining 40 scheduled for shipment at a later time. In this setup, a transfer order for 100 quantities will have two item fulfillment records created in NetSuite. The first record reflects the fulfillment of 60 quantities, marked with a `Shipped` status, indicating their dispatch from the warehouse. The second record represents the remaining 40 quantities.
+It's possible that the warehouse team ships these quantities in multiple shipments. For example, 60 quantities might be picked, packed, and shipped initially, with the remaining 40 scheduled for shipment at a later time. In this setup, a transfer order for 100 quantities will have two item fulfillment records created in NetSuite. The first record reflects the fulfillment of 60 quantities, marked with a `Shipped` status, indicating their dispatch from the warehouse. The second record represents the remaining 40 quantities.
 
 Following this, a Map Reduce script generates a CSV file containing details of the item fulfillment record for the initial 60 quantities and places it at an SFTP location.
 

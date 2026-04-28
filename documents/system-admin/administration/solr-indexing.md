@@ -28,7 +28,7 @@ The `Core Operations` feature within HotWax Commerce enables users to manage Sol
 * **enterpriseSearch:** The enterpriseSearch core houses comprehensive data concerning products, orders, and other enterprise-related information. It serves as the primary repository for critical business data, facilitating efficient search and retrieval operations within the HotWax Commerce platform.
 * **logInsights:** The logInsights core contains insights derived from system logs, offering valuable information for generating superset reports within HotWax Commerce. It serves as a repository for log data analysis, aiding in performance monitoring, troubleshooting, and reporting activities.
 
-#### Core Management Operations:
+#### Core Management Operations
 
 * **Refresh Core:** Click on the `Refresh Core` button to update the Solr index with the latest data, ensuring synchronization with system changes or updates.
 * **Delete Core:** Use caution when deleting a core, as it permanently removes all associated data. Only delete cores that are no longer in use and ensure the action is intentional.
@@ -48,4 +48,4 @@ Follow these steps to create all the indexes for Solr cores:
 * **Create Order Index:** Use the `Create Order Index` button to create an index for orders in HotWax Commerce. Optionally, add a specific order ID if you want to index data for a particular order. Otherwise, click `Submit` to index all orders.
 * **Create Order Item Ship Group Inventory Reservation (OISGIR) Index:** Click on the `Create Order Item Ship Group Inventory Reservation (OISGIR) Index` button to create an index for reservations against order item ship groups. Optionally, specify parameters such as order ID, order item sequence ID, ship group sequence ID, inventory item ID, or shipment ID to index specific reservation data. Otherwise, click `Submit` to index all reservations.
 
-<figure><img src=".gitbook/assets/Solr Indexing.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/solr-indexing.png" alt=""><figcaption></figcaption></figure>

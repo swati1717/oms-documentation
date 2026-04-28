@@ -17,15 +17,15 @@ The users can search for a specific product within the catalog by entering the p
 
 #### View Product Details
 
-On clicking any specific product card, the users will be redirected to the `Product details` page. The product details page provides an overview of the product including its image, available variants and their respective inventory across all the associated facilities. By clicking on the stock quantity button next to the `Other stores` option, a pop-up window will appear displaying the inventory for that product in the other facilities.
+The parent product name is visible on the BOPIS App Catalog page to help with product identification. On clicking any specific product card, the users will be redirected to the Product Details page. The Product Details page provides an overview of the product, including its image, available variants, and their respective inventory across all the associated facilities. By clicking on the stock quantity button next to the “Other stores” option, a pop-up window will appear displaying the inventory for that product in the other facilities.
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-01-01 at 11.56.13 PM.png" alt=""><figcaption><p>Image: Catalog Page</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/bopis-catalog.png" alt=""><figcaption><p>Image: Catalog Page</p></figcaption></figure>
 
-## Product Details Page Overview:
+## Product Details Page Overview
 
 The Product Details Page provides in-depth information on individual products. It not only showcases core product attributes like available sizes, colors, and Product ID but also highlights real-time availability insights.
 
-### Key metrics include:
+### Key metrics include
 
 * **Quantity on Hand**: The total stock available in store at any given time.
 * **Safety Stock**: Buffer inventory to prevent stockouts.
@@ -34,4 +34,4 @@ The Product Details Page provides in-depth information on individual products. I
 
 Additionally, the system provides information on inventory availability across various facilities, ensuring that customers can be provided information about the product availability across all the stores.
 
-<figure><img src="../.gitbook/assets/Screenshot from 2024-10-11 15-16-56 (1).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/bopis-product-details-page.png" alt="" width="563"><figcaption></figcaption></figure>

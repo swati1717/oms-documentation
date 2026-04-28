@@ -24,12 +24,10 @@ The brokering engine relies on correctly scheduled runs to process and route ord
 4. **Confirm Status**
    1. Finally, verify the status of the inventory rule, order batch, and brokering run. Ensure that each status is set to "Active" and not in "Draft."
 
-Read our [order routing](broken-reference) user manual to learn more
+Read our [order routing](https://docs.hotwax.co/documents/retail-operations/orders/order-routing) user manual to learn more
 
 **Example**
 
 **Incorrect Scheduling**: If the brokering run is set to execute at 3:00 PM daily but needs to run every hour, adjust the frequency to "Hourly" in the Brokering Run settings.
-
-
 
 {% embed url="https://youtu.be/fRni_V6Yc3U" %}

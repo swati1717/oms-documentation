@@ -11,6 +11,762 @@ description: Discover  the versions of HotWax Commerce OMS releases.
 2. To find details about SOLR versions, refer to the [SOLR version document](https://docs.google.com/spreadsheets/d/1H-iEVG-hS9FTsYOf5YiUH-5KOJUcu0\_TiPG8aVYjaHU/edit?gid=0#gid=0)
 {% endhint %}
 
+{% hint style="warning" %} Before pushing the OMS v6.6.15 release to production, we need to make sure the maarg is deployed on v4.1.3 {% endhint %}
+
+## Release - v6.6.15 (8th July 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.6.15                                                                                                             |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.6.15                                                                                                             |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.6.15`                             |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.6.14...v6.6.15?from_project_id=161&straight=false)   |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.6.15/CHANGELOG.md?ref_type=tags)                   |
+
+## Release - v6.6.14 (7th July 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.6.14                                                                                                             |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.6.14                                                                                                             |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.6.14`                             |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.6.13...v6.6.14?from_project_id=161&straight=false)   |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.6.14/CHANGELOG.md?ref_type=tags)                   |
+
+## Release - v6.6.13 (7th July 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.6.13                                                                                                             |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.6.13                                                                                                             |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.6.13                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.6.12...v6.6.13?from_project_id=161&straight=false)   |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.6.13/CHANGELOG.md?ref_type=tags)                   |
+
+## Release - v6.6.12 (2nd July 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.6.12                                                                                                             |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.6.12                                                                                                             |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.6.12`                             |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.6.11...v6.6.12?from_project_id=161&straight=false)   |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.6.12/CHANGELOG.md?ref_type=tags)                   |
+
+## Release - v6.6.11 (30th June 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.6.11                                                                                                             |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.6.11                                                                                                             |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.6.11`                             |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.6.10...v6.6.11?from_project_id=161&straight=false)   |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.6.11/CHANGELOG.md?ref_type=tags)                   |
+
+## Release - v6.6.10 (27th June 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.6.10                                                                                                             |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.6.10                                                                                                             |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.6.10`                             |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.6.9...v6.6.10?from_project_id=161&straight=false)    |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.6.10/CHANGELOG.md?ref_type=tags)                   |
+
+## Release - v6.6.9 (27th June 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.6.9                                                                                                              |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.6.9                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.6.9`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.6.8...v6.6.9?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.6.9/CHANGELOG.md?ref_type=tags)                    |
+
+## Release - v6.6.8 (19th June 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.6.8                                                                                                              |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.6.8                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.6.8`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.6.7...v6.6.8?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.6.8/CHANGELOG.md?ref_type=tags)                    |
+
+## Release - v6.6.7 (19th June 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.6.7                                                                                                              |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.6.7                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.6.7`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.6.6...v6.6.7?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.6.7/CHANGELOG.md?ref_type=tags)                    |
+
+
+## Release - v6.6.6 (17th June 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.6.6                                                                                                              |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.6.6                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.6.6`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.6.5...v6.6.6?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.6.6/CHANGELOG.md?ref_type=tags)                    |
+
+## Release - v6.6.5 (5th June 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.6.5                                                                                                              |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.6.5                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.6.5`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.6.4...v6.6.5?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.6.5/CHANGELOG.md?ref_type=tags)                    |
+
+## Release - v6.6.4 (2nd June 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.6.4                                                                                                             |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.6.4                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.6.4`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.6.3...v6.6.4?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.6.4/CHANGELOG.md?ref_type=tags)                    |
+
+{% tabs %}
+{% tab title="Upgrade Data" %}
+[Link to Upgrade Data](https://git.hotwax.co/commerce/oms/-/blob/develop/upgrade/v6.6.4/UpgradeData.xml?ref_type=heads)
+{% endtab %}
+
+{% tab title="Upgrade SQL" %}
+[Link to Upgrade SQL](https://git.hotwax.co/commerce/oms/-/blob/develop/upgrade/v6.6.4/UpgradeSQL.sql?ref_type=he)
+{% endtab %}
+
+## Release - v6.6.3 (30th May 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.6.3                                                                                                              |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.6.3                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.6.3`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.6.2...v6.6.3?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.6.3/CHANGELOG.md?ref_type=tags)                    |
+
+## Release - v6.6.2 (29th May 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.6.2                                                                                                              |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.6.2                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.6.2`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.6.0...v6.6.2?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.6.2/CHANGELOG.md?ref_type=tags)                    |
+
+{% hint style="warning" %} Before pushing the OMS v6.6.0 release to production, we need to make sure the maarg is deployed on v3.8.12 {% endhint %}
+
+## Release - v6.6.0 (29th May 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.6.0                                                                                                              |
+| Release Type    | minor                                                                                                               |
+| Image Tag       | v6.6.0                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.6.0`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.5.0...v6.6.0?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.6.0/CHANGELOG.md?ref_type=tags)                    |
+
+{% tabs %}
+{% tab title="Upgrade Data" %}
+[Link to Upgrade Data](https://git.hotwax.co/commerce/oms/-/blob/develop/upgrade/v6.6.0/UpgradeData.xml?ref_type=heads)
+{% endtab %}
+
+{% tab title="Upgrade SQL" %}
+[Link to Upgrade SQL](https://git.hotwax.co/commerce/oms/-/blob/develop/upgrade/v6.6.0/UpgradeSQL.sql?ref_type=he)
+{% endtab %}
+
+{% tab title="Upgrade Steps" %}
+[Link to Upgrade Steps](https://git.hotwax.co/commerce/oms/-/blob/develop/upgrade/v6.6.0/UpgradeSteps.md?ref_type=heads)
+{% endtab %}
+{% endtabs %}
+
+## Release - v6.5.4 (16th May 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.5.4                                                                                                             |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.5.4                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.5.4`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.5.3...v6.5.4?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.5.4/CHANGELOG.md?ref_type=tags)                    |
+
+## Release - v6.5.3 (14th May 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.5.3                                                                                                              |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.5.3                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.5.3`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.5.2...v6.5.3?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.5.3/CHANGELOG.md?ref_type=tags)                    |
+
+## Release - v6.5.2 (13th May 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.5.2                                                                                                              |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.5.2                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.5.2`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.5.1...v6.5.2?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.5.2/CHANGELOG.md?ref_type=tags)                    |
+
+## Release - v6.5.1 (7th May 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.5.1                                                                                                              |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.5.1                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.5.1`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.5.0...v6.5.1?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.5.1/CHANGELOG.md?ref_type=tags)                    |
+
+{% hint style="warning" %} Before pushing the OMS v6.5.0 release to production, we need to make sure the maarg is deployed on v3.7.9 {% endhint %}
+
+## Release - v6.5.0 (5th May 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.5.0                                                                                                              |
+| Release Type    | minor                                                                                                               |
+| Image Tag       | v6.5.0                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.5.0`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.4.0...v6.5.0?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.5.0/CHANGELOG.md?ref_type=tags)                    |
+
+{% tabs %}
+{% tab title="Upgrade Data" %}
+[Link to Upgrade Data](https://git.hotwax.co/commerce/oms/-/blob/develop/upgrade/v6.5.0/UpgradeData.xml?ref_type=heads)
+{% endtab %}
+
+{% tab title="Upgrade SQL" %}
+[Link to Upgrade SQL](https://git.hotwax.co/commerce/oms/-/blob/develop/upgrade/v6.5.0/UpgradeSQL.sql?ref_type=he)
+{% endtab %}
+
+{% tab title="Upgrade Steps" %}
+[Link to Upgrade Steps](https://git.hotwax.co/commerce/oms/-/blob/develop/upgrade/v6.5.0/UpgradeSteps.md?ref_type=heads)
+{% endtab %}
+{% endtabs %}
+
+## Release - v6.4.6 (15th May 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.4.6                                                                                                              |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.4.6                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.4.6`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.4.5...v6.4.6?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.4.6/CHANGELOG.md?ref_type=tags)                    |
+
+## Release - v6.4.5 (13th May 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.4.5                                                                                                              |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.4.5                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.4.5`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.4.4...v6.4.5?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.4.5/CHANGELOG.md?ref_type=tags)                    |
+
+## Release - v6.4.4 (29th April 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.4.4                                                                                                              |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.4.4                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.4.4`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.4.3...v6.4.4?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.4.4/CHANGELOG.md?ref_type=tags)                    |
+
+## Release - v6.4.3 (25th April 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.4.3                                                                                                              |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.4.3                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.4.3`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.4.2...v6.4.3?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.4.3/CHANGELOG.md?ref_type=tags)                    |
+
+## Release - v6.4.2 (24th April 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.4.2                                                                                                              |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.4.2                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.4.2`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.4.1...v6.4.2?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.4.2/CHANGELOG.md?ref_type=tags)                    |
+
+## Release - v6.4.1 (22th April 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.4.1                                                                                                              |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.4.1                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.4.1`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.4.0...v6.4.1?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.4.1/CHANGELOG.md?ref_type=tags)                    |
+
+{% hint style="warning" %} Before pushing the OMS v6.4.0 release to production, we need to make sure the maarg is deployed on v3.7.7 {% endhint %}
+
+## Release - v6.4.0 (21st April 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.4.0                                                                                                              |
+| Release Type    | minor                                                                                                               |
+| Image Tag       | v6.4.0                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.4.0`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.3.0...v6.4.0?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.4.0/CHANGELOG.md?ref_type=tags)                    |
+
+{% tabs %}
+{% tab title="Upgrade Data" %}
+[Link to Upgrade Data](https://git.hotwax.co/commerce/oms/-/blob/develop/upgrade/v6.4.0/UpgradeData.xml?ref_type=heads)
+{% endtab %}
+
+{% tab title="Upgrade SQL" %}
+[Link to Upgrade SQL](https://git.hotwax.co/commerce/oms/-/blob/develop/upgrade/v6.4.0/UpgradeSQL.sql?ref_type=he)
+{% endtab %}
+
+{% tab title="Upgrade Steps" %}
+[Link to Upgrade Steps](https://git.hotwax.co/commerce/oms/-/blob/develop/upgrade/v6.4.0/UpgradeSteps.md?ref_type=heads)
+{% endtab %}
+{% endtabs %}
+
+## Release - v6.3.9 (29th April 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.3.9                                                                                                              |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.3.9                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.3.9`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.3.8...v6.3.9?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.3.9/CHANGELOG.md?ref_type=tags)                    |
+
+## Release - v6.3.8 (25th April 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.3.8                                                                                                              |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.3.8                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.3.8`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.3.7...v6.3.8?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.3.8/CHANGELOG.md?ref_type=tags)                    |
+
+## Release - v6.3.7 (24th April 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.3.7                                                                                                             |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.3.7                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.3.7`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.3.6...v6.3.7?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.3.7/CHANGELOG.md?ref_type=tags)                    |
+
+## Release - v6.3.6 (22th April 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.3.6                                                                                                              |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.3.6                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.3.6`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.3.5...v6.3.6?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.3.6/CHANGELOG.md?ref_type=tags)                    |
+
+## Release - v6.3.5 (16th April 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.3.5                                                                                                              |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.3.5                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.3.5`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.3.4...v6.3.5?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.3.5/CHANGELOG.md?ref_type=tags)                    |
+
+## Release - v6.3.4 (15th April 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.3.4                                                                                                              |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.3.4                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.3.4`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.3.3...v6.3.4?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.3.4/CHANGELOG.md?ref_type=tags)                    |
+
+{% tabs %}
+{% tab title="Upgrade Data" %}
+[Link to Upgrade Data](https://git.hotwax.co/commerce/oms/-/blob/v6.3.4/upgrade/v6.3.4/UpgradeData.xml?ref_type=tags)
+{% endtab %}
+
+{% tab title="Upgrade SQL" %}
+[Link to Upgrade SQL](https://git.hotwax.co/commerce/oms/-/blob/v6.3.4/upgrade/v6.3.4/UpgradeSQL.sql?ref_type=tags)
+{% endtab %}
+
+{% tab title="Upgrade Steps" %}
+[Link to Upgrade Steps](https://git.hotwax.co/commerce/oms/-/blob/v6.3.4/upgrade/v6.3.4/UpgradeSteps.md?ref_type=tags)
+{% endtab %}
+{% endtabs %}
+
+## Release - v6.3.3 (14th April 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.3.3                                                                                                              |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.3.3                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.3.3`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.3.2...v6.3.3?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.3.3/CHANGELOG.md?ref_type=tags)                    |
+
+## Release - v6.3.2 (2nd April 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.3.2                                                                                                              |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.3.2                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.3.2`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.3.1...v6.3.2?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.3.2/CHANGELOG.md?ref_type=tags)                    |
+
+## Release - v6.3.1 (26th March 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.3.1                                                                                                              |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.3.1                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.3.1`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.3.0...v6.3.1?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.3.1/CHANGELOG.md?ref_type=tags)                    |
+
+{% hint style="warning" %} Before pushing the OMS v6.3.0 release to production, we need to make sure maarg is deployed on v3.6.1 {% endhint %}
+
+## Release - v6.3.0 (25th March 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.3.0                                                                                                              |
+| Release Type    | minor                                                                                                               |
+| Image Tag       | v6.3.0                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.3.0`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.2.6...v6.3.0?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.3.0/CHANGELOG.md?ref_type=tags)                    |
+
+{% tabs %}
+{% tab title="Upgrade Data" %}
+[Link to Upgrade Data](https://git.hotwax.co/commerce/oms/-/blob/develop/upgrade/v6.3.0/UpgradeData.xml?ref_type=heads)
+{% endtab %}
+
+{% tab title="Upgrade SQL" %}
+[Link to Upgrade SQL](https://git.hotwax.co/commerce/oms/-/blob/develop/upgrade/v6.3.0/UpgradeSQL.sql?ref_type=heads)
+{% endtab %}
+
+{% tab title="Upgrade Steps" %}
+[Link to Upgrade Steps](https://git.hotwax.co/commerce/oms/-/blob/develop/upgrade/v6.3.0/UpgradeSteps.md?ref_type=heads)
+{% endtab %}
+{% endtabs %}
+
+## Release - v6.2.16 (29th April 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.2.16                                                                                                             |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.2.16                                                                                                             |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.2.16`                             |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.2.15...v6.2.16?from_project_id=161&straight=false)   |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.2.16/CHANGELOG.md?ref_type=tags)                   |
+
+## Release - v6.2.15 (26th April 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.2.15                                                                                                             |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.2.15                                                                                                             |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.2.15`                             |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.2.14...v6.2.15?from_project_id=161&straight=false)   |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.2.15/CHANGELOG.md?ref_type=tags)                   |
+
+## Release - v6.2.14 (25th April 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.2.14                                                                                                             |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.2.14                                                                                                             |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.2.14`                             |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.2.13...v6.2.14?from_project_id=161&straight=false)   |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.2.14/CHANGELOG.md?ref_type=tags)                   |
+
+## Release - v6.2.14 (25th April 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.2.14                                                                                                             |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.2.14                                                                                                             |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.2.14`                             |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.2.13...v6.2.14?from_project_id=161&straight=false)   |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.2.14/CHANGELOG.md?ref_type=tags)                   |
+
+## Release - v6.2.13 (24th April 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.2.13                                                                                                           |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.2.13                                                                                                            |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.2.13`                             |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.2.12...v6.2.13?from_project_id=161&straight=false)   |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.2.13/CHANGELOG.md?ref_type=tags)                   |
+
+## Release - v6.2.12 (23th April 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.2.12                                                                                                          |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.2.12                                                                                                             |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.2.12`                             |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.2.11...v6.2.12?from_project_id=161&straight=false)   |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.2.12/CHANGELOG.md?ref_type=tags)                   |
+
+## Release - v6.2.11 (22th April 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.2.11                                                                                                             |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.2.11                                                                                                             |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.2.11`                             |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.2.10...v6.2.11?from_project_id=161&straight=false)   |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.2.11/CHANGELOG.md?ref_type=tags)                   |
+
+## Release - v6.2.10 (16th April 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.2.10                                                                                                             |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.2.10                                                                                                             |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.2.10`                             |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.2.8...v6.2.10?from_project_id=161&straight=false)    |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.2.10/CHANGELOG.md?ref_type=tags)                   |
+
+## Release - v6.2.8 (14th April 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.2.8                                                                                                              |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.2.8                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.2.8`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.2.7...v6.2.8?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.2.8/CHANGELOG.md?ref_type=tags)                    |
+
+## Release - v6.2.7 (26th March 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.2.7                                                                                                              |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.2.7                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.2.7`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.2.6...v6.2.7?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.2.7/CHANGELOG.md?ref_type=tags)                    |
+
+## Release - v6.2.6 (21st March 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.2.6                                                                                                              |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.2.6                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.2.6`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.2.5...v6.2.6?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.2.6/CHANGELOG.md?ref_type=tags)                    |
+
+## Release - v6.2.5 (6th March 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.2.5                                                                                                              |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.2.5                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.2.5`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.2.4...v6.2.5?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.2.5/CHANGELOG.md?ref_type=tags)                    |
+
+## Release - v6.2.4 (25th February 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.2.4                                                                                                             |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.2.4                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.2.4`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.2.3...v6.2.4?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.2.4/CHANGELOG.md?ref_type=tags)                    |
+
+## Release - v6.2.3 (25th February 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.2.3                                                                                                              |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.2.3                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.2.3`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.2.2...v6.2.3?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.2.3/CHANGELOG.md?ref_type=tags)                    |
+
+{% hint style="info" %} Run refreshSolr service only on first production server deployment.{% endhint %}
+
+## Release - v6.2.2 (20th February 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.2.2                                                                                                              |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.2.2                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.2.2`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.2.1...v6.2.2?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.2.2/CHANGELOG.md?ref_type=tags)                    |
+
+{% tab title="Upgrade SQL" %}
+[Link to Upgrade SQL](https://git.hotwax.co/commerce/oms/-/blob/v6.2.2/upgrade/v6.2.2/UpgradeSQL.sql?ref_type=tags)
+{% endtab %}
+
+{% hint style="warning" %} Before pushing the OMS v6.2.0 release to production, we need to make sure the maarg is deployed on v3.7.7 {% endhint %}
+
+## Release - v6.2.1 (20th February 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.2.1                                                                                                              |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.2.1                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.2.1`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.2.0...v6.2.1?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.2.1/CHANGELOG.md?ref_type=tags)                    |
+
+{% tab title="Upgrade Data" %}
+[Link to Upgrade Data](https://git.hotwax.co/commerce/oms/-/blob/develop/upgrade/v6.2.1/UpgradeData.xml?ref_type=heads)
+{% endtab %}
+
+{% hint style="warning" %} Do not deploy any instance on v6.2.0 tag {% endhint %}
+
+## Release - v6.2.0 (20th February 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.2.0                                                                                                            |
+| Release Type    | minor                                                                                                              |
+| Image Tag       | v6.2.0                                                                                                             |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.2.0`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.1.7...v6.2.0?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.2.0/CHANGELOG.md?ref_type=tags)                    |
+
+{% tabs %}
+{% tab title="Upgrade Data" %}
+[Link to Upgrade Data](https://git.hotwax.co/commerce/oms/-/blob/develop/upgrade/v6.2.0/UpgradeData.xml?ref_type=heads)
+{% endtab %}
+
+{% tab title="Upgrade SQL" %}
+[Link to Upgrade SQL](https://git.hotwax.co/commerce/oms/-/blob/develop/upgrade/v6.2.0/UpgradeSQL.sql?ref_type=heads)
+{% endtab %}
+
+{% tab title="Upgrade Steps" %}
+[Link to Upgrade Steps](https://git.hotwax.co/commerce/oms/-/blob/develop/upgrade/v6.2.0/UpgradeSteps.md?ref_type=heads)
+{% endtab %}
+{% endtabs %}
+
+## Release - v6.1.10 (6th March 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.1.10                                                                                                              |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.1.10                                                                                                             |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.1.10`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.1.9...v6.1.10?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.1.10/CHANGELOG.md?ref_type=tags)                    |
+
+## Release - v6.1.7 (11th February 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.1.7                                                                                                              |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.1.7                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.1.7`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.1.6...v6.1.7?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.1.7/CHANGELOG.md?ref_type=tags)                    |
+
+## Release - v6.1.6 (10th February 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.1.6                                                                                                              |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.1.6                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.1.6`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.1.5...v6.1.6?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.1.6/CHANGELOG.md?ref_type=tags)                    |
+
+## Release - v6.1.5 (10th February 2025)
+
+| Information     | Value                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------  |
+| Release Version | v6.1.5                                                                                                              |
+| Release Type    | Hotfix                                                                                                              |
+| Image Tag       | v6.1.5                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.1.5`                              |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.1.4...v6.1.5?from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.1.5/CHANGELOG.md?ref_type=tags)                    |
+
 ## Release - v6.1.4 (04th February 2025)
 
 | Information     | Value                                                                                                               |
@@ -39,7 +795,7 @@ description: Discover  the versions of HotWax Commerce OMS releases.
 | --------------- | ------------------------------------------------------------------------------------------------------------------  |
 | Release Version | v6.1.2                                                                                                              |
 | Release Type    | Hotfix                                                                                                              |
-| Image Tag       | v6.1.2                                                                                                             |
+| Image Tag       | v6.1.2                                                                                                              |
 | Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v6.1.2`                              |
 | Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.0.4...v6.1.2?from_project_id=161&straight=false)     |
 | Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.1.2/CHANGELOG.md?ref_type=tags)                    |
@@ -88,6 +844,8 @@ description: Discover  the versions of HotWax Commerce OMS releases.
 | Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v6.0.0...v6.0.1?from_project_id=161&straight=false)     |
 | Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.0.1/CHANGELOG.md?ref_type=tags)                    |
 
+{% hint style="success" %} Add your content here {% endhint %}
+
 ## Release - v6.0.0 (2nd January 2025)
 
 | Information     | Value                                                                                                              |
@@ -98,7 +856,6 @@ description: Discover  the versions of HotWax Commerce OMS releases.
 | Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest`                                    |
 | Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v5.18.13...v6.0.0?from_project_id=161&straight=false)  |
 | Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v6.0.0/CHANGELOG.md?ref_type=tags)                   |
-                                                                                                                                        
 
 {% tabs %}
 {% tab title="Upgrade Data" %}
@@ -223,7 +980,6 @@ description: Discover  the versions of HotWax Commerce OMS releases.
 | Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v5.18.3`                            |
 | Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v5.18.2...v5.18.3?from_project_id=161&straight=false)  |
 | Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.18.3/CHANGELOG.md?ref_type=tags)                  |
-                                                                                                                                       
 
 ## Release - v5.18.2 (06th November 2024)
 
@@ -235,7 +991,7 @@ description: Discover  the versions of HotWax Commerce OMS releases.
 | Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v5.18.2`                            |
 | Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v5.18.1...v5.18.2?from_project_id=161&straight=false)  |
 | Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.18.2/CHANGELOG.md?ref_type=tags)                  |
-                                                                                                                                       
+
 ## Release - v5.18.1 (23rd October 2024)
 
 | Information     | Value                                                                                                              |
@@ -246,7 +1002,6 @@ description: Discover  the versions of HotWax Commerce OMS releases.
 | Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest-v5.18.1`                            |
 | Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v5.18.0...v5.18.1?from_project_id=161&straight=false)  |
 | Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.18.1/CHANGELOG.md?ref_type=tags)                  |
-                                                                                                                                        
 
 ## Release - v5.18.0 (18th October 2024)
 
@@ -258,7 +1013,6 @@ description: Discover  the versions of HotWax Commerce OMS releases.
 | Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest`                                    |
 | Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v5.17.0...v5.18.0?from_project_id=161&straight=false)  |
 | Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.18.0/CHANGELOG.md?ref_type=tags)                  |
-                                                                                                                                        
 
 {% tabs %}
 {% tab title="Upgrade Data" %}
@@ -278,7 +1032,7 @@ description: Discover  the versions of HotWax Commerce OMS releases.
 
 | Information     | Value                                                                                                                |
 | --------------- | -------------------------------------------------------------------------------------------------------------------- |
-| Release Version | v5.17.17                                                                                                            |
+| Release Version | v5.17.17                                                                                                             |
 | Release Type    | Hotfix                                                                                                               |
 | Image Tag       | v5.17.17                                                                                                             |
 | Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-v5.17.17`                                    |
@@ -438,7 +1192,7 @@ description: Discover  the versions of HotWax Commerce OMS releases.
 | Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest`                                    |
 | Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v5.16.2...v5.17.0?from_project_id=161&straight=false)  |
 | Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.17.0/CHANGELOG.md?ref_type=tags)                  |
-                                                                                                                                       | 
+                                                                                                                                       |
 
 {% tabs %}
 {% tab title="Upgrade Data" %}
@@ -563,7 +1317,7 @@ description: Discover  the versions of HotWax Commerce OMS releases.
 | Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest`                                    |
 | Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v5.15.0...v5.16.2?from_project_id=161&straight=false)  |
 | Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.16.2/CHANGELOG.md?ref_type=tags)                  |
-                                                                                                                                       | 
+                                                                                                                                       |
 
 {% tabs %}
 {% tab title="Upgrade Data" %}
@@ -666,7 +1420,7 @@ description: Discover  the versions of HotWax Commerce OMS releases.
 | Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest`                                    |
 | Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v5.14.0...v5.15.0?from_project_id=161&straight=false)  |
 | Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.15.0/CHANGELOG.md?ref_type=tags)                  |
-                                                                                                                                       | 
+                                                                                                                                       |
 
 {% tabs %}
 {% tab title="Upgrade Data" %}
@@ -780,7 +1534,7 @@ description: Discover  the versions of HotWax Commerce OMS releases.
 | Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest`                                    |
 | Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v5.13.0...v5.14.0?from_project_id=161&straight=false)  |
 | Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.14.0/CHANGELOG.md?ref_type=tags)                  |
-                                                                                                                                       | 
+                                                                                                                                       |
 
 {% tabs %}
 {% tab title="Upgrade Data" %}
@@ -916,7 +1670,7 @@ description: Discover  the versions of HotWax Commerce OMS releases.
 | Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest`                                    |
 | Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v5.12.0...v5.13.0?from_project_id=161&straight=false)  |
 | Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.13.0/CHANGELOG.md?ref_type=tags)                  |
-                                                                                                                                       | 
+                                                                                                                                       |
 
 {% tabs %}
 {% tab title="Upgrade Data" %}
@@ -1030,7 +1784,7 @@ description: Discover  the versions of HotWax Commerce OMS releases.
 | Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest`                                    |
 | Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v5.11.0...v5.12.0?from_project_id=161&straight=false)  |
 | Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.12.0/CHANGELOG.md?ref_type=tags)                  |
-                                                                                                                                       | 
+                                                                                                                                       |
 
 {% tabs %}
 {% tab title="Upgrade Data" %}
@@ -1094,12 +1848,12 @@ description: Discover  the versions of HotWax Commerce OMS releases.
 
 | Information     | Value                                                                                                                |
 | --------------- | -------------------------------------------------------------------------------------------------------------------- |
-| Release Version | v5.11.1                                                                                                         |
+| Release Version | v5.11.1                                                                                                              |
 | Release Type    | Hotfix                                                                                                               |
-| Image Tag       | v5.11.1                                                                                                          |
-| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-v5.11.1`                                      |
-| Diff            | [Link to diff]((https://git.hotwax.co/commerce/oms/-/compare/v5.11.0...v5.11.1from_project_id=161&straight=false)) |
-| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.11.1/CHANGELOG.md?ref%5C_type=tags&ref_type=tags) |
+| Image Tag       | v5.11.1                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-v5.11.1`                                     |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v5.11.0...v5.11.1from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.11.1/CHANGELOG.md?ref%5C_type=tags&ref_type=tags)   | 
 
 ## Release - v5.11.0 (29th May 2024)
 
@@ -1111,7 +1865,7 @@ description: Discover  the versions of HotWax Commerce OMS releases.
 | Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest`                                    |
 | Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v5.10.0...v5.11.0?from_project_id=161&straight=false)    |
 | Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.11.0/CHANGELOG.md?ref_type=tags)                   |
-                                                                                                                                       | 
+                                                                                                                                       |
 
 {% tabs %}
 {% tab title="Upgrade Data" %}
@@ -1179,32 +1933,32 @@ description: Discover  the versions of HotWax Commerce OMS releases.
 | Release Type    | Hotfix                                                                                                               |
 | Image Tag       | v5.10.2                                                                                                              |
 | Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-v5.10.2`                                     |
-| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v5.10.1...v5.10.2from_project_id=161&straight=false)  |
-| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.10.2/CHANGELOG.md?ref%5C_type=tags&ref_type=tags)   | 
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v5.10.1...v5.10.2from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.10.2/CHANGELOG.md?ref%5C_type=tags&ref_type=tags)   |
 
 ## Hotfix - v5.10.1 (10th June 2024)
 
 | Information     | Value                                                                                                                |
 | --------------- | -------------------------------------------------------------------------------------------------------------------- |
-| Release Version | v5.10.1                                                                                                             |
+| Release Version | v5.10.1                                                                                                              |
 | Release Type    | Hotfix                                                                                                               |
-| Image Tag       | v5.10.1                                                                                                            |
-| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-v5.10.1`                                      |
-| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v5.10.0...v5.10.1from_project_id=161&straight=false) |
-| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.10.1/CHANGELOG.md?ref%5C_type=tags&ref_type=tags) |
+| Image Tag       | v5.10.1                                                                                                              |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-v5.10.1`                                     |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v5.10.0...v5.10.1from_project_id=161&straight=false)     |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.10.1/CHANGELOG.md?ref%5C_type=tags&ref_type=tags)   |
 
 ## Release - v5.10.0 (21st May 2024)
 
 | Information     | Value                                                                                                              |
 | --------------- | ------------------------------------------------------------------------------------------------------------------ |
-| Release Version | v5.10.0                                                                                                             |
+| Release Version | v5.10.0                                                                                                            |
 | Release Type    | Minor                                                                                                              |
-| Image Tag       | v5.10.0                                                                                                             |
+| Image Tag       | v5.10.0                                                                                                            |
 | Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest`                                    |
-| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v5.9.0...v5.10.0?from_project_id=161&straight=false)    |
-| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.10.0/CHANGELOG.md?ref_type=tags)                   |
-                                                                                                                                       | 
- 
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v5.9.0...v5.10.0?from_project_id=161&straight=false)   |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.10.0/CHANGELOG.md?ref_type=tags)                  |
+                                                                                                                                       |
+
 {% tabs %}
 {% tab title="Upgrade Data" %}
 [Link to Upgrade Data](https://git.hotwax.co/commerce/oms/-/blob/develop/upgrade/v5.10.0/UpgradeData.xml?ref_type=heads)
@@ -1227,41 +1981,41 @@ description: Discover  the versions of HotWax Commerce OMS releases.
 | Release Type    | Hotfix                                                                                                               |
 | Image Tag       | v5.9.5                                                                                                               |
 | Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-v5.9.5`                                      |
-| Diff            | [Link to diff]((https://git.hotwax.co/commerce/oms/-/compare/v5.9.4...v5.9.5from_project_id=161&straight=false))    |
+| Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v5.9.4...v5.9.5from_project_id=161&straight=false)       |
 | Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.9.5/CHANGELOG.md?ref%5C_type=tags&ref_type=tags)    |
 
 ## Hotfix - v5.9.4 (21st May 2024)
 
 | Information     | Value                                                                                                                |
 | --------------- | -------------------------------------------------------------------------------------------------------------------- |
-| Release Version | v5.9.4                                                                                                             |
+| Release Version | v5.9.4                                                                                                               |
 | Release Type    | Hotfix                                                                                                               |
-| Image Tag       | v5.9.4                                                                                                            |
+| Image Tag       | v5.9.4                                                                                                               |
 | Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-v5.9.4`                                      |
-| Diff            | [Link to diff](https://git.hotwax.co/tools/omssetup/-/compare/v5.9.3...v5.9.4?from_project_id=242&straight=false) |
-| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.9.4/CHANGELOG.md?ref%5C_type=tags&ref_type=tags) |
+| Diff            | [Link to diff](https://git.hotwax.co/tools/omssetup/-/compare/v5.9.3...v5.9.4?from_project_id=242&straight=false)    |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.9.4/CHANGELOG.md?ref%5C_type=tags&ref_type=tags)    |
 
 ## Hotfix - v5.9.3 (21st May 2024)
 
 | Information     | Value                                                                                                                |
 | --------------- | -------------------------------------------------------------------------------------------------------------------- |
-| Release Version | v5.9.3                                                                                                             |
+| Release Version | v5.9.3                                                                                                               |
 | Release Type    | Hotfix                                                                                                               |
-| Image Tag       | v5.9.3                                                                                                            |
+| Image Tag       | v5.9.3                                                                                                               |
 | Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-v5.9.3`                                      |
-| Diff            | [Link to diff](https://git.hotwax.co/tools/omssetup/-/compare/v5.9.2...v5.9.3?from_project_id=242&straight=false) |
-| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.9.3/CHANGELOG.md?ref%5C_type=tags&ref_type=tags) |
+| Diff            | [Link to diff](https://git.hotwax.co/tools/omssetup/-/compare/v5.9.2...v5.9.3?from_project_id=242&straight=false)    |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.9.3/CHANGELOG.md?ref%5C_type=tags&ref_type=tags)    |
 
 ## Hotfix - v5.9.2 (29th Apr 2024)
 
 | Information     | Value                                                                                                                |
 | --------------- | -------------------------------------------------------------------------------------------------------------------- |
-| Release Version | v5.9.2                                                                                                             |
+| Release Version | v5.9.2                                                                                                               |
 | Release Type    | Hotfix                                                                                                               |
-| Image Tag       | v5.9.2                                                                                                            |
+| Image Tag       | v5.9.2                                                                                                               |
 | Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-v5.9.2`                                      |
-| Diff            | [Link to diff](https://git.hotwax.co/tools/omssetup/-/compare/v5.9.1...v5.9.2?from_project_id=242&straight=false) |
-| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.9.2/CHANGELOG.md?ref%5C_type=tags&ref_type=tags) |
+| Diff            | [Link to diff](https://git.hotwax.co/tools/omssetup/-/compare/v5.9.1...v5.9.2?from_project_id=242&straight=false)    |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.9.2/CHANGELOG.md?ref%5C_type=tags&ref_type=tags)    |
 
 ## Hotfix - v5.9.1 (29th Apr 2024)
 
@@ -1271,9 +2025,8 @@ description: Discover  the versions of HotWax Commerce OMS releases.
 | Release Type    | Hotfix                                                                                                               |
 | Image Tag       | v5.9.1                                                                                                               |
 | Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-v5.9.1`                                      |
-| Diff            | [Link to diff](https://git.hotwax.co/tools/omssetup/-/compare/v5.9.0...v5.9.1?from_project_id=242&straight=false) |
-| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.9.1/CHANGELOG.md?ref%5C_type=tags&ref_type=tags) |
-
+| Diff            | [Link to diff](https://git.hotwax.co/tools/omssetup/-/compare/v5.9.0...v5.9.1?from_project_id=242&straight=false)    |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.9.1/CHANGELOG.md?ref%5C_type=tags&ref_type=tags)    |
 
 ## Release - v5.9.0 (25th Apr 2024)
 
@@ -1282,11 +2035,11 @@ description: Discover  the versions of HotWax Commerce OMS releases.
 | Release Version | v5.9.0                                                                                                             |
 | Release Type    | Minor                                                                                                              |
 | Image Tag       | v5.9.0                                                                                                             |
-| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:v5.9.0`                                    |
+| Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:v5.9.0`                                                 |
 | Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v5.8.0...v5.9.0?from_project_id=161&straight=false)    |
 | Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.9.0/CHANGELOG.md?ref_type=tags)                   |
-                                                                                                                                       | 
- 
+                                                                                                                                       |
+
 {% tabs %}
 {% tab title="Upgrade Data" %}
 [Link to Upgrade Data](https://git.hotwax.co/commerce/oms/-/blob/v5.9.0/upgrade/v5.9.0/UpgradeData.xml)
@@ -1307,10 +2060,10 @@ description: Discover  the versions of HotWax Commerce OMS releases.
 | --------------- | -------------------------------------------------------------------------------------------------------------------- |
 | Release Version | v5.8.9                                                                                                               |
 | Release Type    | Hotfix                                                                                                               |
-| Image Tag       | v5.8.9                                                                                                             |
+| Image Tag       | v5.8.9                                                                                                               |
 | Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-v5.8.9`                                      |
-| Diff            | [Link to diff](https://git.hotwax.co/tools/omssetup/-/compare/v5.8.3...v5.8.9?from_project_id=242&straight=false) |
-| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.8.9/CHANGELOG.md?ref%5C_type=tags&ref_type=tags) |
+| Diff            | [Link to diff](https://git.hotwax.co/tools/omssetup/-/compare/v5.8.3...v5.8.9?from_project_id=242&straight=false)    |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.8.9/CHANGELOG.md?ref%5C_type=tags&ref_type=tags)    |
 
 ## Hotfix - v5.8.3 (29th Apr 2024)
 
@@ -1320,8 +2073,8 @@ description: Discover  the versions of HotWax Commerce OMS releases.
 | Release Type    | Hotfix                                                                                                               |
 | Image Tag       | v5.8.3                                                                                                               |
 | Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-v5.8.3`                                      |
-| Diff            | [Link to diff](https://git.hotwax.co/tools/omssetup/-/compare/v5.8.2...v5.8.3?from_project_id=242&straight=false) |
-| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.8.3/CHANGELOG.md?ref%5C_type=tags&ref_type=tags) |
+| Diff            | [Link to diff](https://git.hotwax.co/tools/omssetup/-/compare/v5.8.2...v5.8.3?from_project_id=242&straight=false)    |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.8.3/CHANGELOG.md?ref%5C_type=tags&ref_type=tags)    |
 
 ## Hotfix - v5.8.2 (29th Apr 2024)
 
@@ -1331,9 +2084,8 @@ description: Discover  the versions of HotWax Commerce OMS releases.
 | Release Type    | Hotfix                                                                                                               |
 | Image Tag       | v5.8.2                                                                                                               |
 | Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-v5.8.2`                                      |
-| Diff            | [Link to diff](https://git.hotwax.co/tools/omssetup/-/compare/v5.8.1...v5.8.2?from_project_id=242&straight=false) |
-| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.8.2/CHANGELOG.md?ref%5C_type=tags&ref_type=tags) |
-
+| Diff            | [Link to diff](https://git.hotwax.co/tools/omssetup/-/compare/v5.8.1...v5.8.2?from_project_id=242&straight=false)    |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.8.2/CHANGELOG.md?ref%5C_type=tags&ref_type=tags)    |
 
 ## Hotfix - v5.8.1 (18th Apr 2024)
 
@@ -1343,9 +2095,8 @@ description: Discover  the versions of HotWax Commerce OMS releases.
 | Release Type    | Hotfix                                                                                                               |
 | Image Tag       | v5.8.1                                                                                                               |
 | Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-v5.8.1`                                      |
-| Diff            | [Link to diff](https://git.hotwax.co/tools/omssetup/-/compare/v5.8.0...v5.8.1?from_project_id=242&straight=false) |
-| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.8.1/CHANGELOG.md?ref%5C_type=tags&ref_type=tags)
-
+| Diff            | [Link to diff](https://git.hotwax.co/tools/omssetup/-/compare/v5.8.0...v5.8.1?from_project_id=242&straight=false)    |
+| Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.8.1/CHANGELOG.md?ref%5C_type=tags&ref_type=tags)    |
 
 ## Release - v5.8.0 (10th Apr 2024)
 
@@ -1357,8 +2108,8 @@ description: Discover  the versions of HotWax Commerce OMS releases.
 | Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-latest`                                    |
 | Diff            | [Link to diff](https://git.hotwax.co/commerce/oms/-/compare/v5.7.0...v5.8.0?from_project_id=161&straight=false)    |
 | Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.8.0/CHANGELOG.md?ref_type=tags)                   |
-                                                                                                                                       | 
- 
+                                                                                                                                       |
+
 {% tabs %}
 {% tab title="Upgrade Data" %}
 [Link to Upgrade Data](https://git.hotwax.co/commerce/oms/-/blob/develop/upgrade/v5.8.0/UpgradeData.xml?ref_type=heads)
@@ -1383,8 +2134,6 @@ description: Discover  the versions of HotWax Commerce OMS releases.
 | Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-v5.7.6`                                      |
 | Diff            | [Link to diff](https://git.hotwax.co/tools/omssetup/-/compare/v5.7.5...v5.7.6?from_project_id=242&straight=false) |
 | Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.7.6/CHANGELOG.md?ref%5C_type=tags&ref_type=tags)
-
-
 
 ## Hotfix - v5.7.4 (09th Apr 2024)
 
@@ -1469,7 +2218,6 @@ description: Discover  the versions of HotWax Commerce OMS releases.
 | Diff            | [Link to diff](https://git.hotwax.co/tools/omssetup/-/compare/v5.6.0...v5.6.1?from\_project\_id=242\&straight=false) |
 | Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.6.1/CHANGELOG.md?ref\_type=tags)                    |
 
-
 ## Release - v5.6.0 (11th Mar 2024)
 
 | Information     | Value                                                                                                              |
@@ -1505,7 +2253,6 @@ description: Discover  the versions of HotWax Commerce OMS releases.
 | Image URL       | `289432782788.dkr.ecr.us-east-1.amazonaws.com/omscoreimage:omscoreimage-v5.5.6`                                      |
 | Diff            | [Link to diff](https://git.hotwax.co/tools/omssetup/-/compare/v5.5.5...v5.5.6?from_project_id=242&straight=false) |
 | Changelog       | [Link to changelog](https://git.hotwax.co/commerce/oms/-/blob/v5.5.6/CHANGELOG.md?ref%5C_type=tags&ref_type=tags)
-
 
 ## Hotfix - v5.5.5 (22th Mar 2024)
 
@@ -1615,7 +2362,7 @@ No upgrade steps to follow.
 **Upgrade Data**
 
 ```xml
-ReturnAdjustmentType description="Appeasement" hasTable="N" returnAdjustmentTypeId="APPEASEMENT">
+ReturnAdjustmentType description="Appeasement" hashtable="N" returnAdjustmentTypeId="APPEASEMENT">
 ```
 
 ## Hotfix - v5.4.1 (10th Feb 2024)

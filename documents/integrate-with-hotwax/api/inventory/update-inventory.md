@@ -22,7 +22,7 @@ Updated inventory in HotWax: 8
 
 `https://<host>/api/service/updateInventoryByIdentification`
 
-Example: [https://demo-oms.hotwax.io/api/service/updateInventoryByIdentification](https:/%3Chost%3E/api/service/updateInventoryByIdentification/)
+Example: https://demo-oms.hotwax.io/api/service/updateInventoryByIdentification
 
 ### Header
 
@@ -61,7 +61,7 @@ Sample:
   "locationSeqId": "TLTLTLLL01",
   "varianceReasonId": "POS_SALE"
 }
-  
+
 ```
 
 | Parameters         | Description                                                                                  | Required (Y/N) |
@@ -85,7 +85,7 @@ Table of valid variance reasons and their IDs:
 | `VAR_DAMAGED`      | Reduce damaged inventory from available quantity                                  |
 | `VAR_LOST`         | SKU inventory is lost                                                             |
 | `VAR_FOUND`        | Lost SKU inventory is found                                                       |
-| `WORN_DISPLAY`     | SKU inventory is worn and unsuable from being on display                          |
+| `WORN_DISPLAY`     | SKU inventory is worn and unusable from being on display                          |
 | `VAR_MANUAL`       | SKU inventory adjustment is done manually                                         |
 
 ## Response

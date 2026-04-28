@@ -1,15 +1,14 @@
 ---
-description: >-
-  Learn how store to store transfer orders are processed in HotWax Commerce.
---- 
+description: Learn how store to store transfer orders are processed in HotWax Commerce.
+---
 
 # Store to Store
 
-Stores looking to transfer surplus inventory to another store in need of it work alongside the warehouse manager to create a store-to-store transfer order in NetSuite. This facilitates the transfer of inventory from one store location to another.
+Stores looking to transfer surplus inventory to another store in need of it work alongside the inventory planning team to create a store-to-store transfer order in NetSuite. This facilitates the transfer of inventory from one store location to another.
 
 Now, let’s look at how store to store transfer orders are processed:
 
-Warehouse managers create transfer orders in NetSuite, specifying the source location as the designated store and the destination location as also a store. These transfer orders are automatically assigned a `Pending Fulfillment` status.
+Inventory planners create transfer orders in NetSuite, specifying the source location as the designated store and the destination location as also a store. These transfer orders are automatically assigned a `Pending Fulfillment` status.
 
 These transfer orders are synchronized to HotWax Commerce so that they can be fulfilled from stores. Once transfer order items are shipped from stores, their status is updated from `Approved` to `Completed` and subsequently inventory count for the shipped items is reduced in HotWax Commerce.
 
@@ -21,15 +20,15 @@ Upon successful receipt of inventory, HotWax Commerce synchronizes item receipts
 
 ## Workflow
 
-<figure><img src="../../.gitbook/assets/40.png" alt=""><figcaption><p>Fulfilling store to store transfer order</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/store-to-store-transfer-order-fulfilling.png" alt=""><figcaption><p>Fulfilling store to store transfer order</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/41.png" alt=""><figcaption><p>Receiving store to store transfer order</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/store-to-store-transfer-order-receiving.png" alt=""><figcaption><p>Receiving store to store transfer order</p></figcaption></figure>
 
 ### Create Transfer Orders in NetSuite
 
 1.  **Export Created Transfer Orders from NetSuite:**
 
-    Warehouse managers create transfer orders in NetSuite, specifying the source location as the designated store and the destination location as also a store. These transfer orders are automatically assigned a `Pending Fulfillment` status.
+    Inventory planners create transfer orders in NetSuite, specifying the source location as the designated store and the destination location as also a store. These transfer orders are automatically assigned a `Pending Fulfillment` status.
 
     At regular intervals, a Map Reduce script runs a specific Saved Search in NetSuite and identifies transfer orders with a `Pending Fulfillment` status that have a source location set as the `Store`. This script compiles the relevant data into a CSV file, which is then securely placed at an SFTP location.
 
@@ -47,11 +46,11 @@ HC_MR_ExportedStoreTransferOrderCSV.js
 /home/{sftp-username}/netsuite/transferorder/csv
 ```
 
-2.  **Import Transfer Orders into HotWax Commerce:**
+1.  **Import Transfer Orders into HotWax Commerce:**
 
     Once the store to store transfer orders are created and exported from NetSuite, they are imported into HotWax Commerce.
 
-    The process of approving transfer orders in HotWax Commerce, fulfilling them from the designated store location, reducing inventory counts in HotWax Commerce for fulfilled transfer order items, exporting store fulfilled transfer order items from HotWax Commerce and finally importing them into NetSuite mirrors the [store to warehouse transfer order flow ](storetowarehouse.md)discussed earlier.
+    The process of approving transfer orders in HotWax Commerce, fulfilling them from the designated store location, reducing inventory counts in HotWax Commerce for fulfilled transfer order items, exporting store fulfilled transfer order items from HotWax Commerce and finally importing them into NetSuite mirrors the [store to warehouse transfer order flow](store-to-warehouse.md) discussed earlier.
 
 **Job in HotWax Commerce**
 
@@ -109,7 +108,7 @@ HC_MR_ExportedStoreTOFulfillmentCSV.jsd
 
 4.  **Receive Transfer Orders in HotWax Commerce:**
 
-    The process of importing item fulfillment records in HotWax Commerce, receiving inbound shipments in the store, increasing inventory counts in HotWax Commerce against inbound shipments, exporting item receipts from HotWax Commerce, importing item receipts into NetSuite and finally increasing inventory count at store in NetSuite mirrors the [warehouse to store transfer order flow](warehousetostore.md) discussed earlier.
+    The process of importing item fulfillment records in HotWax Commerce, receiving inbound shipments in the store, increasing inventory counts in HotWax Commerce against inbound shipments, exporting item receipts from HotWax Commerce, importing item receipts into NetSuite and finally increasing inventory count at store in NetSuite mirrors the [warehouse to store transfer order flow](warehouse-to-store.md) discussed earlier.
 
 **Job in HotWax Commerce**
 
@@ -147,15 +146,15 @@ Following this approach, store associates at the destination store can efficient
 
 {% tabs %}
 {% tab title="Transfer Order Fields in NetSuite" %}
-<figure><img src="../../.gitbook/assets/transferOrderNS.png" alt=""><figcaption><p>Transfer Order Fields Mapping in NetSuite</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/transfer-order-fields-netsuite.png" alt=""><figcaption><p>Transfer Order Fields Mapping in NetSuite</p></figcaption></figure>
 {% endtab %}
 
 {% tab title="Transfer Order Fields in HotWax Commerce" %}
-<figure><img src="../../.gitbook/assets/salesOrderHC.png" alt=""><figcaption><p>Transfer Order Fields Mapping in HotWax Commerce</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/transfer-order-fields-hotwax.png" alt=""><figcaption><p>Transfer Order Fields Mapping in HotWax Commerce</p></figcaption></figure>
 {% endtab %}
 {% endtabs %}
 
-<figure><img src="../../.gitbook/assets/44.png" alt=""><figcaption><p>Transfer Order Items Fulfilled in HotWax Commerce "Store Fulfillment App"</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/store-to-store-transfer-order-items-fulfilled.png" alt=""><figcaption><p>Transfer Order Items Fulfilled in HotWax Commerce "Store Fulfillment App"</p></figcaption></figure>
 
 **Here's how transfer order fields are mapped in NetSuite and HotWax Commerce for receiving in store:**
 
@@ -163,11 +162,11 @@ Following this approach, store associates at the destination store can efficient
 
 {% tabs %}
 {% tab title="Transfer Order Fields in NetSuite" %}
-<figure><img src="../../.gitbook/assets/itemFulfillment.png" alt=""><figcaption><p>Fulfilled Transfer Order Fields Mapping in NetSuite</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/fulfilled-transfer-order-fields-netsuite.png" alt=""><figcaption><p>Fulfilled Transfer Order Fields Mapping in NetSuite</p></figcaption></figure>
 {% endtab %}
 
 {% tab title="Transfer Order Fields in HotWax Commerce" %}
-<figure><img src="../../.gitbook/assets/shipmentReceiving.png" alt=""><figcaption><p>Inbound Shipment Fields Mapping in HotWax Commerce "Inventory Receiving App"</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/inbound-shipment-fields-hotwax.png" alt=""><figcaption><p>Inbound Shipment Fields Mapping in HotWax Commerce "Inventory Receiving App"</p></figcaption></figure>
 {% endtab %}
 {% endtabs %}
 

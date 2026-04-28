@@ -23,11 +23,11 @@ Facilitate the importation of all products and orders from the eCommerce platfor
 
 Empower users to schedule the import process, enabling them to select the desired execution time.
 
-<figure><img src="../../.gitbook/assets/yyyyy.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/initial-load-page.png" alt=""><figcaption></figcaption></figure>
 
 ***
 
-## How to schedule jobs for initial load?
+## How to schedule jobs for initial load
 
 {% hint style="info" %}
 **Things to remember:**

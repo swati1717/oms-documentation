@@ -1,13 +1,12 @@
 ---
-description: >-
-  Learn about purchase order sync from NetSuite to HotWax Commerce.
+description: Learn about purchase order sync from NetSuite to HotWax Commerce.
 ---
 
 # Purchase Orders
 
 Accurate inventory availability in physical stores is important for omnichannel retail. For retailers using NetSuite as their ERP and HotWax Commerce as their Order Management System, integration is key to synchronizing Purchase Orders (POs) from NetSuite with HotWax Commerce. This synchronization enables store associates to receive and manage inventory using HotWax Commerce's user-friendly in-store inventory management tools.
 
-When a PO is raised in NetSuite, it syncs with HotWax Commerce, allowing store associates to receive inventory through the [Receiving App](https://docs.hotwax.co/documents/store-operations/inventory/receiving) provided by HotWax Commerce.
+When a PO is raised in NetSuite, it syncs with HotWax Commerce, allowing store associates to receive inventory through the [Receiving App](/documents/store-operations/receiving/returns-and-purchase-orders.md) provided by HotWax Commerce.
 
 ## Key Objectives
 
@@ -21,7 +20,7 @@ When a PO is raised in NetSuite, it syncs with HotWax Commerce, allowing store a
 
 The procurement process begins in the NetSuite ERP, where POs are generated to replenish inventory in physical stores.
 
-<figure><img src="../../.gitbook/assets/POsync (1).png" alt=""><figcaption><p>Purchase Order sync from NetSuite to HotWax Commerce</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/purchase-order-sync-netsuite-to-hotwax.png" alt=""><figcaption><p>Purchase Order sync from NetSuite to HotWax Commerce</p></figcaption></figure>
 
 ### Export Purchase Orders from NetSuite
 
@@ -58,11 +57,11 @@ IMP_ASN_PO_FEED
 
 {% tabs %}
 {% tab title="Purchase Order Fields in NetSuite" %}
-<figure><img src="../../.gitbook/assets/purchaseOrderNS.png" alt=""><figcaption><p>Purchase Order Fields Mapping in NetSuite</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/purchase-order-fields-netsuite.png" alt=""><figcaption><p>Purchase Order Fields Mapping in NetSuite</p></figcaption></figure>
 {% endtab %}
 
 {% tab title="Purchase Order Fields in HotWax Commerce" %}
-<figure><img src="../../.gitbook/assets/purchaseOrder.png" alt=""><figcaption><p>Purchase Order Fields Mapping in HotWax Commerce "Inventory Receiving App"</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/purchase-order-fields-hotwax.png" alt=""><figcaption><p>Purchase Order Fields Mapping in HotWax Commerce "Inventory Receiving App"</p></figcaption></figure>
 {% endtab %}
 {% endtabs %}
 
@@ -74,9 +73,13 @@ IMP_ASN_PO_FEED
 
 Once POs are synchronized, store associates use the HotWax Commerce's Receiving App to receive new inventory. The app's interface simplifies the receiving process, allowing associates to manage inventory with ease, even with minimal training.
 
-<figure><img src="../../.gitbook/assets/syncItemreceipts.png" alt=""><figcaption><p>Item Receipts Sync from HotWax Commerce to NetSuite</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/item-receipts-sync-to-netsuite.png" alt=""><figcaption><p>Item Receipts Sync from HotWax Commerce to NetSuite</p></figcaption></figure>
 
 After store associates receive POs from app, Item Receipt records are created in HotWax Commerce. These records update inventory counts, making the newly received stock available for sale on eCommerce platforms.
+
+{% hint style="info" %}
+HotWax's Receiving App helps store associates manage in-store receiving discrepancies. The app allows over receiving, under receiving as well as provides an option to receive unexpected items in a PO. The operations team can also track and manage discrepancies using the reports available on HotWax’s BI Reports & Analytics platform.
+{% endhint %}
 
 ### Export Item Receipts from HotWax Commerce
 
@@ -117,6 +120,6 @@ HC_SC_ImportPurchaseOrderReceipts
 The HC\_SC\_ImportPurchaseOrderReceipts SuiteScript also generates a CSV file highlighting erroneous records found during processing and uploads the file to the SFTP server. Simultaneously, an email alert is automatically triggered to designated personnel, helping them quickly pinpoint the source of the issue and accelerating troubleshooting.
 {% endhint %}
 
-{% file src="../../.gitbook/assets/Purchase-Orders-Receipt-Sample-Feed.json" %}
+{% file src="../.gitbook/assets/Purchase-Orders-Receipt-Sample-Feed.json" %}
 Sample JSON Feed
 {% endfile %}

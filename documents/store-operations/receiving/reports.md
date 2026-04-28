@@ -4,23 +4,23 @@ description: >-
   alignment between expected and received quantities.
 ---
 
-# Receiving Reports
+# Receiving reports
 
-## Discrepancy Tracking for Fulfilled Transfer Orders
+## Discrepancy tracking for fulfilled transfer orders
 
-Reports designed to meticulously monitor and manage discrepancies arising from fulfilled transfer orders. In essence, it serves as a comprehensive oversight tool to ensure the actual receipt aligns accurately with the expected shipped quantities.
+Use this report to monitor discrepancies in fulfilled transfer orders. It compares expected shipped quantities with actual receipts.
 
-## Receiving Discrepancy report
+## Receiving discrepancy report
 
-Monitor and identify discrepancies at facilities where the actual receipt does not align with the expected shipped amount. This systematic approach allows for a meticulous tracking of fulfilled transfer orders, ensuring that the actual receipt quantities are in sync with the expectations. Facilities reporting higher discrepancies are strategically prioritized, enabling a focused investigation into potential issues.
+Identify facilities where actual receipts do not match expected shipped amounts. Prioritize locations with higher discrepancies to investigate potential issues.
 
 **In case of NetSuite**
 
-In the context of NetSuite, this monitoring system becomes particularly beneficial. By aligning the actual receipt with the expected shipped amount from NetSuite for fulfilled transfer orders, organizations gain a targeted insight into the accuracy of their inventory management.
+In NetSuite, the report compares actual receipts with expected shipped amounts from transfer orders to highlight inventory accuracy issues.
 
 **User:** Operations team
 
-| Field                     | Detials                                                           |
+| Field                     | Details                                                           |
 | ------------------------- | ----------------------------------------------------------------- |
 | Shipment\_Id              | The ID of the shipment in external system                         |
 | HotWax\_Shipment\_Id      | The ID of the shipment in HotWax                                  |
@@ -31,6 +31,6 @@ In the context of NetSuite, this monitoring system becomes particularly benefici
 | Destination\_Facility\_Id | The ID of the destination facility where the shipment is destined |
 | Destination\_Facility     | The name of the facility where the shipment is destined           |
 | Expected                  | Quantity expected to be shipped                                   |
-| Recieved                  | Quantity actually received                                        |
+| Received                  | Quantity actually received                                        |
 | Difference                | Variance between expected and actual quantities                   |
 | Status                    | Current status of the shipment                                    |

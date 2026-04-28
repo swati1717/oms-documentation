@@ -6,7 +6,7 @@ Previously, if the order was allocated to a facility, CSRs had to reject the ent
 
 ## Step-by-Step Usage Instructions
 
-### For CSRs to Change Shipping Method and Carrier (Orders Not Yet Brokered):
+### For CSRs to Change Shipping Method and Carrier (Orders Not Yet Brokered)
 
 1. **Accessing Sales Orders:**
    * Go to the Hamburger Menu in the OMS.
@@ -19,7 +19,7 @@ Previously, if the order was allocated to a facility, CSRs had to reject the ent
    * Choose the desired shipping method from the list.
    * Click `Save` to apply the changes.
 
-### For Store Associates to Change Shipping Labels After Order Allocation:
+### For Store Associates to Change Shipping Labels After Order Allocation
 
 1. **Accessing the `Fulfillment` app:**
    * Open the `Fulfillment` app, search for the order and click on the `Order ID` to open the submenu, and select `view details` to open the `Order Details` page
@@ -28,4 +28,4 @@ Previously, if the order was allocated to a facility, CSRs had to reject the ent
    * Select the appropriate shipping carrier and shipping method from the dropdown menus.
    * Click on the `Generate Label` button to print the shipping label again as per the new shipping method and carrier.&#x20;
 
-<figure><img src="../.gitbook/assets/shipment method (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/change-shipping-method.png" alt="" width="375"><figcaption></figcaption></figure>

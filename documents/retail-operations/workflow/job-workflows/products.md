@@ -1,65 +1,56 @@
 ---
-description: >-
-  Learn about the Products job in HotWax Commerce.
+description: Learn about the Products job in HotWax Commerce.
 ---
 
 # Products
 
 ## Sync
 
-### Import Products
+### Import New Product
 
-**Job Name:** `Import New Products`
+Job Name: `Import new products`\
+Job Enum ID: `JOB_IMP_PROD_NEW`\
+Service Name: `CreateProductsFromShopify`\
+Flow: Importing new products from Shopify to HotWax.
 
-**Job Enum ID:** `JOB\_IMP\_PROD\_NEW`
+**`Import new product` job is used for importing new products from Shopify to HotWax.** For maintaining the system integrity, it is important to sync new products from Shopify.
 
-**Description**
+If a new product created in Shopify and its not synced in HotWax Commerce (may be because job scheduled to run after 10 mins) and if an order is created for this new product in Shopify (before the job in run) and that order is now downloaded in HotWax, then a a placeholder for this new product will be created in HotWax. Once the job runs, the actual product will be imported and replace the placeholder.
 
-The Import New Products job is designed to import new products from eCommerce or Product Information Management systems. This job is crucial for keeping your product catalog updated with the latest additions and ensuring accurate representation on your platform.
+**How does HotWax import products?**\
+HotWax makes an API call on Shopify to retrieve all the newly created products in Shopify between the time frame of the last job run and the current timestamp. In response to this request, Shopify provides a JSON file containing details of such products. Further, the `Import New Products` job imports this JSON into HotWax OMS and uploads it to the `IMP_SHOPIFY_PROD` MDM in HotWax. Finally, the `Process Bulk Import Files` job runs and processes the JSON file to create products in HotWax OMS.
 
-**Recommended Frequency**
-
-The job frequency is set to run every 15 minutes by default. You may adjust this frequency based on the frequency of new product additions and the desired update interval for your product catalog.
-
-**Custom Parameters**
-
-| **Parameter**         | **Type** | **Description**                                                                                | **Default Value** | **Example Value** |
-| --------------------- | -------- | ---------------------------------------------------------------------------------------------- | ----------------- | ----------------- |
-| **`shopifyConfigId`** | String   | Specifies the configuration ID for Shopify, if applicable.                                     | null              | SHOP\_CONFIG\_001 |
-| **`limit`**           | Integer  | Sets a limit on the number of products to import per job run.                                  | 100               | 50                |
-| **`frequency`**       | Integer  | Defines the default duration for syncing products if there is no `Last Sync Time`.             | 15 minutes        | 10 minutes        |
-| **`bufferTime`**      | Integer  | Specifies the buffer time (in minutes) for scheduling job downloads.                           | Not specified     | 5                 |
-| **`scheduleNow`**     | Boolean  | When set to true, forces the system to pick the file out of sequence for immediate processing. | false             | true              |
-
-<figure><img src="../.gitbook/assets/import new products.png" alt="" width="375"><figcaption></figcaption></figure>
-
-
-### Sync Products
-
-**Job Name:** `Import Product Updates`
-
-**Job Enum ID:** `JOB\_IMP\_PROD\_UPD`
-
-**Description**
-
-The Import Product Updates job is designed to update existing products from eCommerce or Product Information Management (PIM) systems. This job ensures that your product information stays current and reflects any changes made in the source system.
-
-**Recommended Frequency**
-
-The job frequency is set to run every 15 minutes by default. Adjust the frequency based on the update frequency of your product data in the eCommerce or PIM system.
+It is important to note that the `Import New Product` job must not be scheduled while creating new products on Shopify, as it can import incomplete data and cause data corruption. So the recommendation is to pause this job and reschedule it only after all products are fully created.
 
 **Custom Parameters**
 
-| **Parameter**         | **Type** | **Description**                                                                                | **Default Value** | **Example Value** |
-| --------------------- | -------- | ---------------------------------------------------------------------------------------------- | ----------------- | ----------------- |
-| **`shopifyConfigId`** | String   | Specifies the configuration ID for Shopify, if applicable.                                     | null              | SHOP\_CONFIG\_001 |
-| **`limit`**           | Integer  | Sets a limit on the number of products to import per job run.                                  | 100               | 50                |
-| **`frequency`**       | Integer  | Defines the default duration for syncing products if there is no `Last Sync Time`.             | 15 minutes        | 10 minutes        |
-| **`bufferTime`**      | Integer  | Specifies the buffer time (in minutes) for scheduling job downloads.                           | Not specified     | 5                 |
-| **`scheduleNow`**     | Boolean  | When set to true, forces the system to pick the file out of sequence for immediate processing. | false             | true              |
+* `frequency` is the required parameter for this job.
+* It has some optional parameters.
 
-<figure><img src="../.gitbook/assets/Import product Update.png" alt="" width="375"><figcaption></figcaption></figure>
+To know more about product import refer to this [document](https://docs.hotwax.co/documents/learn-shopify/shopify-integration/how-are-products-downloaded-from-shopify-to-hotwax-commerce/product-download).
 
+***
+
+### Import Product Updates
+
+Job name: `Import Product Updates`\
+Job Enum ID: `JOB_IMP_PROD_UPD`\
+Service name: `updateProductsFromShopify`\
+Flow: Import product updates from Shopify to HotWax
+
+When a retailer updates a product in Shopify, it is important for HotWax Commerce to sync these updates. **The `Import Product Updates` job is used for importing updates on products from Shopify to HotWax.**
+
+**How are product updates synced?**\
+HotWax makes an API call on Shopify to retrieve all the products that are updated between the last job run time and the current timestamp by checking the `updated_at` field in Shopify. In response to this request, Shopify provides a JSON file that is imported into HotWax by the `Import Product Update` job. Further, the `Process Bulk Imported Files` job runs and processes the JSON to sync product updates in Shopify.
+
+**Custom Parameters**
+
+* `frequency` is the required parameter for this job.
+* It has some optional parameters.
+
+To know more about importing product updates refer to this [document](https://docs.hotwax.co/documents/learn-shopify/shopify-integration/how-are-products-downloaded-from-shopify-to-hotwax-commerce/updating-product-details).
+
+***
 
 ## Webhooks
 
@@ -84,165 +75,121 @@ Automated messages sent from eCommerce (Shopify) to OMS whenever an event occurs
 
 ## More Jobs
 
-### Import Kit Components
+### Product HS Code Identification
 
-**Job Name:** `Import kit components`
+Job Name:`Product HS Code Identification`\
+Job Enum ID: `JOB_HS_IDENT`\
+Service Name: `ftpImportFile`\
+Flow: Product Setup from NetSuite
 
-**Job Enum ID:** `IMP\_KIT\_METAFIELD`
+**The product HS code identification job imports Harmonized System (HS) codes from NetSuite to HotWax Commerce.** The HS code is a standardized numerical system used to classify and identify products that are traded internationally.
 
-**Description**
+An ERP system (like NetSuite) provides a CSV format file containing HS codes for all the products. Which is then imported by this job into HotWax OMS. This job is used in special scenarios when the retailer is shipping products internationally.
 
-The `Import Kit Product Components` job is specifically designed to import components of kit products from an external system. This job ensures that kit product components are accurately reflected in the Order Management System (OMS).
-
-**Recommended Frequency**
-
-The frequency of running this job depends on the frequency of updates or changes to kit product components. It is recommended to run this job as needed based on changes in the external system.
-
-**Custom Parameters**
-
-| **Parameter**              | **Type** | **Description**                                                      | **Default Value**       | **Example Value**         |
-| -------------------------- | -------- | -------------------------------------------------------------------- | ----------------------- | ------------------------- |
-| **`shopifyConfigId`**      | String   | Specifies the configuration ID for Shopify.                          | null                    | SHOPIFY\_CONFIG\_001      |
-| **`configId`**             | String   | Specifies the configuration ID for importing kit product components. | BULK\_IMP\_VARIANTS\_MF | KIT\_COMP\_IMPORT\_CONFIG |
-| **`productVariantsQuery`** | String   | Specifies the query to identify kit products.                        | product\_type: Kit      | category: Bundle          |
-| **`namespaces`**           | String   | Specifies the namespaces for kit product components.                 | bundles\_app            | kit\_components           |
-
-
-### Import Promo Code
-
-**Job Name:** `Import Promo Code`
-
-**Job Enum ID:** `JOB\_IMP\_PRMO\_CODE`
-
-**Description**
-
-The `Import Promo Code` job is designed to import promotional codes into the system. This job is essential for managing and updating promotional offers on your platform.
-
-**Recommended Frequency**
-
-The frequency for running this job depends on the frequency of updates to your promotional codes. Adjust the frequency accordingly to ensure timely and accurate updates.
-
+**How are HS codes synced with HotWax?**\
+Through a scheduled SuiteScript, NetSuite uploads a CSV file of HS codes for all the products to an SFTP location. From there, the `Product HS code Identification' job imports that CSV into HotWax and uploads it on` IMP\_HS\_IDENT`MDM. Further, the`Process Bulk Imported Files\` job processes the CSV to apply HS codes to products.
 
 **Custom Parameters**
 
-| **Parameter**              | **Type** | **Description**                                                                  | **Default Value** | **Example Value**                          |
-| -------------------------- | -------- | -------------------------------------------------------------------------------- | ----------------- | ------------------------------------------ |
-| **`propertyResource`**     | String   | Specifies the property resource for the FTP configuration.                       | FTP\_CONFIG       | SFTP\_CONFIG\_001                          |
-| **`configId`**             | String   | Specifies the configuration ID for importing promo codes.                        | IMP\_PRMO\_CODE   | PROMO\_CONFIG\_001                         |
-| **`fileNameRegex`**        | String   | Specifies the regular expression for matching file names during synchronization. | \*.csv            | \*.csv                                     |
-| **`groupBy`**              | String   | Specifies the grouping parameter for multi-threading, such as `location_id`.     | Not specified     | location\_id                               |
-| **`additionalParameters`** | Optional | Specifies additional parameters for customization.                               | Not specified     | { "param1": "value1", "param2": "value2" } |
-| **`remoteFilename`**       | Optional | Specifies the remote filename for the job.                                       | Not specified     | sample\_file.txt                           |
-| **`scheduleNow`**          | Optional | Specifies whether to schedule the job for immediate processing.                  | false             | true                                       |
+* The recommended frequency for this job is 15 minutes.
+* It also has some optional parameters.
+* This job has configId and propertyResource as the required parameters.
 
-<figure><img src="../.gitbook/assets/Import Promo code.png" alt="" width="375"><figcaption></figcaption></figure>
+***
 
+### Import Kit Component
+
+Job Name: `Import Kit Component`\
+Job Enum ID: `JOB_KIT_COMP`\
+Service Name: `ftpImportFile`\
+Flow: Importing Kit Product Information from ERP to OMS
+
+When a retailer chooses not to use Shopify’s Bundles App for Kit products. Generally in such cases, ERP systems (like NetSuite) are used to manage kit products. So, HotWax needs to import kit components from NetSuite.
+
+**`Import Kit Component` job is used for importing kit products from NetSuite to HotWax.**
+
+**How are kit components synced?**\
+When NetSuite manages the kit products, it uploads a CSV format file of kit product details to an SFTP location. From there, the `Import Kit Component` job imports the JSON in HotWax and uploads it on `IMP_KIT_COMP` MDM. Further, the `Process Bulk Imported Files` job processes the JSON to sync kit products in HotWax.
+
+**Custom Parameters**
+
+* The recommended frequency for this job is 15 minutes.
+* This job has configId and propertyResource as the required parameters.
+* It also has some optional parameters.
+
+To know more about kit products, refer to this [document](https://docs.hotwax.co/documents/learn-netsuite/integration-flows/kitproducts).
+
+***
+
+### Import Promo Codes
+
+Job Name: `Import Promo Codes`\
+Job Enum ID: `JOB_IMP_PRMO_CODE`\
+Service Name: `createUpdateProductPromo`
+
+**This job is used to import promo codes from NetSuite to HotWax.**
+
+Promo codes are those codes applied by customers while shopping to get some discounts. If an order has a discount code applied to it, during order sync to NetSuite, HotWax OMS checks if the applied code is available in NetSuite. If the code is available, then the exact code is used, and the value of the discount is shared as the "Rate.".
+
+**Custom Parameters**
+
+* The recommended frequency for this job is 15 minutes.
+* This job has configId and propertyResource as the required parameters.
+* It also has some optional parameters.
+
+To know more about promo code refer to this [document](https://docs.hotwax.co/documents/learn-netsuite/netsuite-deployment/prerequisites/promocodes).
+
+***
 
 ### Product Identification
 
-**Job Name:** `Product Identification`
+Job Name: `Product Identification`\
+Job Enum ID: `JOB_PROD_IDENT`\
+Service Name: `createUpdateProductErpId`\
+Flow: Importing Product Details from ERP to OMS
 
-**Job Enum ID:** `JOB\_PROD\_IDENT`
+**This job is used to import product IDs from ERP systems like NetSuite into HotWax OMS.** By fetching product IDs from NetSuite, it ensures proper integration and accurate product identification within HotWax OMS.
 
-**Description**
-
-The `Product Identification` job, identified by Job ID JOB\_PROD\_IDENT, is designed to create or update GoodIdentification records for products. This job is crucial for maintaining accurate identification and synchronization of product information across systems.
-
-**Recommended Frequency**
-
-The frequency for running this job depends on the frequency of updates to product identifications. Adjust the frequency accordingly to ensure timely and accurate updates.
+**How is the NetSuite product ID mapped?**\
+A scheduled script in NetSuite retrieves the “NetSuite Product ID” for all the products in a JSON format file and uploads it to an SFTP location. From their `Product Identification` job, imports that JSON in HotWax and uploads it on `IMP_PROD_IDENT` MDM. Further, the `Process Bulk Imported Files` job runs and processes the file to map the NetSuite product ID in HotWax OMS.
 
 **Custom Parameters**
 
-| **Parameter**                                       | **Type** | **Description**                                                              | **Default Value** | **Example Value**        |
-| --------------------------------------------------- | -------- | ---------------------------------------------------------------------------- | ----------------- | ------------------------ |
-| **`propertyResource`**                              | String   | Specifies the property resource for the FTP configuration.                   | FTP\_CONFIG       | SFTP\_CONFIG\_001        |
-| **`configId`**                                      | String   | Specifies the configuration ID for importing product identifications.        | IMP\_PROD\_IDENT  | PROD\_IDENT\_CONFIG\_001 |
-| **`additionalParameters.idType`**                   | String   | Specifies the type of identification used (e.g., SHOPIFY\_PROD\_ID).         | Not specified     | SHOPIFY\_PROD\_ID        |
-| **`additionalParameters.goodIdentificationTypeId`** | String   | Specifies the type of GoodIdentification (e.g., NETSUITE\_PRODUCT\_ID).      | Not specified     | NETSUITE\_PRODUCT\_ID    |
-| **`groupBy`**                                       | String   | Specifies the grouping parameter for multi-threading, such as `location_id`. | Not specified     | location\_id             |
-| **`remoteFilename`**                                | Optional | Specifies the remote filename for the job.                                   | Not specified     | sample\_file.txt         |
-| **`groupBy`**                                       | String   | Specifies the grouping parameter for multi-threading, such as `location_id`. | Not specified     | location\_id             |
+* The recommended frequency for this job is 15 minutes.
+* This job has configId and propertyResource as the required parameters.
+* It also has some optional parameters.
 
 ***
 
-<figure><img src="../.gitbook/assets/Product identification.png" alt="" width="375"><figcaption></figcaption></figure>
+### Activate Product on Shopify
 
+Job Name: `Activate Product on Shopify` Job Enum ID: `JOB_ACT_PROD_SHPFY` Service Name: `activateProductOnShopifyLocation` Flow: Order Fulfillment Flow
 
-### Activate Products on Shopify
-
-**Job Name:** `Activate products on Shopify`
-
-**Job Enum ID:** `JOB_ACT_PROD_SHPFY`
-
-**Description**  
-The `Activate Products on Shopify` job synchronizes activated products, such as gift cards, from HotWax Commerce to Shopify. Gift cards, as stored-value products, must be activated to ensure customers can redeem them upon receipt. This job ensures that once gift cards are activated in HotWax Commerce, the activation codes are automatically synced to Shopify, making them immediately redeemable for customers.
+Products in HotWax are mapped to their physical facilities, and the same applies to Shopify. When a product is mapped to a facility in HotWax OMS but not in Shopify. The `Activates Product on Shopify` job identifies these products by querying the HotWax database. It then activates them on Shopify, ensuring a one-to-one mapping between products and facilities in both systems.
 
 **Custom Parameters**
 
-| **Parameter**  | **Type**   | **Description**                                                             | **Default Value** |
-|----------------|------------|-----------------------------------------------------------------------------|-------------------|
-| `facilityids`  | Optional   | Identifies the configuration for Order Item Attribute records.              | `Not specified`   |
-| `productId`    | Optional   | Specifies the property resource for configuration.                          | `Not specified`   |
-| `idType`       | Optional   | Specifies the remote filename for processing.                               | `Not specified`   |
-| `iDValue`      | Optional   | Specifies a grouping parameter for the job.                                 | `Not specified`   |
-| `limit`        | Optional   | Additional parameters for job customization.                                | `Not specified`   |
-
-
-### Associate Products with Sub Catalog
-
-**Job Name:** `Associate products with sub catalog`
-
-**Job Enum ID:** `JOB\_UPD\_PROD\_ASSOC`
-
-**Description**
-
-The job identified by Job ID `JOB_UPD_PROD_ASSOC` is specifically crafted to link products within a child product catalog (typically a non-master catalog) with those in the master product catalog in OMS. This process is vital for ensuring accurate product associations across multiple Shopify stores utilizing the same product catalog, thereby enhancing consistency in the system.
-
-**Recommended Frequency**
-
-The recommended frequency for running this job is every 60 minutes. Adjust the frequency based on the frequency of updates or changes to product associations.
-
-**Custom Parameters**
-
-| **Parameter**     | **Type** | **Description**                                                                                                                                                                                                                      | **Default Value**      | **Example Value**        |
-| ----------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------- | ------------------------ |
-| **`configId`**    | String   | Specifies the configuration ID for updating product associations.                                                                                                                                                                    | IMP\_SHPFY\_SHOP\_PROD | ASSOC\_PROD\_CONFIG\_001 |
-| **`frequency`**   | Integer  | Specifies the frequency (in minutes) for running the job.                                                                                                                                                                            | 60                     | 30                       |
-| **`limit`**       | Optional | Sets a limit on the order import job, restricting the number of orders fetched from eCommerce.                                                                                                                                       | Not specified          | 100                      |
-| **`bufferTime`**  | Optional | Ensures orders are not imported until they have aged past a desired duration, accommodating post-processing workflows in eCommerce platforms.                                                                                        | Not specified          | 30 minutes               |
-| **`scheduleNow`** | Optional | When importing files into the OMS, force the system to pick the file out of sequence for immediate processing. Enabled by default when importing files from FTP, but can be disabled during high-volume syncs for system stability. | Enabled                | false                    |
+* This job has no custom parameters.
 
 ***
 
-<figure><img src="../.gitbook/assets/Associate product sub catalog.png" alt="" width="375"><figcaption></figcaption></figure>
+### Associate Product with sub catalog
 
+Job Name: `Associate Product with sub catalog`\
+Job Enum ID: `JOB_ACT_PROD_SHPFY`\
+Service name: `activateProductsOnShopifyLocation`\
+Flow: `HotWax to Shopify`
 
-### Remove Promo Code
+Retailers usually maintain a master catalog containing all their products. When selling some specific products in a particular country, they create a sub-catalog derived from the master catalog.
 
-**Job Name:** `Remove Promo Code`
+**The `Associate Product with Sub Catalog` job maps specific products to their respective sub-catalogs, verifying accurate product linkage within the catalog.**
 
-**Job Enum ID:** `JOB\_RMV\_PRMO\_CODE`
-
-**Description**
-
-The Remove Promo Code job, identified by Job ID JOB\_RMV\_PRMO\_CODE, is designed to remove promotional codes from the system. This job is crucial for maintaining an accurate and up-to-date list of active promotional offers on your platform.
-
-**Recommended Frequency**
-
-The frequency for running this job depends on the removal frequency of your promotional codes. Adjust the frequency accordingly to ensure timely and accurate removals.
+**How are products mapped?**\
+ERP systems (like NetSuite) generally maintain the mapping of the product and catalog. A suite script from NetSuite generates a JSON format file containing details about product mapping with the catalog and uploads it to an SFTP location. Then the `Associate Product with sub catalog` job is used to import the JSON in HotWax and upload it on `IMP_SHPFY_SHOP_PROD` MDM. Further, the `Process Bulk Import Files` job processes the file in HotWax OMS.
 
 **Custom Parameters**
 
-| **Parameter**              | **Type** | **Description**                                                                  | **Default Value**    | **Example Value**                          |
-| -------------------------- | -------- | -------------------------------------------------------------------------------- | -------------------- | ------------------------------------------ |
-| **`propertyResource`**     | String   | Specifies the property resource for the FTP configuration.                       | FTP\_CONFIG          | SFTP\_CONFIG\_001                          |
-| **`configId`**             | String   | Specifies the configuration ID for removing promo codes.                         | IMP\_RMV\_PRMO\_CODE | PROMO\_CONFIG\_002                         |
-| **`fileNameRegex`**        | String   | Specifies the regular expression for matching file names during synchronization. | \*.csv               | \*.csv                                     |
-| **`groupBy`**              | String   | Specifies the grouping parameter for multi-threading, such as `location_id`.     | Not specified        | location\_id                               |
-| **`additionalParameters`** | Optional | Specifies additional parameters for customization.                               | Not specified        | { "param1": "value1", "param2": "value2" } |
-| **`remoteFilename`**       | Optional | Specifies the remote filename for the job.                                       | Not specified        | sample\_file.txt                           |
-| **`scheduleNow`**          | Optional | Specifies whether to schedule the job for immediate processing.                  | false                | true                                       |
+* Frequency is the required parameter for this job.
+* It has some optional parameters.
 
-<figure><img src="../.gitbook/assets/Remove promo Code.png" alt="" width="375"><figcaption></figcaption></figure>
-
+***

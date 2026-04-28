@@ -4,34 +4,35 @@ description: >-
   precise shipping cost calculations and accurate label generation.
 ---
 
-# Shipping Boxes
+# Create Shipping Boxes
 
- HotWax Commerce lets users define these boxes for accurate shipping calculations and label generation, ensuring alignment with retailer packaging standards.
+HotWax Commerce lets users define these boxes for accurate shipping calculations and label generation, ensuring alignment with retailer packaging standards.
 
 This guide outlines a step-by-step process for retailers to establish and manage boxes within HotWax Commerce.
 
-Note:
+{% hint style="warning" %}
 Incorrect box selection may result in extra shipping charges for retailers.
+{% endhint %}
 
 ## Creating Boxes
 
-Users can create shipping boxes through the following steps:
+Users can create shipping boxes through the following steps in HotWax OMS:
 
-* Navigate to `HotWax Commerce` > `Hamburger Menu` > `Settings` > `General Settings`
-* Scroll down to find the `Shipment Box` section
-* Click `Add` to open the box creation form and add details such as:
+1. Navigate to **HotWax OMS** > **Settings** > **General Settings**.
+2. Scroll to the **Shipment Box** section.
+3. Click **Add** to open the box creation form and enter the details:
 
 | Field                         | Description                                                                                                                                            |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Shipment Box ID               | Shipment BOX ID with which the boxes will be recognized in HotWax Commerce                                                                             |
-| Description                   | Small description of the box, e.g., "Standard Box Square"                                                                                              |
-| Dimension Unit of Measurement | Specify the measurement unit for box dimensions, e.g., Inches, Centimeters, etc.                                                                       |
-| Box Dimensions                | Input width, height, and length in the chosen unit. Example: If using inches, entering "10" for box height implies the height of the box is 10 inches. |
+| **Shipment Box ID**           | Unique identifier for the box in HotWax Commerce.                                                                                                      |
+| **Description**               | Descriptive name, e.g., "Standard Medium Box".                                                                                                         |
+| **Dimension Unit of Measurement** | Unit for dimensions (e.g., Inches, Centimeters).                                                                                                      |
+| **Box Dimensions**            | Input width, height, and length.                                                                                                                      |
 
-* Click `Add` to save the box, the box will now appear in the shipment box section.
-* Use the `pencil` icon to edit box dimensions if needed.
+4. Click **Add** to save the box.
+5. Use the **Edit** (pencil) icon to update box dimensions if needed.
 
-The added box sizes can now be mapped from in the shipment carrier setup page.
+The added box sizes can now be mapped in the shipment carrier setup page.
 
 {% embed url="https://youtu.be/B_-s6FOtlok" %}
 Add Shipping Box
@@ -39,34 +40,18 @@ Add Shipping Box
 
 ## Adding Shipment Boxes for Specific Carriers
 
-Retailers often integrate with multiple shipping carriers. When sending box details to a carrier using just the box name, this association helps the carrier identify the box size and calculate shipping costs accordingly. Users can associate the shipment boxes for shipment carriers through the following steps:
+Retailers often integrate with multiple shipping carriers. When sending box details to a carrier, associating them helps the carrier identify the box size and calculate shipping costs accurately. Users can associate shipment boxes for carriers through the following steps in HotWax OMS:
 
-* In the HotWax Commerce interface, navigate to the `Settings` > `Carrier Setup` page.
-* Scroll to the bottom of the `Carrier Setup` page to find the `Carrier Shipment Box` section.
-* Click `Add` within the `Carrier Shipment Box` section to initiate box configuration.
-* Within the newly opened form, select the preferred shipping boxes from the dropdown menu. The dropdown menu displays boxes created in the general settings.
-* Select the appropriate carrier from the available options in the Shipment Box dropdown menu. This links the selected box with the carrier for shipping purposes.
-* Add packaging codes, if provided by shipping carriers, as it helps in their system's identification of box types. This maps carrier-specific box sizes with the boxes in Hotwax Commerce for easy identification by the carrier.
-* After adding box details and packaging codes (if applicable), save the carrier shipment box configurations by clicking the `Add` button within the form.
+1. Navigate to **HotWax OMS** > **Carriers**.
+2. Select the carrier you want to configure.
+3. Find the **Carrier Shipment Box** section.
+4. Click **Add** to associate a shipment box with this carrier.
+5. Select the **Shipment Box** from the dropdown (created in the previous step).
+6. Enter the **Packaging Code** provided by the shipping carrier. This is essential for carrier systems to identify the box type.
+7. Click **Add** to save the configuration.
 
 These configured boxes are now ready for selection by packers during the order fulfillment process, ensuring accurate packaging aligned with specific carriers for efficient shipping.
 
 {% embed url="https://youtu.be/dFkeW5U1F3I" %}
-Add SHipping Box to Carrier
-{% endembed %}
-
-## Adding Shipment Box to Order During Fulfillment
-
-Store associates can select appropriate boxes through the following steps:
-
-* Navigate to the specific order details within the `In Progress` tab of the `Fulfillment App.`
-* Within the order details section, locate and click on the `Add Boxes` option.
-* Add the required number of boxes corresponding to the order items, ensuring adequate packaging space without excess boxes. Store associates can choose to pack multiple order items into one box, reducing shipping costs and environmental impact.
-* Upon adding boxes, store associates can further specify box types for individual order items. Click on the `select box` option against the order item and navigate through the dropdown menu to select the appropriate option corresponding to each item's size and packaging requirements.
-* After appropriately packing all items and selecting box types click `Pack` to update the shipping carrier for shipping label generation with the least shipping charges for the selected boxes.
-
-By diligently specifying both the total box quantity for the entire order and the appropriate box types for individual order items, store associates ensure accurate shipping labels, cost-effective packaging, and efficient utilization of available space, ultimately reducing shipping expenses for retailers.
-
-{% embed url="https://youtu.be/385HSXa8Pdc" %}
-Add Shipment Box During Fulfillment
+Add Shipping Box to Carrier
 {% endembed %}

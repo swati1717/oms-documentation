@@ -6,9 +6,11 @@ To create a return for a customer's order that has already been fulfilled and co
 ## Request
 
 ### Endpoint
+
 - POST: `https://{host}/api/createReturn`
 
 ### Header
+
 - Content-Type: application/json
 
 ### Body
@@ -67,7 +69,7 @@ To create a return for a customer's order that has already been fulfilled and co
                 "itemAdjustments": [
                     {
                         "returnAdjustmentTypeId": "",
-                        "amount": 
+                        "amount":
                     },
                     {
                         "type": "",
@@ -94,7 +96,6 @@ To create a return for a customer's order that has already been fulfilled and co
     }
 }
 ```
-
 
 **In the request body, include the information necessary for creating a return, including all the parameters listed below:**
 
@@ -152,6 +153,14 @@ Return adjustments are used to categorize different return-level charges. By sto
 | RET_VAT_TAX_ADJ        | Return VAT Tax                        |
 | RET_WARRANTY_ADJ       | Return Warranty                       |
 
+## Return channels
+
+The two return channels are as follows:
+
+| Enum Id            | Enum Type Id     | Description            | Enum Name         | Sequence Id |
+|---------------------|------------------|------------------------|-------------------|-------------|
+| ECOM_RTN_CHANNEL   | RETURN_CHANNEL   | Ecom Return Channel    |                   | 01          |
+| POS_RTN_CHANNEL    | RETURN_CHANNEL   | POS Return Channel     |                   | 02          |
 
 <details>
 
@@ -211,13 +220,14 @@ Return adjustments are used to categorize different return-level charges. By sto
 
 </details>
 
-
 ## Response
 
 ### Header
+
 - Content-Type: application/json
 
 ### Body
+
 The response will include all the parameters provided in the request body, along with any error messages and login information.
 
 <details>

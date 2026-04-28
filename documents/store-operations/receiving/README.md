@@ -1,17 +1,31 @@
----
-description: Streamline your stock management with HotWax Commerce's Receiving app.
----
+# Receiving app user manual
 
-# Receiving
+## Overview
 
-## Introduction
+The HotWax Commerce Receiving app helps store associates receive inbound inventory from transfer orders, purchase orders, and returns. It runs in a browser, supports barcode scanning, and updates inventory in HotWax Commerce as receiving is saved or completed.
 
-HotWax Commerce’s Receiving app enables stock associates to receive items quickly and accurately by utilising features like barcode scanning, enlarged product image, and an easy-to-use interface.
+## Getting started
 
-This section focuses on managing incoming shipments, returns, and purchase orders through the Receiving app.
+### Logging in
 
-### List of Topics
+1. Open the Receiving app URL provided by your organization.  
+2. If you are not already signed in, you will be redirected to HotWax Launchpad.  
+3. After authentication, you will return to the Receiving app.
 
-1. Receiving Shipments
-2. Receiving Returns
-3. Receiving Purchase Orders
+### Navigation and dashboard
+
+The left menu includes:
+
+* Transfer Orders  
+* Returns  
+* Purchase Orders  
+* Settings
+
+All list pages support search, open/completed filtering, pull-to-refresh, and load-more actions when additional records are available.
+
+## Guides
+
+* For transfer orders, see [Transfer Orders](transfer-orders.md).  
+* For purchase orders and returns, see [Returns and Purchase Orders](returns-and-purchase-orders.md).  
+* For app configuration, see [Settings](settings.md).  
+* For permission mapping, see [Permissions](permissions.md).

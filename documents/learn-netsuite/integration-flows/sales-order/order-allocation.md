@@ -5,13 +5,13 @@ description: >-
 
 # Order Allocation
 
-After an order's items are allocated, the OMS begins syncing them to systems that are responsible for fulfillment of those items. When items are allocated to stores for fulfillment, they show up in the HotWax Store Fulfillment App.
+After an order's items are allocated, the OMS begins syncing them to systems that are responsible for fulfillment of those items. When items are allocated to stores for fulfillment, they show up in the HotWax Store Fulfillment or BOPIS Apps.
 
 If the facility where an item is allocated uses NetSuite for fulfillment, usually a warehouse, then the OMS syncs those items' allocation with NetSuite.
 
 It's important to remember that if items are not allocated to a `NetSuite Facility` their allocation is not synced to NetSuite until after fulfillment is complete.
 
-<figure><img src="../../.gitbook/assets/16.png" alt=""><figcaption><p>Items' allocations synced from HotWax Commerce to NetSuite</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/item-allocations-synced-to-netsuite.png" alt=""><figcaption><p>Items' allocations synced from HotWax Commerce to NetSuite</p></figcaption></figure>
 
 **Actions**
 
@@ -33,7 +33,6 @@ Import NetSuite fulfillment item allocations:
 HC_SC_UpdateSalesOrders
 ```
 {% file src="../../.gitbook/assets/Brokered Order Items Sample Feed.csv" %}
-
 
 * [x] Sync new orders from HotWax to NetSuite
   * [x] Sync customers
@@ -76,7 +75,7 @@ IMP_ORDER_ITM_RJCT
 If an order is rejected from the HotWax Store Fulfillment App with a valid inventory issue reason, then inventory delta's are also pushed to NetSuite. These are the valid inventory variance reasons to be pushed to NetSuite:
 
 * VAR\_STOLEN
-* VAR\_DAMANGED
+* VAR\_DAMAGED
 * VAR\_FOUND
 
 **SFTP Locations**

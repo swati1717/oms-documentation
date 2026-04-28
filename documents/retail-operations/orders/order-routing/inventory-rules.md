@@ -6,7 +6,7 @@ description: Learn about Inventory Rules.
 
 As discussed, <mark style="color:orange;">**inventory rules**</mark> help orchestrate the process of choosing the most suitable fulfillment locations for each order in a batch of orders based on defined criteria like proximity, stock levels, and strategic priorities. These rules act as sequential steps in the order routing, guiding the brokering engine through multiple checks to find the best fulfillment location.
 
-## Why Use Multiple Inventory Rules?
+## Why Use Multiple Inventory Rules
 
 Multiple inventory rules are required because a single rule may not allocate inventory to all orders in a batch. If the first rule does not allocate inventory to some orders, the brokering engine will proceed to the next rule in sequence. This multi-step process continues through each rule until all possible options are exhausted.
 
@@ -43,7 +43,7 @@ In this section, we’ll demonstrate how to set up multiple inventory rules for 
 
 <table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><ol><li><mark style="color:orange;"><strong>Filters</strong></mark></li></ol><p>Look up eligible facilities with inventory that can fulfill an order.</p></td><td></td><td></td></tr><tr><td><ol start="2"><li><mark style="color:orange;"><strong>Sorting</strong></mark></li></ol><p>Determine which eligible facility should be prioritized to allocate an order.</p></td><td></td><td></td></tr><tr><td><ol start="3"><li><mark style="color:orange;"><strong>Actions</strong></mark></li></ol><p>Define fallback actions for orders that cannot be fully allocated to a single facility. The actions also help configure the final steps if all previous rules don’t allocate inventory to orders.</p></td><td></td><td></td></tr></tbody></table>
 
-<figure><img src="../../.gitbook/assets/chooseOptimallocations.png" alt=""><figcaption><p>Choose Optimal Facilties</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/choose-optimal-allocations.png" alt=""><figcaption><p>Choose Optimal Facilities</p></figcaption></figure>
 
 ### Step 1: Finding Facilities with Inventory Using Filters
 
@@ -57,12 +57,17 @@ Retailers can set up facility groups in HotWax’s `Facility App`. Creating faci
 
 <mark style="color:orange;">**HotWax Commerce offers several inventory filters to fine-tune which facilities are eligible for allocation, including:**</mark>
 
-<figure><img src="../../.gitbook/assets/Inventoryfilters.png" alt="" width="563"><figcaption><p>Inventory Filters</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/inventory-filters.png" alt=""><figcaption><p>Inventory Filters</p></figcaption></figure>
 
+* **All items available anywhere:** Only allocate a shipgroup if all the items are available. All items do not have to be available at the same location, only available at the same time. This is useful if an order should only be shipped if all of it can be shipped without cancellation.
 * **Turn off the facility order limit check:** Retailers can set[ fulfillment capacity](https://docs.hotwax.co/documents/system-admins/administration/facilities/configure-fulfillment-capacity) in HotWax, allowing them to define the maximum number of orders a facility can fulfill in a day. Disabling the facility order limit filter gives retailers the flexibility to bypass the defined order limit for a facility, which is especially useful during peak times or high-demand periods. For example, if a retailer turns off this limit, orders can continue to be assigned to that facility even after its maximum capacity has been reached.
-* **Brokering safety stock:** Different from online ATP safety stock, [brokering safety stock](https://docs.hotwax.co/documents/retail-operations/orders/brokering/scenarios) defines the minimum stock required for an order to be brokered to a facility. For example, if a retailer sets a brokering safety stock level of 10 units, only facilities with at least 10 units of the item in stock will be eligible to fulfill the order. This prevents over-allocation and maintains safety stock levels for unforeseen demand.
+* **Shipment Threshold Value Check:** Retailers can set a minimum shipment value to prevent order splitting for low-value allocations, ensuring efficient shipping. For example, if the threshold is $25, items will only be allocated if their value exceeds $25.
+* **Brokering safety stock:** Different from online ATP safety stock, brokering safety stock defines the minimum stock required for an order to be brokered to a facility. For example, if a retailer sets a brokering safety stock level of 10 units, only facilities with at least 10 units of the item in stock will be eligible to fulfill the order. This prevents over-allocation and maintains safety stock levels for unforeseen demand.
 * **Facility Group:** Custom grouping of locations. Grouping certain facilities allows retailers to simplify their decision-making. For example, as discussed above, there can be a dedicated facility group of only warehouses, one group can have both stores and warehouses or there can also be slow-moving or lower-demand facilities can be grouped together and allotted for non-urgent orders, while high-demand facilities are reserved for time-sensitive fulfillment.
 * **Proximity:** The distance between a fulfillment facility and the customer’s address. When a facility address is added in HotWax, its latitude and longitude are automatically saved. Similarly, HotWax saves the latitude and longitude for customer addresses as well. With both locations’ coordinates stored, the brokering engine can compare them to identify warehouses and stores within the defined proximity that have available inventory. For example, a retailer can set a 200-mile proximity limit for next-day delivery orders, so only inventory within 200 miles of the customer’s address is considered. This approach supports faster, cost-effective delivery while meeting SLA requirements.
+* **Exclude Facility Group:** Exclude a specific facility group from order allocation. Rather than selecting all the valid facility groups individually, retailers can simply exclude the one group they don’t want certain orders to be allocated to.
+
+For example, if a retailer wants to allocate inventory for rejected orders only to warehouses and retail stores while excluding only outlet stores, they can apply the exclude filter to omit outlet stores instead of selecting both other groups.
 
 {% hint style="info" %}
 All facilities enabled for online fulfillment will be attempted for brokering if no filter is applied.
@@ -81,7 +86,7 @@ First Inventory Rule Filters
 3. Configure filters, select the right filters to narrow down eligible facilities. For the <mark style="color:orange;">**“Same-day/Next-day orders” routing rule**</mark><mark style="color:orange;">,</mark> we will choose <mark style="color:orange;">**“Facility Group**</mark><mark style="color:orange;">”</mark> and <mark style="color:orange;">**“Proximity”**</mark><mark style="color:orange;">.</mark>
 
 * **Facility Group:** Select <mark style="color:orange;">**“Warehouses”**</mark> from the dropdown. This limits eligibility to only warehouses with available inventory. **Why did we choose warehouse locations?** Warehouses handle larger inventory volumes and can better support online order fulfillment compared to stores, which often focus on walk-in customers.
-*   **Proximity:** Set the distance to **100 miles**, so the rule includes only those warehouses within a 100-mile radius of the customer’s location.
+* **Proximity:** Set the distance to **100 miles**, so the rule includes only those warehouses within a 100-mile radius of the customer’s location.
 
     This means that only nearby warehouses are considered, optimizing delivery speed and meeting SLA requirements.
 
@@ -93,7 +98,7 @@ Once the eligible facilities are filtered, the next step is to set up sorting cr
 
 <mark style="color:orange;">**Here are the available sorting options:**</mark>
 
-<figure><img src="../../.gitbook/assets/Inventorysorting.png" alt="" width="563"><figcaption><p>Inventory Sorting</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/inventory-sorting.png" alt="" width="563"><figcaption><p>Inventory Sorting</p></figcaption></figure>
 
 * **Proximity:** Retailers can sort inventory allocation based on the distance between the customer's shipping address and the facility. This sorting method prioritizes inventory located closer to the customer, helping reduce shipping times and costs, especially for expedited orders or those requiring same-day or next-day delivery.
 * **Facility order limit:** To maintain a balanced workload at facilities, they can also be sorted based on the remaining fulfillment capacity.
@@ -215,7 +220,7 @@ Final inventory rule
 {% hint style="warning" %}
 Once you've configured each rule, change its status from **Draft** to **Active** to make it operational. To do this, click on **Draft** and select **Active,** or revert an active rule back to **Draft** if any adjustments are required.
 
-Once all rules are active, and your routing is fully configured, set the [Brokering Run](broken-reference) to **Active** so that orders can be processed as scheduled.
+Once all rules are active, and your routing is fully configured, set the [Brokering Run](/documents/retail-operations/orders/order-routing/brokering-runs.md) to **Active** so that orders can be processed as scheduled.
 {% endhint %}
 
 ### Add Special Handling for Standard Orders
@@ -267,7 +272,7 @@ For the final **third inventory rule**, we will look up all warehouse locations.
 
 This is how in a single brokering run, you can set up multiple routings with unique inventory rules based on each order batch specific needs.
 
-<figure><img src="../../.gitbook/assets/routingframeworkexample.png" alt=""><figcaption><p>Everyday Order Routing</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/everyday-order-routing.png" alt=""><figcaption><p>Everyday Order Routing</p></figcaption></figure>
 
 **What did we do differently for standard orders?**
 
@@ -297,4 +302,4 @@ By leveraging HotWax Commerce, `Order Routing App`retailers can create highly cu
 
 ### Next Steps
 
-In the following sections, we’ll cover a range of business [use cases](scenarios.md) that the HotWax Commerce `Order Routing` App can help achieve, highlighting its adaptability to various inventory and order fulfillment needs.
+In the following sections, we’ll cover a range of business [use cases](./use-cases.md) that the HotWax Commerce `Order Routing` App can help achieve, highlighting its adaptability to various inventory and order fulfillment needs.

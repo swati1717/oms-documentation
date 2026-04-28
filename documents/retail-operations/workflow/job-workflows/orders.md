@@ -39,9 +39,11 @@ Job Enum ID: `JOB_APR_ORD`\
 Service Name: `approvePendingShopifyOrders`\
 Flow : Order Approval
 
-**The `Approve Orders` job changes the status of orders from 'Created' to 'Approved,' making them eligible for brokering.** Orders must be verified and approved before fulfilment to prevent invalid or fraudulent orders. The Approved Orders job runs every 30 minutes and approves all the orders placed between the last job ran up and the current timestamp.
+**The `Approve Orders` job changes the status of orders from 'Created' to 'Approved,' making them eligible for brokering.** Orders must be verified and approved before fulfillment to prevent invalid or fraudulent orders. The Approved Orders job runs every 30 minutes and approves all the orders placed between the last job ran up and the current timestamp.
 
-**How are orders approved?** This job checks the payment preference for each order in the 'Created' state. If the payment preference is either 'Authorised' or 'Settled,' then the job changes the order status from ‘Created' to 'Approved’.
+**How are orders approved?**&#x20;
+
+This job checks the payment preference for each order in the 'Created' state. If the payment preference is either 'Authorised' or 'Settled,' then the job changes the order status from ‘Created' to 'Approved’.
 
 **Custom Parameter:**
 
@@ -150,7 +152,9 @@ Another method for importing returns is subscribing to Shopify webhooks via the 
 
 Although Shopify allows fetching 250 returns per API call, to avoid issues with large files, HotWax will download up to 100 returns per API call.
 
-**How are returns imported?** HotWax sends an API request to Shopify, which returns the order return details in JSON format. The JSON file is then uploaded to the internal file system of HotWax Commerce for further processing. The `Process Bulk Import Files` job then reads a JSON file and creates order records in HotWax Commerce.
+**How are returns imported?**
+
+HotWax sends an API request to Shopify, which returns the order return details in JSON format. The JSON file is then uploaded to the internal file system of HotWax Commerce for further processing. The `Process Bulk Import Files` job then reads a JSON file and creates order records in HotWax Commerce.
 
 Note: To find the Uploaded file, login to HotWax Commerce OMS, then navigate to Hamburger Menu>EXIM Page > Shopify Jobs tab > `Shopify Order Return`.
 
@@ -186,6 +190,7 @@ Automated messages sent from eCommerce (Shopify) to OMS whenever an event occurs
 4. Returns
 
 </details>
+***
 
 ### Upload
 
@@ -235,21 +240,6 @@ To know more about this, refer to this [document](https://docs.hotwax.co/documen
 
 ***
 
-### Update Order Tags
-
-**Job Name:** `Update Order Tags`\
-**Job Enum ID:** `JOB_UPD_TAG_ORD`
-
-**Description**\
-The Update Order Tags job, identified by Job Enum ID UPDATE\_ORDER\_TAGS, is designed to perform bulk updates to order tags on the eCommerce platform. This job facilitates efficient and large-scale modifications to order tags, ensuring synchronization with the latest data.
-
-**Recommended Frequency**\
-The job frequency can be configured based on the business needs and the desired frequency of updating order tags in bulk.
-
-**No custom parameters for this job**
-
-***
-
 ### Complete Order Item from Shopify
 
 Job Name: `Complete Order Item from Shopify`\
@@ -283,33 +273,15 @@ For example, if the retailers want to ensure that payment must be captured befor
 
 Some jobs, like `party identification` and `order identification`are those required jobs that need to be run before this job ensures custom conditions are matched.
 
-**How are orders approved?** This job queries the HotWax Commerce database to fetch orders in the created state and filters out the orders that pass the checks defined by the retailer. The filtered orders’ are then changed to the ‘Approved’ status.
+**How are orders approved?**
+
+This job queries the HotWax Commerce database to fetch orders in the created state and filters out the orders that pass the checks defined by the retailer. The filtered orders’ are then changed to the ‘Approved’ status.
 
 **Custom Parameters**
 
 * The recommended frequency for this job is 15 minutes.
 * This job has configId and propertyResource as the required parameters.
 * It has some optional parameters.
-
-***
-
-### Bulk Process Refund for Received Return
-
-**Job Name:** `Bulk Process Refund for Received Return`\
-**Job Enum ID:** `BLK_PROCESS_RTN_RFND`
-
-**Description**\
-The Bulk Process Refund for Received Returns job is designed to efficiently process returns in bulk and push them to the Shopify platform. This job specifically handles returns that are associated with a sales channel set to POS.\
-It is particularly useful for retailers who do not use Shopify's POS system, enabling them to manage returns and process refunds in bulk for smoother operations and accurate financial records.
-
-**Custom Parameters**
-
-| Parameter       | Type     | Description                                                                                                               | Default Value |
-| --------------- | -------- | ------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| `startDateTime` | Optional | It marks the beginning of the validity period for an entity or event, such as the defined period of the received returns. | Not Specified |
-| `returnId`      | Optional | Unique identifier for return transactions within the system.                                                              | Not Specified |
-
-***
 
 ***
 
@@ -360,30 +332,6 @@ Shopify uploads a JSON file with returns and exchanges to an SFTP location. The 
 * It has some optional parameters.
 
 To know more about returns, refer to this [document](https://docs.hotwax.co/documents/learn-shopify/shopify-integration/how-does-hotwax-commerce-manage-order-returns/shopify-pos-exchanges).
-
-***
-
-### Create Shipment for Incoming Returns
-
-**Job Name:** `Create Shipment for Incoming Returns`&#x20;
-
-**Job EnumID:** `INCOMING_SHPMNT_RETN`
-
-The `Create Shipment for incoming returns` job serves to manage the reception of return shipments efficiently. When a return is initiated through Shopify, the return item details are added into the receiving app of HotWax Commerce.
-
-**Custom parameters**
-
-| Parameter              | Type     | Description                                                                                                                                                                                                                          | Default Value          |
-| ---------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------- |
-| `configId`             | Required | Identifies the configuration for Order Item Attribute records.                                                                                                                                                                       | INCOMING\_SHPMNT\_RETN |
-| `propertyResource`     | Required | Specifies the property resource for configuration.                                                                                                                                                                                   | FTP\_CONFIG            |
-| `remoteFilename`       | Optional | Specifies the remote filename for processing.                                                                                                                                                                                        | Not specified          |
-| `groupBy`              | Optional | Specifies a grouping parameter for the job.                                                                                                                                                                                          | Not specified          |
-| `additionalParameters` | Optional | Additional parameters for job customization.                                                                                                                                                                                         | Not specified          |
-| `fileNameRegex`        | Optional | Specifies a regular expression for filtering filenames.                                                                                                                                                                              | Not specified          |
-| importpath             | Optional | Specifies the SFTP location and path for importing the file into the system.                                                                                                                                                         | Not specified          |
-| `scheduleNow`          | Optional | When importing files into the OMS, forces the system to pick the file out of sequence for immediate processing. Enabled by default when importing files from FTP, but can be disabled during high-volume syncs for system stability. | Not specified          |
-| `createdByJobID`       | Optional | ID of the job that initiated this job.                                                                                                                                                                                               | Not specified          |
 
 ***
 
@@ -520,24 +468,6 @@ Order metafields are basically some additional information of an order. **The `I
 
 ***
 
-### Import Customer
-
-**Job Name**: Import Customers from Shopify\
-**Job Enum ID**: JOB\_IMP\_CSTMR
-
-**Description**\
-The Import Customer job imports customer data from Shopify into HotWax Commerce. This job ensures that customer information, including contact details and order history, is accurately synced between the two platforms, supporting smooth order processing and customer management in HotWax Commerce.
-
-**Custom Parameters**
-
-| Parameter    | Type     | Description                                                              | Default Value |
-| ------------ | -------- | ------------------------------------------------------------------------ | ------------- |
-| frequency    | Required | Defines the default duration of the last syncing of the shipment status. | 15            |
-| `bufferTime` | Optional | Specifies the buffer time (in minutes) for scheduling job.               | Not Specified |
-| limit        | Optional | Additional parameters for job customization.                             | Not Specified |
-
-***
-
 ### Approve Transfer Order
 
 Job Name: `Approve Transfer Order`\
@@ -593,5 +523,23 @@ NetSuite runs a SuiteScript to provide details of items that are fulfilled in th
 * The recommended frequency for this job is 15 minutes.
 * This job has configId and propertyResource as the required parameters.
 * It has some optional parameters.
+
+***
+
+### Import Customer
+
+**Job Name**: Import Customers from Shopify\
+**Job Enum ID**: JOB\_IMP\_CSTMR
+
+**Description**\
+The Import Customer job imports customer data from Shopify into HotWax Commerce. This job ensures that customer information, including contact details and order history, is accurately synced between the two platforms, supporting smooth order processing and customer management in HotWax Commerce.
+
+**Custom Parameters**
+
+| Parameter    | Type     | Description                                                              | Default Value |
+| ------------ | -------- | ------------------------------------------------------------------------ | ------------- |
+| frequency    | Required | Defines the default duration of the last syncing of the shipment status. | 15            |
+| `bufferTime` | Optional | Specifies the buffer time (in minutes) for scheduling job.               | Not Specified |
+| limit        | Optional | Additional parameters for job customization.                             | Not Specified |
 
 ***

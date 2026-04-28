@@ -16,18 +16,35 @@ Users can perform various actions on a specific group by accessing the overflow 
 
 HotWax Commerce allows retailers to create product stores in HotWax Commerce to configure brand-specific settings across one or multiple Shopify stores. Retailers can link specific product stores with designated facility groups to define the scope and purpose of various facilities within a product store. This is specifically crucial when creating facility groups for brokering the brokering engine ensures that inventory allocation aligns with each brand's specific requirements. The product store can be linked to the facility group by clicking the `number chip` against the product store option.
 
-### Manage Facilities in a Group
-
-The number displayed in front of `Facilities` on the group card indicates the count of facilities linked to that group. Clicking on this number provides users with a list of all associated facilities. Users can efficiently manage facility associations in bulk within a designated group by utilizing the `Quick Edit` button. Clicking on the `Quick Edit` button opens a modal where checkboxes next to facilities can be marked for association. Click on the save icon to finalize the process, allowing hassle-free facility management within the group.
-
 ### Creating a New Group
 
-There are some default groups already added when you deploy HotWax Commerce. However, retailers can create groups as per their requirements by scrolling to the end of the page and then clicking on the `Create Group` button. On clicking the `Create Group` button a pop-up window appears with the following fields-
+Retailers can create custom groups by clicking the plus icon at the bottom right of the Group tab. A modal window will appear asking for the following details:
 
-* Name
-* Internal ID
-* System Group Type
-* Description After filling in this information users need to click on the `+` icon button to create a new group.
+- **Name**: Enter the name of the facility group being created.
+
+- **Internal ID**: The Internal ID is automatically generated based on the group name. It is used in HotWax to uniquely identify a group and can be edited manually as well.
+
+- **Group Type**: Each group can be assigned a type. Users need to select the relevant group type from the dropdown menu. This is optional.
+
+- **Product Store**: Link facility groups to product stores if they need to be used for routing rules of that product store.
+
+- **Description**: A short description of the facility group helps understand its purpose and business needs later. This field is optional.
+
+These details can be modified even after the group is created, except for the Internal ID.
+
+### Manage Facilities in a Group
+
+The number displayed in front of the facilities on the group card represents the total count of facilities included in that group. Clicking on this number redirects to the Manage Facilities page, where users can view and manage all associated facilities for that group.
+
+**List of Actions Users Can Perform on the Manage Facilities Page:**
+
+- **Adding a Facility**: On the Manage Facilities page, users can view a list of all available facilities on the left side. They can add any facility as needed by clicking the add icon. Additionally, with the INCLUDE ALL option at the top, users can add all facilities to the group at once instead of manually selecting each facility.
+
+- **Custom Sequence**: Users can drag and drop individual facilities to customize the facility sequence considered for order routing.
+
+- **Removing a Facility**: Users can remove a facility from a group by clicking the remove icon next to the facility name. For example, in the “Same Day Shipping” group, if certain facilities are no longer eligible to ship orders on the same day, users can remove them using this button.
+
+Click the save icon below to finalize the changes.
 
 ## System Facility Group Types
 
@@ -36,7 +53,7 @@ These are default facility group types, which are available when you deploy HotW
 * **Pickup**
   * Facilities managing BOPIS orders often require a designated staging area to ensure efficient order processing. Furthermore, given the urgency of same-day customer pickups, immediate picking and packing are essential. Only Facilities that have the capability to fulfill BOPIS orders can be added to this group. You can create a facility group with a `PICKUP` group type to ensure that facilities are available to the customer on Shopify PDP as a pickup option. For adding individual facilities, you can also go to the `Facility Details` page and turn the toggle on for `Allow Pickup`, which will automatically add the facility to the `PICKUP` facility group.
 * **Brokering Group**
-  * Retailers may opt not to facilitate order brokering for all stores, even if their facilities support order management system (OMS) fulfillment. This could be due to a preference to prioritize certain facilities during brokering runs. In such scenarios, retailers must establish facility groups for which they intend to broker orders simultaneously. These designated facility groups should be categorized with a `BROKERING` subtype. Once classified, facility groups with the `BROKERING` subtype become visible to users within the [Order Routing app](https://docs.hotwax.co/documents/retail-operations/orders/order-routing#configurable-order-routing-app) when establishing brokering rules.
+  * Retailers may opt not to facilitate order brokering for all stores, even if their facilities support order management system (OMS) fulfillment. This could be due to a preference to prioritize certain facilities during brokering runs. In such scenarios, retailers must establish facility groups for which they intend to broker orders simultaneously. These designated facility groups should be categorized with a `BROKERING` subtype. Once classified, facility groups with the `BROKERING` subtype become visible to users within the [Order Routing app](../../../retail-operations/orders/order-routing/README.md) when establishing brokering rules.
 * **Online Facility Group**
   * Facilities have the option to choose whether or not to participate in selling their inventory online. If a facility is capable of fulfilling orders and wants its inventory to be sold online, it can be added to a facility group with the `CHANNEL FAC GROUP` subtype. Conversely, if a facility decides not to sell its inventory online, it can be excluded from the group.
   * Retailers can have multiple online facility groups for different channels. If a retailer sells their inventory on different channels, For example, on Shopify and Amazon, they can have two Groups, one for each Amazon and Shopify with the `CHANNEL FAC GROUP` subtype. The facilities that are added to the Shopify facility group would be available to sell their inventory only on Shopify and Vice Versa. The facility group created with the `CHANNEL FAC GROUP` subtype will also be available as options in toggles in the `sell online` card on the `facility details` page which can be turned on to add the facility to the respective facility group.
@@ -51,4 +68,4 @@ These are default facility group types, which are available when you deploy HotW
 Users can see groups linked to specific facilities in the facilities' details page and also add individual facilities to a group by clicking on the `Link to Group` facility button in the `groups` tab.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/Groups.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/groups.png" alt=""><figcaption></figcaption></figure>
