@@ -92,32 +92,44 @@ https://{instance}.hotwax.io/commerce/control/ViewShopifyShop?shopId=<shopId>
 
 **Live example — Shop ID: 10000 (`hc-sandbox`)**
 
+#### Overview
+
 | Field | Value |
 |---|---|
-| Shop ID | `10000` |
-| Name | `hc-sandbox` |
-| Shop Domain | `hc-sandbox.myshopify.com` |
+| Phone | `41965584548`, `9826754548` |
+| Email | `deepak.dixit@hotwax.co` |
+| Store Name | `HC Demo Store` |
 | Owner | `HotWax Commerce Shopify` |
 | Plan | `partner_test` |
 | Primary Location ID | `67890151588` |
+| Shop Domain | `hc-sandbox.myshopify.com` |
 | Weight Unit | `lb` |
 | Currency | `USD` |
 | Country Code | `US` |
 | Time Zone | `America/New_York` |
+
+#### Shopify Config
+
+| Field | Value |
+|---|---|
+| Name | `10010 hc-sandbox` |
 | Access Scope | `Shopify shop read and write access` |
 | API Version | `2025-07` |
 | Connect URL | `https://hc-sandbox.myshopify.com/` |
-| Client ID | `ec8cec8c4299d0ea17269da567eebc28` |
 | Process Refund | `Y` |
+| Client ID | `ec8cec8c4299d0ea17269da567eebc28` |
+| Access Token | (hidden — copy via super user action) |
+| Client Secret | (hidden — copy via super user action) |
+| Last Updated | `07-12-2025 02:35 AM` |
 
-**Shopify Scripts (auto-loaded):**
+#### Shopify Scripts (auto-loaded)
 
-| Script | ID |
-|---|---|
-| Pre-order JS | `10001` |
-| Pre-order CSS | `10003` |
-| BOPIS JS | `10016` |
-| BOPIS CSS | `10017` |
+| Script ID | Type | Version | File Type | From Date | Shopify Tag ID |
+|---|---|---|---|---|---|
+| `10001` | Pre-order JS | v1.0.0 | application/javascript | 06-11-2024 09:00 AM | `280275648676` |
+| `10003` | Pre-order CSS | v1.0.0 | text/css | 06-11-2024 09:00 AM | — |
+| `10016` | BOPIS JS | v1.0.0 | application/javascript | 06-12-2024 08:45 AM | `280346198180` |
+| `10017` | BOPIS CSS | v1.0.0 | text/css | 06-12-2024 08:45 AM | `280347050148` |
 
 ### 2.2 Quick Actions on the Shop Summary Card
 
@@ -162,44 +174,103 @@ Map the **default Shopify location** to the OMS brokering queue location. This i
 
 ### 2.6 Map Facilities to Shopify Locations
 
-Required for POS inventory sync.
-
-**Mapped locations (live example):**
-
-| Facility | Shopify Location ID |
-|---|---|
-| BROADWAY | `67890446500` |
-| BROOKLYN | `67890479268` |
-| CENTERVILLE | `67890282660` |
+Required for POS inventory sync. Facilities and Shopify locations are mapped one-to-one.
 
 **Steps:**
 1. Shopify Shop page → **Facilities** section
 2. Click **"Import Shopify locations in HotWax"**
 3. Select locations → OMS creates matching facilities
-4. Facilities and Shopify locations are mapped one-to-one
+4. Map each facility to its Shopify Location ID
+
+**Live facility-location mappings (hc-sandbox):**
+
+| Facility | Facility Type | Shopify Location ID |
+|---|---|---|
+| BROADWAY | RETAIL_STORE | `67890446500` |
+| BROOKLYN | WAREHOUSE | `67890479268` |
+| CENTERVILLE | RETAIL_STORE | `67890282660` |
+| DIVRETAILSTORE | RETAIL_STORE | `111` |
+| GARDEN_CITY | RETAIL_STORE | `67890544804` |
+| INDORE | RETAIL_STORE | `23` |
+| MIAMI2 | RETAIL_STORE | `Test20` |
+| MIAMI3 | WAREHOUSE | `598456184` |
+| OREM | RETAIL_STORE | `67890348196` |
+| QUEENS | RETAIL_STORE | `67890577572` |
 
 ### 2.7 Data Mappings
 
-Three types must be configured — import from Shopify first, then map:
+Configure all mapping types from the Shopify Shop page. Import from Shopify first, then map each value to its OMS equivalent. Mappings can be edited anytime via the overflow menu.
+
+#### Sales Channel Mappings
+
+Maps Shopify sales channels to OMS internal channel types.
+
+| Shopify Value | OMS Mapped Value |
+|---|---|
+| `android` | `PHONE_SALES_CHANNEL` |
+| `exchange` | `EXCHG_SALES_CHANNEL` |
+| `iphone` | `PHONE_SALES_CHANNEL` |
+| `Marketplace` | `MKTP_SALES_CHANNEL` |
+| `pos` | `POS_SALES_CHANNEL` |
+| `shopify_draft_order` | `CSR_SALES_CHANNEL` |
+| `web` | `WEB_SALES_CHANNEL` |
+
+> [!IMPORTANT]
+> Missing sales channel mappings cause order processing errors — orders from unmapped channels will not be handled correctly.
+
+#### Payment Method Mappings
+
+Maps Shopify payment method names to OMS payment type IDs.
+
+| Shopify Value | OMS Mapped Value |
+|---|---|
+| `afterpay` | `EXT_SHOP_AFTRPAY` |
+| `afterpay_north_america` | `EXT_SHOP_AFTRPAY_NA` |
+| `American Express` | `EXT_SHOP_AMEX` |
+| `Discover` | `EXT_SHOP_DISCOVER` |
+| `Klarna` | `EXT_SHOP_KLARNA` |
+| `Mastercard` | `EXT_SHOP_MASTERCARD` |
+| `paypal` | `EXT_SHOP_PAYPAL` |
+
+#### Product Type Mappings
+
+Maps Shopify product types to OMS product types. Configure **before** the first product download.
+
+| Shopify Value | OMS Mapped Value |
+|---|---|
+| `donation` | `DONATION` |
+| `Gift Card` | `DIGITAL_GOOD` |
+| `Gift Cards` | `DIGITAL_GOOD` |
+| `Loyalty Card` | `DIGITAL_GOOD` |
+
+#### Additional Mapping Types
 
 | Mapping Type | Purpose |
 |---|---|
-| **Sales Channel** | Shopify sales channels → OMS channels |
-| **Product Types** | Shopify product types → OMS product types |
-| **Payment Methods** | Shopify payment methods → OMS payment types |
+| **Order Item Association** | Maps Shopify SKU variants to OMS product IDs |
+| **Order Item Group Association** | Groups order items for combined fulfillment |
+| **Product Tag** | Maps Shopify product tags to OMS attributes |
+| **Order Customer Classification** | Classifies customers based on Shopify order data |
+
+### 2.8 Shipping Method (Carrier Shipment) Mappings
+
+Maps Shopify shipping method names to OMS carrier + shipment method combinations.
 
 **Steps:**
-1. Shopify Shop page → **Data Mappings** section
-2. Click **Import** to pull data from Shopify
-3. Map each value to its OMS equivalent
-4. Save — mappings can be edited anytime via the overflow menu
+1. Shopify Shop page → **Shopify Shop Carrier Shipment** section
+2. Click **"Import Shopify shipping methods in HotWax"**
+3. Match each Shopify shipping method to an OMS carrier and shipment method
+4. Save — mappings can be changed at any time
 
-### 2.8 Shipping Method Mappings
+**Live carrier shipment mappings (hc-sandbox):**
 
-1. Click **"Import Shopify shipping methods in HotWax"**
-2. Match each Shopify shipping method to an OMS shipping method
-3. Associate each with its carrier
-4. Save
+| Carrier | OMS Shipment Method | Shopify Shipping Method |
+|---|---|---|
+| FedEx | 2 Day FedEx Shipping | `2 Day FedEx Shipping` |
+| Default | Next Day | `Expedited` |
+| FedEx | 2 Day FedEx Shipping | `FedEx 2-Day Test` |
+| FedEx | BLINK DELIVERY | `SAME_DAY_BLINKIT_SHOPIFY` |
+| FedEx | Third Day | `Standard` |
 
 > [!NOTE]
 > Required when generating shipping labels for predefined methods (without rate shopping).
