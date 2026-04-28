@@ -4,7 +4,7 @@
 
 ---
 
-## Part 1: What We Have in Legacy OMS
+## Legacy OMS — Full Configuration Capabilities
 
 The legacy OMS (`/commerce/control/ViewStore`) provides a granular, tab-based configuration for every aspect of a Product Store.
 
@@ -81,7 +81,7 @@ Additional key-value settings configurable in Legacy OMS:
 
 ---
 
-## Part 2: What We Have in Company App
+## Company App — Current Feature Coverage
 
 The Company App (`/product-store-details/<id>`) provides a modern, card-based interface focused on the most frequently used operational toggles.
 
@@ -124,7 +124,7 @@ The Company App (`/product-store-details/<id>`) provides a modern, card-based in
 
 ---
 
-## Part 3: What Is Missing in Company App
+## Gaps — Features Missing in Company App
 
 These configurations are **absent from the Company App** and require switching back to Legacy OMS. Each gap includes the correct workaround.
 
@@ -144,7 +144,7 @@ These configurations are **absent from the Company App** and require switching b
 
 ---
 
-## Summary
+## Feature Comparison Summary
 
 | Category | Legacy OMS | Company App |
 |---|---|---|
