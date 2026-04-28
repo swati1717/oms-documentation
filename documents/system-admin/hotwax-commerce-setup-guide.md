@@ -38,6 +38,43 @@ DBIC defines which countries this OMS instance operates in — affects tax, ship
 > [!NOTE]
 > When one OMS instance serves multiple countries, include only the relevant countries. Incorrect DBIC setup causes errors in tax and shipping flows.
 
+### 1.3 Update Company Profile
+
+The **Company Profile** holds the identity of the retailer's business within OMS — including company name, logo, primary address, and contact details. Update this immediately after first login so all system communications and documents reflect the correct brand identity.
+
+**Direct URL:**
+```
+https://{instance}.hotwax.io/commerce/control/ViewParty?partyId=COMPANY
+```
+
+**Path in OMS:** Hamburger Menu → Party → COMPANY
+
+#### What to Update
+
+| Section | Field | Action |
+|---|---|---|
+| **Overview** | **Company Name** | Click the ✏️ edit icon next to `Default Company` — replace with the actual retailer name |
+| **Overview** | **Company Logo** | Click **Change** under the logo — upload the retailer's brand logo |
+| **Overview** | **Status** | Should remain `Enabled` ✓ |
+| **Overview** | **Primary Address** | Click **Add Primary Ad...** — enter the retailer's registered business address |
+| **Overview** | **Emails and Phones** | Click **+** — add the company's primary email and phone number |
+| **Overview** | **Add Role** | Click **+** — assign business roles if required (e.g., `INTERNAL_ORGANIZATIO`) |
+| **Overview** | **Add Classification** | Click **+** — classify the company type if needed |
+| **Overview** | **Add Identification** | Click **+** — add Tax ID, EIN, or other business identifiers |
+| **Summary** | **Company Logo Path** | Click **Edit** — update the logo path (default: `/resources/uploads/images/company_logo.png`) |
+| **Accounting Preferences** | Accounting settings | Configure currency and accounting preferences if applicable |
+
+**Live example (dev environment):**
+
+| Field | Value |
+|---|---|
+| Company Name | `Default Company` *(update to retailer name)* |
+| Status | `Enabled` |
+| Logo Path | `/resources/uploads/images/company_logo.png` |
+
+> [!IMPORTANT]
+> Always update the **Company Name** and **Company Logo** before going live. These values appear on packing slips, system emails, and internal OMS documents sent to store staff and customers.
+
 ---
 
 ## Step 2: Shopify Shop Setup
@@ -486,8 +523,9 @@ Facility Groups define what role a facility plays in OMS omnichannel operations.
 | **Initial Setup** | | |
 | 1 | Log in and reset password | ☐ |
 | 2 | Create admin users, disable default user | ☐ |
-| 3 | Add DBIC (operating countries) | ☐ |
-| 4 | Configure System Property Data (non-US only) | ☐ |
+| 3 | Update Company Profile (name, logo, address, contacts) | ☐ |
+| 4 | Add DBIC (operating countries) | ☐ |
+| 5 | Configure System Property Data (non-US only) | ☐ |
 | **Shopify Shop** | | |
 | 5 | Install HotWax Commerce app on Shopify | ☐ |
 | 6 | Verify Shopify Shop auto-created in OMS | ☐ |
@@ -529,6 +567,7 @@ Facility Groups define what role a facility plays in OMS omnichannel operations.
 | Page | URL |
 |---|---|
 | OMS Login | `https://{instance}.hotwax.io/commerce/control/main` |
+| Company Profile | `https://{instance}.hotwax.io/commerce/control/ViewParty?partyId=COMPANY` |
 | Shopify Shop | `https://{instance}.hotwax.io/commerce/control/ViewShopifyShop?shopId=<id>` |
 | Product Store | `https://{instance}.hotwax.io/commerce/control/ViewStore?productStoreId=<id>` |
 | General Settings | `https://{instance}.hotwax.io/commerce/control/GeneralSettings` |
