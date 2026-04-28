@@ -53,9 +53,9 @@ https://{instance}.hotwax.io/commerce/control/ViewParty?partyId=COMPANY
 
 | Section | Field | Action |
 |---|---|---|
-| **Overview** | **Company Name** | Click the ✏️ edit icon next to `Default Company` — replace with the actual retailer name |
+| **Overview** | **Company Name** | Click the  edit icon next to `Default Company` — replace with the actual retailer name |
 | **Overview** | **Company Logo** | Click **Change** under the logo — upload the retailer's brand logo |
-| **Overview** | **Status** | Should remain `Enabled` ✓ |
+| **Overview** | **Status** | Should remain `Enabled`  |
 | **Overview** | **Primary Address** | Click **Add Primary Ad...** — enter the retailer's registered business address |
 | **Overview** | **Emails and Phones** | Click **+** — add the company's primary email and phone number |
 | **Overview** | **Add Role** | Click **+** — assign business roles if required (e.g., `INTERNAL_ORGANIZATIO`) |
@@ -223,7 +223,7 @@ https://{instance}.hotwax.io/commerce/control/ViewStore?productStoreId=<storeId>
 
 ### 3.2 Core Product Store Fields
 
-#### ✅ Configure These Fields
+#### Configure These Fields
 
 | Field | Description | Live Value (Example) |
 |---|---|---|
@@ -235,7 +235,7 @@ https://{instance}.hotwax.io/commerce/control/ViewStore?productStoreId=<storeId>
 | **Allow Split** | Allow orders to split across multiple shipments | `Y` (default) |
 | **Product Identifier** | Primary product ID used internally in OMS | `SKU` / `UPCA` |
 
-#### 🚫 Do Not Change These Fields
+#### Do Not Change These Fields
 
 | Field | Required Value | Why |
 |---|---|---|
@@ -521,44 +521,44 @@ Facility Groups define what role a facility plays in OMS omnichannel operations.
 | # | Task | Done |
 |---|---|---|
 | **Initial Setup** | | |
-| 1 | Log in and reset password | ☐ |
-| 2 | Create admin users, disable default user | ☐ |
-| 3 | Update Company Profile (name, logo, address, contacts) | ☐ |
-| 4 | Add DBIC (operating countries) | ☐ |
-| 5 | Configure System Property Data (non-US only) | ☐ |
+| 1 | Log in and reset password |  |
+| 2 | Create admin users, disable default user |  |
+| 3 | Update Company Profile (name, logo, address, contacts) |  |
+| 4 | Add DBIC (operating countries) |  |
+| 5 | Configure System Property Data (non-US only) |  |
 | **Shopify Shop** | | |
-| 5 | Install HotWax Commerce app on Shopify | ☐ |
-| 6 | Verify Shopify Shop auto-created in OMS | ☐ |
-| 7 | Set access scope to `Read and write` | ☐ |
-| 8 | Link Shopify Shop to Product Store | ☐ |
-| 9 | Configure product type mappings | ☐ |
-| 10 | Configure sales channel mappings | ☐ |
-| 11 | Configure payment method mappings | ☐ |
-| 12 | Import and map shipping methods | ☐ |
-| 13 | Import Shopify locations → create OMS facilities | ☐ |
-| 14 | Trigger initial product download | ☐ |
-| 15 | Trigger initial order sync | ☐ |
+| 5 | Install HotWax Commerce app on Shopify |  |
+| 6 | Verify Shopify Shop auto-created in OMS |  |
+| 7 | Set access scope to `Read and write` |  |
+| 8 | Link Shopify Shop to Product Store |  |
+| 9 | Configure product type mappings |  |
+| 10 | Configure sales channel mappings |  |
+| 11 | Configure payment method mappings |  |
+| 12 | Import and map shipping methods |  |
+| 13 | Import Shopify locations → create OMS facilities |  |
+| 14 | Trigger initial product download |  |
+| 15 | Trigger initial order sync |  |
 | **Product Store & General Settings** | | |
-| 16 | Update Product Store name | ☐ |
-| 17 | Configure currency, auto-approve, sales order prefix | ☐ |
-| 18 | Verify brokering and inventory reservation are `Y` | ☐ |
-| 19 | Configure advanced product store settings | ☐ |
-| 20 | Verify General Settings (country, currency, date formats) | ☐ |
-| 21 | Add shipping methods to Product Store | ☐ |
+| 16 | Update Product Store name |  |
+| 17 | Configure currency, auto-approve, sales order prefix |  |
+| 18 | Verify brokering and inventory reservation are `Y` |  |
+| 19 | Configure advanced product store settings |  |
+| 20 | Verify General Settings (country, currency, date formats) |  |
+| 21 | Add shipping methods to Product Store |  |
 | **Facility Setup** | | |
-| 22 | Create / import facilities | ☐ |
-| 23 | Configure address, phone, zip for each facility | ☐ |
-| 24 | Add latitude & longitude for each facility | ☐ |
-| 25 | Set operating hours and time zone | ☐ |
-| 26 | Configure fulfillment settings per facility | ☐ |
-| 27 | Set fulfillment capacity | ☐ |
-| 28 | Associate facilities with Product Store | ☐ |
-| 29 | Create BROKERING facility group | ☐ |
-| 30 | Create CHANNEL FAC GROUP (online inventory) | ☐ |
-| 31 | Create PICKUP facility group (BOPIS) | ☐ |
-| 32 | Add facilities to relevant groups with correct sequence | ☐ |
-| 33 | Map facilities to Shopify locations (external mappings) | ☐ |
-| 34 | Verify all facilities and locations exist in OMS | ☐ |
+| 22 | Create / import facilities |  |
+| 23 | Configure address, phone, zip for each facility |  |
+| 24 | Add latitude & longitude for each facility |  |
+| 25 | Set operating hours and time zone |  |
+| 26 | Configure fulfillment settings per facility |  |
+| 27 | Set fulfillment capacity |  |
+| 28 | Associate facilities with Product Store |  |
+| 29 | Create BROKERING facility group |  |
+| 30 | Create CHANNEL FAC GROUP (online inventory) |  |
+| 31 | Create PICKUP facility group (BOPIS) |  |
+| 32 | Add facilities to relevant groups with correct sequence |  |
+| 33 | Map facilities to Shopify locations (external mappings) |  |
+| 34 | Verify all facilities and locations exist in OMS |  |
 
 ---
 
