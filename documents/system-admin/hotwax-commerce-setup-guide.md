@@ -53,9 +53,9 @@ https://{instance}.hotwax.io/commerce/control/ViewParty?partyId=COMPANY
 
 | Section | Field | Action |
 |---|---|---|
-| **Overview** | **Company Name** | Click the  edit icon next to `Default Company` — replace with the actual retailer name |
+| **Overview** | **Company Name** | Click the ✏️ edit icon next to `Default Company` — replace with the actual retailer name |
 | **Overview** | **Company Logo** | Click **Change** under the logo — upload the retailer's brand logo |
-| **Overview** | **Status** | Should remain `Enabled`  |
+| **Overview** | **Status** | Should remain `Enabled` ✓ |
 | **Overview** | **Primary Address** | Click **Add Primary Ad...** — enter the retailer's registered business address |
 | **Overview** | **Emails and Phones** | Click **+** — add the company's primary email and phone number |
 | **Overview** | **Add Role** | Click **+** — assign business roles if required (e.g., `INTERNAL_ORGANIZATIO`) |
@@ -92,44 +92,32 @@ https://{instance}.hotwax.io/commerce/control/ViewShopifyShop?shopId=<shopId>
 
 **Live example — Shop ID: 10000 (`hc-sandbox`)**
 
-#### Overview
-
 | Field | Value |
 |---|---|
-| Phone | `41965584548`, `9826754548` |
-| Email | `deepak.dixit@hotwax.co` |
-| Store Name | `HC Demo Store` |
+| Shop ID | `10000` |
+| Name | `hc-sandbox` |
+| Shop Domain | `hc-sandbox.myshopify.com` |
 | Owner | `HotWax Commerce Shopify` |
 | Plan | `partner_test` |
 | Primary Location ID | `67890151588` |
-| Shop Domain | `hc-sandbox.myshopify.com` |
 | Weight Unit | `lb` |
 | Currency | `USD` |
 | Country Code | `US` |
 | Time Zone | `America/New_York` |
-
-#### Shopify Config
-
-| Field | Value |
-|---|---|
-| Name | `10010 hc-sandbox` |
 | Access Scope | `Shopify shop read and write access` |
 | API Version | `2025-07` |
 | Connect URL | `https://hc-sandbox.myshopify.com/` |
-| Process Refund | `Y` |
 | Client ID | `ec8cec8c4299d0ea17269da567eebc28` |
-| Access Token | (hidden — copy via super user action) |
-| Client Secret | (hidden — copy via super user action) |
-| Last Updated | `07-12-2025 02:35 AM` |
+| Process Refund | `Y` |
 
-#### Shopify Scripts (auto-loaded)
+**Shopify Scripts (auto-loaded):**
 
-| Script ID | Type | Version | File Type | From Date | Shopify Tag ID |
-|---|---|---|---|---|---|
-| `10001` | Pre-order JS | v1.0.0 | application/javascript | 06-11-2024 09:00 AM | `280275648676` |
-| `10003` | Pre-order CSS | v1.0.0 | text/css | 06-11-2024 09:00 AM | — |
-| `10016` | BOPIS JS | v1.0.0 | application/javascript | 06-12-2024 08:45 AM | `280346198180` |
-| `10017` | BOPIS CSS | v1.0.0 | text/css | 06-12-2024 08:45 AM | `280347050148` |
+| Script | ID |
+|---|---|
+| Pre-order JS | `10001` |
+| Pre-order CSS | `10003` |
+| BOPIS JS | `10016` |
+| BOPIS CSS | `10017` |
 
 ### 2.2 Quick Actions on the Shop Summary Card
 
@@ -174,103 +162,44 @@ Map the **default Shopify location** to the OMS brokering queue location. This i
 
 ### 2.6 Map Facilities to Shopify Locations
 
-Required for POS inventory sync. Facilities and Shopify locations are mapped one-to-one.
+Required for POS inventory sync.
+
+**Mapped locations (live example):**
+
+| Facility | Shopify Location ID |
+|---|---|
+| BROADWAY | `67890446500` |
+| BROOKLYN | `67890479268` |
+| CENTERVILLE | `67890282660` |
 
 **Steps:**
 1. Shopify Shop page → **Facilities** section
 2. Click **"Import Shopify locations in HotWax"**
 3. Select locations → OMS creates matching facilities
-4. Map each facility to its Shopify Location ID
-
-**Live facility-location mappings (hc-sandbox):**
-
-| Facility | Facility Type | Shopify Location ID |
-|---|---|---|
-| BROADWAY | RETAIL_STORE | `67890446500` |
-| BROOKLYN | WAREHOUSE | `67890479268` |
-| CENTERVILLE | RETAIL_STORE | `67890282660` |
-| DIVRETAILSTORE | RETAIL_STORE | `111` |
-| GARDEN_CITY | RETAIL_STORE | `67890544804` |
-| INDORE | RETAIL_STORE | `23` |
-| MIAMI2 | RETAIL_STORE | `Test20` |
-| MIAMI3 | WAREHOUSE | `598456184` |
-| OREM | RETAIL_STORE | `67890348196` |
-| QUEENS | RETAIL_STORE | `67890577572` |
+4. Facilities and Shopify locations are mapped one-to-one
 
 ### 2.7 Data Mappings
 
-Configure all mapping types from the Shopify Shop page. Import from Shopify first, then map each value to its OMS equivalent. Mappings can be edited anytime via the overflow menu.
-
-#### Sales Channel Mappings
-
-Maps Shopify sales channels to OMS internal channel types.
-
-| Shopify Value | OMS Mapped Value |
-|---|---|
-| `android` | `PHONE_SALES_CHANNEL` |
-| `exchange` | `EXCHG_SALES_CHANNEL` |
-| `iphone` | `PHONE_SALES_CHANNEL` |
-| `Marketplace` | `MKTP_SALES_CHANNEL` |
-| `pos` | `POS_SALES_CHANNEL` |
-| `shopify_draft_order` | `CSR_SALES_CHANNEL` |
-| `web` | `WEB_SALES_CHANNEL` |
-
-> [!IMPORTANT]
-> Missing sales channel mappings cause order processing errors — orders from unmapped channels will not be handled correctly.
-
-#### Payment Method Mappings
-
-Maps Shopify payment method names to OMS payment type IDs.
-
-| Shopify Value | OMS Mapped Value |
-|---|---|
-| `afterpay` | `EXT_SHOP_AFTRPAY` |
-| `afterpay_north_america` | `EXT_SHOP_AFTRPAY_NA` |
-| `American Express` | `EXT_SHOP_AMEX` |
-| `Discover` | `EXT_SHOP_DISCOVER` |
-| `Klarna` | `EXT_SHOP_KLARNA` |
-| `Mastercard` | `EXT_SHOP_MASTERCARD` |
-| `paypal` | `EXT_SHOP_PAYPAL` |
-
-#### Product Type Mappings
-
-Maps Shopify product types to OMS product types. Configure **before** the first product download.
-
-| Shopify Value | OMS Mapped Value |
-|---|---|
-| `donation` | `DONATION` |
-| `Gift Card` | `DIGITAL_GOOD` |
-| `Gift Cards` | `DIGITAL_GOOD` |
-| `Loyalty Card` | `DIGITAL_GOOD` |
-
-#### Additional Mapping Types
+Three types must be configured — import from Shopify first, then map:
 
 | Mapping Type | Purpose |
 |---|---|
-| **Order Item Association** | Maps Shopify SKU variants to OMS product IDs |
-| **Order Item Group Association** | Groups order items for combined fulfillment |
-| **Product Tag** | Maps Shopify product tags to OMS attributes |
-| **Order Customer Classification** | Classifies customers based on Shopify order data |
-
-### 2.8 Shipping Method (Carrier Shipment) Mappings
-
-Maps Shopify shipping method names to OMS carrier + shipment method combinations.
+| **Sales Channel** | Shopify sales channels → OMS channels |
+| **Product Types** | Shopify product types → OMS product types |
+| **Payment Methods** | Shopify payment methods → OMS payment types |
 
 **Steps:**
-1. Shopify Shop page → **Shopify Shop Carrier Shipment** section
-2. Click **"Import Shopify shipping methods in HotWax"**
-3. Match each Shopify shipping method to an OMS carrier and shipment method
-4. Save — mappings can be changed at any time
+1. Shopify Shop page → **Data Mappings** section
+2. Click **Import** to pull data from Shopify
+3. Map each value to its OMS equivalent
+4. Save — mappings can be edited anytime via the overflow menu
 
-**Live carrier shipment mappings (hc-sandbox):**
+### 2.8 Shipping Method Mappings
 
-| Carrier | OMS Shipment Method | Shopify Shipping Method |
-|---|---|---|
-| FedEx | 2 Day FedEx Shipping | `2 Day FedEx Shipping` |
-| Default | Next Day | `Expedited` |
-| FedEx | 2 Day FedEx Shipping | `FedEx 2-Day Test` |
-| FedEx | BLINK DELIVERY | `SAME_DAY_BLINKIT_SHOPIFY` |
-| FedEx | Third Day | `Standard` |
+1. Click **"Import Shopify shipping methods in HotWax"**
+2. Match each Shopify shipping method to an OMS shipping method
+3. Associate each with its carrier
+4. Save
 
 > [!NOTE]
 > Required when generating shipping labels for predefined methods (without rate shopping).
@@ -294,7 +223,7 @@ https://{instance}.hotwax.io/commerce/control/ViewStore?productStoreId=<storeId>
 
 ### 3.2 Core Product Store Fields
 
-#### Configure These Fields
+#### ✅ Configure These Fields
 
 | Field | Description | Live Value (Example) |
 |---|---|---|
@@ -306,7 +235,7 @@ https://{instance}.hotwax.io/commerce/control/ViewStore?productStoreId=<storeId>
 | **Allow Split** | Allow orders to split across multiple shipments | `Y` (default) |
 | **Product Identifier** | Primary product ID used internally in OMS | `SKU` / `UPCA` |
 
-#### Do Not Change These Fields
+#### 🚫 Do Not Change These Fields
 
 | Field | Required Value | Why |
 |---|---|---|
@@ -589,47 +518,15 @@ Facility Groups define what role a facility plays in OMS omnichannel operations.
 
 ## Setup Checklist
 
-| # | Task | Done |
-|---|---|---|
-| **Initial Setup** | | |
-| 1 | Log in and reset password |  |
-| 2 | Create admin users, disable default user |  |
-| 3 | Update Company Profile (name, logo, address, contacts) |  |
-| 4 | Add DBIC (operating countries) |  |
-| 5 | Configure System Property Data (non-US only) |  |
-| **Shopify Shop** | | |
-| 5 | Install HotWax Commerce app on Shopify |  |
-| 6 | Verify Shopify Shop auto-created in OMS |  |
-| 7 | Set access scope to `Read and write` |  |
-| 8 | Link Shopify Shop to Product Store |  |
-| 9 | Configure product type mappings |  |
-| 10 | Configure sales channel mappings |  |
-| 11 | Configure payment method mappings |  |
-| 12 | Import and map shipping methods |  |
-| 13 | Import Shopify locations → create OMS facilities |  |
-| 14 | Trigger initial product download |  |
-| 15 | Trigger initial order sync |  |
-| **Product Store & General Settings** | | |
-| 16 | Update Product Store name |  |
-| 17 | Configure currency, auto-approve, sales order prefix |  |
-| 18 | Verify brokering and inventory reservation are `Y` |  |
-| 19 | Configure advanced product store settings |  |
-| 20 | Verify General Settings (country, currency, date formats) |  |
-| 21 | Add shipping methods to Product Store |  |
-| **Facility Setup** | | |
-| 22 | Create / import facilities |  |
-| 23 | Configure address, phone, zip for each facility |  |
-| 24 | Add latitude & longitude for each facility |  |
-| 25 | Set operating hours and time zone |  |
-| 26 | Configure fulfillment settings per facility |  |
-| 27 | Set fulfillment capacity |  |
-| 28 | Associate facilities with Product Store |  |
-| 29 | Create BROKERING facility group |  |
-| 30 | Create CHANNEL FAC GROUP (online inventory) |  |
-| 31 | Create PICKUP facility group (BOPIS) |  |
-| 32 | Add facilities to relevant groups with correct sequence |  |
-| 33 | Map facilities to Shopify locations (external mappings) |  |
-| 34 | Verify all facilities and locations exist in OMS |  |
+A full setup checklist is available as a separate document:
+
+**[hotwax-commerce-setup-checklist.md](hotwax-commerce-setup-checklist.md)**
+
+The checklist covers all 35 tasks across four phases:
+- Phase 1: Initial Setup (5 tasks)
+- Phase 2: Shopify Shop Setup (11 tasks)
+- Phase 3: Product Store & General Settings (6 tasks)
+- Phase 4: Facility Setup (13 tasks)
 
 ---
 
